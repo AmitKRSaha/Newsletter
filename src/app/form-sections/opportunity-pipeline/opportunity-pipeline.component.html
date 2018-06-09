@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+    (click)="expandMoreOrLess()">
+    <h5 class="mb-0">
+      <button class="btn btn-link collapsed" type="button">
+        <div class="row">
+          <div class="col-md-9 plannedSection">
+            Opportunitis In PipeLine
+          </div>
+          <div class="col-md-1" [ngClass]="{'closed': expandtoggle.planningsection.status == 'closed','open': expandtoggle.planningsection.status == 'open'}">
+          </div>
+        </div>
+      </button>
+
+    </h5>
+  </div>
+  <div id="collapseThree" (click)="stateActive()" [ngClass]='opportunityshoworhide' class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample"
+    style=" background-color: bisque !important;">
+    <div class="card-body">
+      <h3>Opportunitis In PipeLine</h3>
+    </div>
+    <div class="card-body">
+      <div>
+        <form [formGroup]="userFormuserOpportunity" (ngSubmit)="onFormSubmit()">
+          <div formArrayName="users">
+            <div *ngFor="let user of users.controls; index as idx">
+              <input [formControlName]="idx" type="text" class="form-control" aria-label="With textarea" placeholder="Planned">
+            </div>
+          </div>
+          <br>
+          <div>
+            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Planned Section</button>
+            <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

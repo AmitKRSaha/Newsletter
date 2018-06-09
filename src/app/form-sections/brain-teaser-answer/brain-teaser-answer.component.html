@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-header" (click)="expandMoreOrLess()" id="headingEight" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button">
+          <div class="row">
+            <div class="col-md-9 plannedSection">
+             Brain Teaser Answers
+            </div>
+            <div class="col-md-1" [ngClass]="{'closed': expandtoggle.brainteaseranssection.status == 'closed','open': expandtoggle.brainteaseranssection.status == 'open'}">
+            </div>
+          </div>
+        </button>
+
+      </h5>
+    </div>
+    <div id="collapseEight" [ngClass]='showorhide' class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample"
+      style=" background-color: bisque !important;" (click)="showActive()">
+      <div class="card-body">
+        <h3>Brain Teasers</h3>
+      </div>
+      <div class="card-body">
+        <div>
+          <form [formGroup]="userFormuserbrainteaserans" (ngSubmit)="onFormSubmit()">
+            <div formArrayName="users">
+              <div *ngFor="let user of users.controls; index as idx">
+                <input [formControlName]="idx" type="text" class="form-control" aria-label="With textarea" placeholder="Planned">
+              </div>
+            </div>
+            <br>
+            <div>
+              <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Planned Section</button>
+              <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

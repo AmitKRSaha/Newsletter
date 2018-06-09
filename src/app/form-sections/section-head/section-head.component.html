@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+  (click)="expandMoreOrLess()">
+    <h5 class="mb-0">
+      <button class="btn btn-link" type="button">
+        <div class="row">
+            <div class="col-md-9 plannedSection">
+                Section Header Image
+            </div>
+            <div class="col-md-1" [ngClass]="{'closed': expandtoggle.sectionHead.status == 'closed','open': expandtoggle.sectionHead.status == 'open'}">
+            </div>
+          </div>
+      </button>
+    </h5>
+  </div>
+
+  <div id="collapseOne" [ngClass]="sectionheadtoggle" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" (click)="showactivestatus()" #patientDDL>
+    <div class="card-body">
+      Section Header Image
+    </div>
+    <div class="card-body">
+      <div>
+        <form [formGroup]="userFormuserOpportunity" (ngSubmit)="onFormSubmit()">
+          <div class="form-group">
+            <input type="file" name="img[]" class="file">
+          </div>
+          <br>
+          <div>
+            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Planned Section</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
