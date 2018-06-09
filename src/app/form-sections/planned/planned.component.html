@@ -1,12 +1,12 @@
 <div class="card">
-  <div class="card-header"  id="headingNight" data-toggle="collapse" data-target="#collapseNight" aria-expanded="false" aria-controls="collapseNight">
+  <div class="card-header" (click)="expandMoreOrLess()" id="headingNight" data-toggle="collapse" data-target="#collapseNight" aria-expanded="false" aria-controls="collapseNight">
     <h5 class="mb-0">
       <button class="btn btn-link collapsed" type="button">
         <div class="row">
           <div class="col-md-9 plannedSection">
            Planned
           </div>
-          <div class="col-md-1" [ngClass]="{'closed': expandtoggle.planningsection.status == 'closed','open': expandtoggle.planningsection.status == 'open'}">
+          <div class="col-md-1" [ngClass]="{'closed': expandtoggle.planned.status == 'closed','open': expandtoggle.planned.status == 'open'}">
           </div>
         </div>
       </button>

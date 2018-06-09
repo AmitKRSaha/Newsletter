@@ -49,7 +49,7 @@ export class AcheivementComponent {
     this.showorhide = showorhide;
   }
   expandMoreOrLess() {
-    this.expandtoggle.brainteaseranssection.status = (this.expandtoggle.brainteaseranssection.status === 'open') ? 'closed' : 'open';
+    this.expandtoggle.acheivement.status = (this.expandtoggle.acheivement.status === 'open') ? 'closed' : 'open';
   }
 
 

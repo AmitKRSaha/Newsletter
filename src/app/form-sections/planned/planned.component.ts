@@ -51,7 +51,7 @@ export class PlannedComponent {
     this.showorhide = showorhide;
   }
   expandMoreOrLess() {
-    this.expandtoggle.planningsection.status = (this.expandtoggle.planningsection.status === 'open') ? 'closed' : 'open';
+    this.expandtoggle.planned.status = (this.expandtoggle.planned.status === 'open') ? 'closed' : 'open';
   }
 
 

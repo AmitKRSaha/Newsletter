@@ -43,9 +43,15 @@ export class AppComponent implements OnInit {
 
   expandtoggle: any = {
     sectionHead: {
-      status: 'closed'
+      status: 'open'
     },
     businessupdate: {
+      status: 'closed'
+    },
+    acheivement: {
+      status: 'closed'
+    },
+    planned: {
       status: 'closed'
     },
     planningsection: {
