@@ -60,7 +60,6 @@ export class BusinessUpdateComponent implements OnInit {
   }
 
   toggle(showorhide: string) {
-    console.log(showorhide);
     this.businessShowOrHide = showorhide;
   }
 

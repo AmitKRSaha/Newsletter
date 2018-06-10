@@ -22,7 +22,8 @@
       <div>
         <form [formGroup]="userFormuserOpportunity" (ngSubmit)="onFormSubmit()">
           <div class="form-group">
-            <input type="file" name="img[]" class="file">
+            <input type="file" name="img[]" class="file"  (change)="fileChange(input)" #input >
+            <img src='{{file_srcs[0]}}' alt="" />
           </div>
           <br>
           <div>
