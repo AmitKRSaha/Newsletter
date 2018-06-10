@@ -1,0 +1,234 @@
+html,
+body {
+  height: 100%;
+  width: 1200px;
+}
+
+.header {
+  background-color: beige;
+  text-align: center;
+  color: cadetblue;
+  margin-top: 0px;
+  padding: 8px;
+}
+
+.contentSection {
+  margin-left: 10px;
+}
+
+.no-container {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.section1 {
+  margin: 20px;
+}
+
+.section:nth-child(1) {
+  margin-top: -5px;
+}
+
+.section {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(243, 234, 234);
+  border-radius: 50%;
+  z-index: 2;
+  position: relative
+}
+
+#sectionhead {
+  /* background-color: aqua !important; */
+  text-align: center;
+  padding: 0px;
+}
+
+.liner {
+  bottom: 80px;
+  height: 600px;
+  background: #ddd;
+  position: absolute;
+  width: 2px;
+  margin: 0 auto;
+  left: 43%;
+  right: 50%;
+  top: 25px;
+  z-index: 1;
+  .sectionheadlineActive {
+    height: 72px;
+    background: orange;
+    top: 25px;
+  }
+  .sectionheadlineCompleted {
+    height: 72px;
+    background: green;
+    top: 25px;
+  }
+  .businessupdatelineActive {
+    height: 72px;
+    background: orange;
+    top: 70px;
+  }
+  .businessupdatelineCompleted {
+    height: 72px;
+    background: green;
+    top: 70px;
+  }
+  .opportunitylineActive {
+    height: 72px;
+    background: orange;
+    top: 100px;
+  }
+  .opportunitylineCompleted {
+    height: 72px;
+    background: green;
+    top: 125px;
+  }
+  .acheivementlineActive {
+    height: 72px;
+    background: orange;
+    top: 206px;
+  }
+  .acheivementlineCompleted {
+    height: 72px;
+    background: green;
+    top: 206px;
+  }
+  .plannedlineActive {
+    height: 72px;
+    background: orange;
+    top: 206px;
+  }
+  .plannedlineCompleted {
+    height: 72px;
+    background: green;
+    top: 286px;
+  }
+  .projstatlineActive {
+    bottom: 80px;
+    height: 80px;
+    background: orange;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 330px;
+    z-index: 1;
+  }
+  .projstatlineCompleted {
+    bottom: 80px;
+    height: 80px;
+    background: green;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 330px;
+    z-index: 1;
+  }
+  .techlineActive {
+    bottom: 80px;
+    height: 80px;
+    background: orange;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 370px;
+    z-index: 1;
+  }
+  .techlineCompleted {
+    bottom: 80px;
+    height: 80px;
+    background: green;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 370px;
+    z-index: 1;
+  }
+  .brainteaserlineActive {
+    bottom: 80px;
+    height: 80px;
+    background: orange;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 450px;
+    z-index: 1;
+  }
+  .brainteaserlineCompleted {
+    bottom: 80px;
+    height: 80px;
+    background: green;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 450px;
+    z-index: 1;
+  }
+  .healthtipslineActive {
+    bottom: 80px;
+    height: 80px;
+    background: orange;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 500px;
+    z-index: 1;
+  }
+  .healthtipslineCompleted {
+    bottom: 80px;
+    height: 80px;
+    background: green;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 500px;
+    z-index: 1;
+  }
+}
+
+
+.inactive {
+  background-color: inherit;
+  display: inline-block;
+  z-index: 2;
+}
+
+.active {
+  height: 50px;
+  width: 50px;
+  background-color: orange;
+  border-radius: 50%;
+}
+
+.completed {
+  height: 50px;
+  width: 50px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 50px;
+}
+
