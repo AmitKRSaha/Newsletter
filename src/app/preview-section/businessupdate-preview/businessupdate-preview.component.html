@@ -1,0 +1,35 @@
+<h3>Business Section Preview</h3>
+<div class="businessupdate">
+  <div *ngIf='progressBarService.content.length > 1'>
+
+    <div class="row">
+      <div class="col-md-2">
+        <img src="../../../assets/Business update.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
+        />Business Updates
+      </div>
+      <div class="col-md-10">
+        <ul>
+          <li *ngFor="let value of progressBarService.content[1][0].usersBusiness"> {{value}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngIf='progressBarService.content.length > 2'>
+    <div class="opportuniyInPipeline">
+      <div class="row">
+        <div class="col-md-10">
+          <ul>
+            <li *ngFor="let value of progressBarService.content[2][1].users"> {{value}}</li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <div>
+            <img src="../../../assets/Opprtunities_Img.png" style="margin: 5px;padding: 10px;" class="image" alt="Opportunity Image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

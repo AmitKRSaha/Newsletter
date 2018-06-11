@@ -1,5 +1,7 @@
 import { Component, Input, ChangeDetectorRef } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { BusinessUpdateComponent } from '../business-update/business-update.component';
 import { ProgressBarService } from '../../progress-bar.service';
 
@@ -24,7 +26,9 @@ public file_srcs: string[] = [];
 public debug_size_before: string[] = [];
  public debug_size_after: string[] = [];
 
-  constructor(private progressbarservice: ProgressBarService, private changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private progressbarservice: ProgressBarService
+          , private changeDetectorRef: ChangeDetectorRef,
+           private route: Router) { }
 
   userFormuserOpportunity = new FormGroup({
     users: new FormArray([
@@ -37,7 +41,7 @@ public debug_size_before: string[] = [];
   readFile(file, reader, callback) {
     reader.onload = () => {
       callback(reader.result);
-      console.log(reader.result);
+      // console.log(reader.result);
     };
     reader.readAsDataURL(file);
   }
@@ -103,14 +107,15 @@ public debug_size_before: string[] = [];
       callback(dataUrl, img.src.length, dataUrl.length);
     };
   }
+
   showactivestatus() {
     this.completedSections.sectionHead.status = 'active';
     this.line.sectionHead.status = 'active';
-
+    this.route.navigateByUrl('header');
   }
 
   onFormSubmit() {
-    this.progressbarservice.addItemInList(['sectionhead', this.imgpath]);
+    this.progressbarservice.addItemInList(this.imgpath);
     this.completedSections.sectionHead.status = 'completed';
     this.line.sectionHead.status = 'completed';
     this.sectionheadtoggle = 'hide';

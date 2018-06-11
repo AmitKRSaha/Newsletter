@@ -20,6 +20,7 @@ import { PreviewSectionComponent } from './form-sections/preview-section/preview
 import { AcheivementComponent } from './form-sections/acheivement/acheivement.component';
 import { PlannedComponent } from './form-sections/planned/planned.component';
 import { HeaderPreviewComponent } from './preview-section/header-preview/header-preview.component';
+import { BusinessupdatePreviewComponent } from './preview-section/businessupdate-preview/businessupdate-preview.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,8 @@ import { HeaderPreviewComponent } from './preview-section/header-preview/header-
     AcheivementComponent,
     PlannedComponent,
     HeaderPreviewComponent,
+    BusinessupdatePreviewComponent,
+
   ],
   imports: [
     BrowserModule,

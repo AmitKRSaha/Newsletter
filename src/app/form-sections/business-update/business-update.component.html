@@ -23,7 +23,13 @@
     <div class="card-body">
       <div>
         <form [formGroup]="userFormBusiness" (ngSubmit)="onFormSubmit()">
+          <!-- <div class="form-group">
+            <input type="file" name="img[]" class="file"  (change)="fileChange(input)" #input >
+          </div>
+          <br> -->
+            <!-- <img src='{{file_srcs[0]}}' alt="" /> -->
           <div formArrayName="usersBusiness">
+
             <div *ngFor="let user of usersBusiness.controls; index as idx">
               <input [formControlName]="idx" type="text" class="form-control" aria-label="With textarea" placeholder="Bussiness Update">
             </div>
