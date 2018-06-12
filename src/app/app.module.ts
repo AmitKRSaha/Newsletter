@@ -21,6 +21,7 @@ import { AcheivementComponent } from './form-sections/acheivement/acheivement.co
 import { PlannedComponent } from './form-sections/planned/planned.component';
 import { HeaderPreviewComponent } from './preview-section/header-preview/header-preview.component';
 import { BusinessupdatePreviewComponent } from './preview-section/businessupdate-preview/businessupdate-preview.component';
+import { ProjectPreviewComponent } from './preview-section/project-preview/project-preview.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { BusinessupdatePreviewComponent } from './preview-section/businessupdate
     PlannedComponent,
     HeaderPreviewComponent,
     BusinessupdatePreviewComponent,
+    ProjectPreviewComponent,
 
   ],
   imports: [
