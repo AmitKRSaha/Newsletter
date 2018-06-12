@@ -44,9 +44,13 @@ body {
   padding: 0px;
 }
 
+@media all and (max-width: 768px){
+  #sectionhead {display: none; }
+}
+
 .liner {
   bottom: 80px;
-  height: 600px;
+  height: 640px;
   background: #ddd;
   position: absolute;
   width: 2px;
@@ -199,6 +203,30 @@ body {
     left: 43%;
     right: 50%;
     top: 500px;
+    z-index: 1;
+  }
+  .teamandbirthdaylineActivate {
+    bottom: 80px;
+    height: 80px;
+    background: orange;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 600px;
+    z-index: 1;
+  }
+  .teamandbirthdaylineCompleted {
+    bottom: 80px;
+    height: 80px;
+    background: green;
+    position: absolute;
+    width: 2px;
+    margin: 0 auto;
+    left: 43%;
+    right: 50%;
+    top: 600px;
     z-index: 1;
   }
 }

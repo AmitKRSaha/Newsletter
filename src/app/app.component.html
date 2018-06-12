@@ -19,6 +19,8 @@
         <div [ngClass]="{'techlineActive': line.tech.status == 'active', 'techlineCompleted': line.tech.status == 'completed'}"></div>
         <div [ngClass]="{'brainteaserlineActive': line.brainteaser.status == 'active', 'brainteaserlineCompleted': line.brainteaser.status == 'completed'}"></div>
         <div [ngClass]="{'healthtipslineActive': line.healthtips.status == 'active', 'healthtipslineCompleted': line.healthtips.status == 'completed'}"></div>
+        <div [ngClass]="{'teamandbirthdaylineActivate': line.teamandbirthday.status == 'active', 'teamandbirthdaylineCompleted': line.teamandbirthday.status == 'completed'}"></div>
+
       </div>
 
       <div class="">
@@ -72,6 +74,11 @@
             <img src="../assets/baseline-question_answer-24px.svg" height="20px" width="20px">
           </div>
         </div>
+        <div class="section1">
+          <div class="navbar-brand section"  [ngClass]="{'active': completedSections.teamandbirthday.status == 'active', 'completed': completedSections.teamandbirthday.status == 'completed'}">
+            <img src="../assets/teamicon.png" height="20px" width="20px">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -90,7 +97,7 @@
         <app-teamphoto-birthday  [expandtoggle]="expandtoggle" [completedSections]="completedSections"  [line]="line"></app-teamphoto-birthday>
       </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5" style="position: fixed;">
       <!-- <a routerLink="/header">Header Section</a> -->
       <router-outlet></router-outlet>
     </div>

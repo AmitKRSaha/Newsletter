@@ -39,6 +39,9 @@ export class AppComponent implements OnInit {
     brainteaseranswer: {
       status: 'inactive'
     },
+    teamandbirthday: {
+      status: 'inactive'
+    },
   };
 
   expandtoggle: any = {
@@ -72,6 +75,9 @@ export class AppComponent implements OnInit {
     brainteaseranssection: {
       status: 'closed'
     },
+    teamandbirthday: {
+      status: 'closed'
+    },
   };
 
   line: any = {
@@ -103,6 +109,9 @@ export class AppComponent implements OnInit {
       status: 'inactive'
     },
     brainteaserans: {
+      status: 'inactive'
+    },
+    teamandbirthday: {
       status: 'inactive'
     }
   };

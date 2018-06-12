@@ -13,7 +13,7 @@ export class TeamphotoBirthdayComponent implements OnInit {
   @Input() expandtoggle: any;
   @Input() line: any;
 
-  userFormuserProjstat = new FormGroup({
+  userFormuserteam = new FormGroup({
     users: new FormArray([
       new FormControl()
     ])
@@ -25,15 +25,14 @@ export class TeamphotoBirthdayComponent implements OnInit {
   }
 
   get users(): FormArray {
-    return this.userFormuserProjstat.get('users') as FormArray;
+    return this.userFormuserteam.get('users') as FormArray;
   }
 
   onFormSubmit() {
-    this.completedSections.projstat.status = 'completed';
-    this.line.projstatInPipeline.status = 'completed';
-    this.progressBarService.addItemInList(['opportunitysection', this.userFormuserProjstat.value]);
-    this.projectstatshoworhide = 'hide';
-    // this.technicalarticle.toggletecharticle('show');
+    this.completedSections.teamandbirthday.status = 'completed';
+    this.line.teamandbirthday.status = 'completed';
+    // this.progressBarService.addItemInList(['opportunitysection', this.userFormuserProjstat.value]);
+    // this.projectstatshoworhide = 'hide';
   }
   addMoreInputBox() {
     this.users.push(new FormControl());
@@ -42,11 +41,11 @@ export class TeamphotoBirthdayComponent implements OnInit {
     this.projectstatshoworhide = showorhide;
   }
   showActive() {
-    this.completedSections.projstat.status = 'active';
-    this.line.projstatInPipeline.status = 'active';
+    this.completedSections.teamandbirthday.status = 'active';
+    this.line.teamandbirthday.status = 'active';
   }
   expandMoreOrLess() {
-    this.expandtoggle.projectsection.status = (this.expandtoggle.projectsection.status === 'open') ? 'closed' : 'open';
+    this.expandtoggle.teamandbirthday.status = (this.expandtoggle.teamandbirthday.status === 'open') ? 'closed' : 'open';
   }
 
 }

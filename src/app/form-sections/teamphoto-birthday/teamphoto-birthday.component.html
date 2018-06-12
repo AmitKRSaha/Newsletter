@@ -5,29 +5,29 @@
         <button class="btn btn-link" type="button">
           <div class="row">
               <div class="col-md-9 plannedSection">
-                  Section Header Image
+                  Team Photo , Birthday and Anniversary
               </div>
-              <div class="col-md-1" [ngClass]="{'closed': expandtoggle.sectionHead.status == 'closed','open': expandtoggle.sectionHead.status == 'open'}">
+              <div class="col-md-1" [ngClass]="{'closed': expandtoggle.teamandbirthday.status == 'closed','open': expandtoggle.teamandbirthday.status == 'open'}">
               </div>
             </div>
         </button>
       </h5>
     </div>
 
-    <div id="collapseEleven" [ngClass]="" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample" #patientDDL>
+    <div id="collapseEleven" [ngClass]="" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample" (click)="showActive()" #patientDDL>
       <div class="card-body">
         Section Header Image
       </div>
       <div class="card-body">
         <div>
-          <form [formGroup]="" (ngSubmit)="onFormSubmit()">
+          <form [formGroup]="userFormuserteam" (ngSubmit)="onFormSubmit()">
             <div class="form-group">
               <!-- <input type="file" name="img[]" class="file"  (change)="" #input > -->
               <!-- <img src='{{file_srcs[0]}}' alt="" /> -->
             </div>
             <br>
             <div>
-              <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Planned Section</button>
+              <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save All</button>
             </div>
           </form>
         </div>

@@ -26,6 +26,7 @@ import { TechnicalPreviewComponent } from './preview-section/technical-preview/t
 import { BarinteaserHealthtipsComponent } from './preview-section/barinteaser-healthtips/barinteaser-healthtips.component';
 import { BarinteaserAnswerComponent } from './preview-section/barinteaser-answer/barinteaser-answer.component';
 import { TeamphotoBirthdayComponent } from './form-sections/teamphoto-birthday/teamphoto-birthday.component';
+import { ImageProcessService } from './utility-section/image-process.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { TeamphotoBirthdayComponent } from './form-sections/teamphoto-birthday/t
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [ProgressBarService],
+  providers: [ProgressBarService, ImageProcessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
