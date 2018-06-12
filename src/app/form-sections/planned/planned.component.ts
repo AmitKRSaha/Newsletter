@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProgressBarService } from '../../progress-bar.service';
 import { ProjectStatisticsComponent } from '../project-statistics/project-statistics.component';
 
@@ -23,7 +24,7 @@ export class PlannedComponent {
     ])
   });
 
-  constructor(private progressBarService: ProgressBarService) { }
+  constructor(private progressBarService: ProgressBarService, private route: Router) { }
 
 
   get users(): FormArray {
@@ -33,7 +34,7 @@ export class PlannedComponent {
   showActive() {
     this.completedSections.planned.status = 'active';
     this.line.planned.status = 'active';
-
+    this.route.navigateByUrl('planned');
   }
 
   onFormSubmit() {
