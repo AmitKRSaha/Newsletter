@@ -38,7 +38,7 @@ export class AcheivementComponent {
   onFormSubmit() {
     this.completedSections.acheivement.status = 'completed';
     this.line.acheivement.status = 'completed';
-    this.progressBarService.addItemInList(['opportunitysection', this.userFormuseracheivement.value]);
+    this.progressBarService.addItemInList([this.userFormuseracheivement.value]);
     this.showorhide = 'hide';
     this.planned.toggle('show');
   }

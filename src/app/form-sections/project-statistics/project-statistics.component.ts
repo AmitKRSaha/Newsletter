@@ -33,7 +33,7 @@ export class ProjectStatisticsComponent implements OnInit {
   onFormSubmit() {
     this.completedSections.projstat.status = 'completed';
     this.line.projstatInPipeline.status = 'completed';
-    this.progressBarService.addItemInList(['opportunitysection', this.userFormuserProjstat.value]);
+    this.progressBarService.addItemInList([this.userFormuserProjstat.value]);
     this.projectstatshoworhide = 'hide';
     this.technicalarticle.toggletecharticle('show');
   }

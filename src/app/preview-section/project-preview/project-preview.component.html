@@ -1,3 +1,36 @@
-<p>
-  project-preview works!
-</p>
+<h3>Planned Section</h3>
+<div class="planning">
+  <div *ngIf='progressBarService.content.length > 4'>
+    <strong>Planned</strong>
+    <div class="row">
+      <div class="col-md-10">
+        <ul>
+          <li *ngFor="let value of progressBarService.content[4][0].users"> {{value}}</li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <img src="../../../assets/Planning.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image" />
+      </div>
+
+    </div>
+  </div>
+  <div *ngIf='progressBarService.content.length > 5'>
+    <strong>Project Statistics</strong>
+    <div class="projectstat">
+      <div class="row">
+        <div class="col-md-2">
+          <div>
+            <img src="../../../assets/planned-stat.png" style="margin: 5px;padding: 10px;" class="image" alt="Opportunity Image"
+            />
+          </div>
+        </div>
+        <div class="col-md-10">
+          <ul>
+            <li *ngFor="let value of progressBarService.content[5][0].users"> {{value}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

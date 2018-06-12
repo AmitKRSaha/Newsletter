@@ -41,7 +41,7 @@ export class PlannedComponent {
     this.completedSections.planned.status = 'completed';
     this.line.planned.status = 'completed';
 
-    this.progressBarService.addItemInList(['opportunitysection', this.userFormuserplanned.value]);
+    this.progressBarService.addItemInList([this.userFormuserplanned.value]);
     this.showorhide = 'hide';
     this.projectstat.toggle('show');
   }
