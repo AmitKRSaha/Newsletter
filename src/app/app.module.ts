@@ -25,6 +25,7 @@ import { ProjectPreviewComponent } from './preview-section/project-preview/proje
 import { TechnicalPreviewComponent } from './preview-section/technical-preview/technical-preview.component';
 import { BarinteaserHealthtipsComponent } from './preview-section/barinteaser-healthtips/barinteaser-healthtips.component';
 import { BarinteaserAnswerComponent } from './preview-section/barinteaser-answer/barinteaser-answer.component';
+import { TeamphotoBirthdayComponent } from './form-sections/teamphoto-birthday/teamphoto-birthday.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { BarinteaserAnswerComponent } from './preview-section/barinteaser-answer
     TechnicalPreviewComponent,
     BarinteaserHealthtipsComponent,
     BarinteaserAnswerComponent,
+    TeamphotoBirthdayComponent,
 
   ],
   imports: [

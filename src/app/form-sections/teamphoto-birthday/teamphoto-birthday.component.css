@@ -1,0 +1,19 @@
+
+.mb-0 .btn{
+  width: 100%;
+
+}
+
+.plannedSection{
+  text-align: left !important;
+}
+.closed{
+  padding-left: 0px;
+  margin-left: 65px;
+  content: url('../../../assets/sharp-expand_more-24px.svg');
+}
+.open{
+  padding-left: 0px;
+  margin-left: 65px;
+  content: url('../../../assets/sharp-expand_less-24px.svg');
+}
