@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
 import { HealthyTipsComponent } from '../healthy-tips/healthy-tips.component';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-brain-teasers',
@@ -22,7 +23,7 @@ export class BrainTeasersComponent {
     ])
   });
 
-  constructor(private progressBarService: ProgressBarService) { }
+  constructor(private progressBarService: ProgressBarService, private route: Router) { }
 
 
   get users(): FormArray {
@@ -32,6 +33,8 @@ export class BrainTeasersComponent {
   showActive() {
     this.completedSections.brainteaser.status = 'active';
     this.line.brainteaser.status = 'active';
+    this.route.navigateByUrl('brainteaserAndHealthtips');
+
   }
 
   onFormSubmit() {

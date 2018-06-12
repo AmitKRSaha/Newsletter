@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { ProgressBarService } from '../../progress-bar.service';
 import { BrainTeasersComponent } from '../brain-teasers/brain-teasers.component';
 
@@ -24,7 +26,7 @@ export class TechnicalArticleComponent implements OnInit {
     ])
   });
 
-  constructor(private progressBarService: ProgressBarService) { }
+  constructor(private progressBarService: ProgressBarService, private route: Router) { }
 
   ngOnInit() {
   }
@@ -36,6 +38,7 @@ export class TechnicalArticleComponent implements OnInit {
   showActive() {
     this.completedSections.tech.status = 'active';
     this.line.tech.status = 'active';
+    this.route.navigateByUrl('technical');
   }
 
   onFormSubmit() {

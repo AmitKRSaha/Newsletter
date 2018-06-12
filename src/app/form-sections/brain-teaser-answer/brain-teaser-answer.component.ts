@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-brain-teaser-answer',
@@ -20,7 +21,7 @@ export class BrainTeaserAnswerComponent {
     ])
   });
 
-  constructor(private progressBarService: ProgressBarService) { }
+  constructor(private progressBarService: ProgressBarService, private route: Router) { }
 
 
   get users(): FormArray {
@@ -29,6 +30,7 @@ export class BrainTeaserAnswerComponent {
 
   showActive() {
     this.completedSections.brainteaseranswer.status = 'active';
+    this.route.navigateByUrl('brainteserans');
   }
 
   onFormSubmit() {
