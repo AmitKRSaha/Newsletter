@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
+import { TeamphotoBirthdayComponent } from '../teamphoto-birthday/teamphoto-birthday.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,6 +13,7 @@ export class BrainTeaserAnswerComponent {
   @Input() completedSections: any;
   @Input() showorhide: string;
   @Input() expandtoggle: any;
+  @Input() teamphotobirthday: TeamphotoBirthdayComponent;
 
 
 
@@ -37,6 +39,7 @@ export class BrainTeaserAnswerComponent {
     this.completedSections.brainteaseranswer.status = 'completed';
     this.progressBarService.addItemInList(['opportunitysection', this.userFormuserbrainteaserans.value]);
     this.showorhide = 'hide';
+    this.teamphotobirthday.toggle('show');
 
   }
   addMoreInputBox() {

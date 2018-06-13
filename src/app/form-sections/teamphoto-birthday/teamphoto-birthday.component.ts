@@ -8,10 +8,10 @@ import { ProgressBarService } from '../../progress-bar.service';
   styleUrls: ['./teamphoto-birthday.component.css']
 })
 export class TeamphotoBirthdayComponent implements OnInit {
-  projectstatshoworhide: any = '';
   @Input() completedSections: any;
   @Input() expandtoggle: any;
   @Input() line: any;
+  @Input() showorhide: string;
 
   userFormuserteam = new FormGroup({
     users: new FormArray([
@@ -38,7 +38,7 @@ export class TeamphotoBirthdayComponent implements OnInit {
     this.users.push(new FormControl());
   }
   toggle(showorhide: string) {
-    this.projectstatshoworhide = showorhide;
+    this.showorhide = showorhide;
   }
   showActive() {
     this.completedSections.teamandbirthday.status = 'active';
