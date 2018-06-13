@@ -1,5 +1,12 @@
 .brainteaser{
+
   font-family:Century Gothic;
+}
+
+.brainandhealth{
+  background-image: url('../../../assets/may_day_cards4.png');
+  background-size: 400px 400px;
+  font: #083d6d;
 }
 .image {
   width: 50px;
