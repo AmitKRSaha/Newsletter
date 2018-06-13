@@ -8,7 +8,7 @@ import { ProgressBarService } from '../../progress-bar.service';
 })
 export class BarinteaserHealthtipsComponent implements OnInit {
 
-  constructor(public progressBarService: ProgressBarService ) { }
+  constructor(public progressBarService: ProgressBarService) { }
 
   ngOnInit() {
   }

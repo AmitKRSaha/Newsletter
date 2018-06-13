@@ -1,3 +1,12 @@
-<p>
-  barinteaser-answer works!
-</p>
+<div class="brainteaser">
+    <div *ngIf='progressBarService.content.length > 9'>
+      <strong>Brain Teaser Answer</strong>
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li *ngFor="let value of progressBarService.content[9][1].users"> {{value}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
