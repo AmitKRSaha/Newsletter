@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgressBarService } from '../../progress-bar.service';
 
 @Component({
   selector: 'app-technical-preview',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechnicalPreviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public progressBarService: ProgressBarService ) { }
 
   ngOnInit() {
   }

@@ -1,3 +1,15 @@
-<p>
-  barinteaser-healthtips works!
-</p>
+<div class="brainteaser">
+  <div *ngIf='progressBarService.content.length > 6'>
+    <strong>Brain Teaser</strong>
+    <div class="row">
+      <div class="col-md-8">
+        <ul>
+          <li *ngFor="let value of progressBarService.content[7][1].users"> {{value}}</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+         <img src='../../../assets/dimag-ki-batti.png' class="image" alt="Brain Teaser">
+      </div>
+    </div>
+  </div>
+</div>

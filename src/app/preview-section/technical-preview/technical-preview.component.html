@@ -1,3 +1,16 @@
-<p>
-  technical-preview works!
-</p>
+<h3 style="text-align: center">Technical Article </h3>
+<div class="planning">
+  <div *ngIf='progressBarService.content.length > 6'>
+    <div class="heading">
+    <img src='../../../assets/Tech_icon.png' alt="Technical Image">
+    <strong>Technical Article</strong>
+  </div>
+    <div class="row">
+      <div class="col-md-10">
+        <ul>
+          <li *ngFor="let value of progressBarService.content[6][1].users"> {{value}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

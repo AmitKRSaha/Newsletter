@@ -16,19 +16,19 @@
     <div id="collapseTen" [ngClass]='showorhide' class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample"
       style=" background-color: bisque !important;" (click)="showActive()">
       <div class="card-body">
-        <h3>Brain Teasers</h3>
+        <h3>Brain Teasers Answers</h3>
       </div>
       <div class="card-body">
         <div>
           <form [formGroup]="userFormuserbrainteaserans" (ngSubmit)="onFormSubmit()">
             <div formArrayName="users">
               <div *ngFor="let user of users.controls; index as idx">
-                <input [formControlName]="idx" type="text" class="form-control" aria-label="With textarea" placeholder="Planned">
+                <input [formControlName]="idx" type="text" class="form-control" aria-label="With textarea" placeholder="Brain Teasers Answers">
               </div>
             </div>
             <br>
             <div>
-              <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Planned Section</button>
+              <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Brain Teasers Answers</button>
               <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button>
             </div>
           </form>

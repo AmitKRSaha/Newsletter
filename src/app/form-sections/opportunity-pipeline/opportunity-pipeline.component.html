@@ -24,12 +24,12 @@
         <form [formGroup]="userFormuserOpportunity" (ngSubmit)="onFormSubmit()">
           <div formArrayName="users">
             <div *ngFor="let user of users.controls; index as idx">
-              <input [formControlName]="idx" type="text" class="form-control" aria-label="With textarea" placeholder="Planned">
+              <input [formControlName]="idx" type="text" class="form-control" aria-label="With textarea" placeholder="Opportunitis In PipeLine">
             </div>
           </div>
           <br>
           <div>
-            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Planned Section</button>
+            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Opportunity Section</button>
             <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button>
           </div>
         </form>
