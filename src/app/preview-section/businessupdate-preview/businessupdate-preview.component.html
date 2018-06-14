@@ -1,13 +1,13 @@
 <h3>Business Section</h3>
 <div class="businessupdate">
   <div *ngIf='progressBarService.content.length > 1'>
-
     <div class="row">
-      <div class="col-md-2">
-        <img src="../../../assets/Business update.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
-        />
+      <div class="col-md-12">
+        <img src="../../../assets/Business update.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"/>
       </div>
-      <div class="col-md-10">
+    </div>
+    <div class="row">
+      <div class="col-md-12">
         <ul>
           <li *ngFor="let value of progressBarService.content[1][0].usersBusiness"> {{value}}</li>
         </ul>
@@ -25,30 +25,28 @@
           </div>
         </div>
         <div class="col-md-10">
-            <ul>
-              <li *ngFor="let value of progressBarService.content[2][0].users"> {{value}}</li>
-            </ul>
-          </div>
+          <ul>
+            <li *ngFor="let value of progressBarService.content[2][0].users"> {{value}}</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
   <div *ngIf='progressBarService.content.length > 3'>
-      <strong> Acheivement </strong>
-      <div class="opportuniyInPipeline">
-        <div class="row">
-          <div class="col-md-2">
-            <div>
-              <img src="../../../assets/Achieved.png" style="margin: 5px;padding: 10px;" class="image" alt="Opportunity Image"
-              />
-            </div>
+    <strong> Acheivement </strong>
+    <div class="opportuniyInPipeline">
+      <div class="row">
+        <div class="col-md-2">
+          <div>
+            <img src="../../../assets/Achieved.png" style="margin: 5px;padding: 10px;" class="image" alt="Opportunity Image" />
           </div>
-          <div class="col-md-10">
-              <ul>
-                <li *ngFor="let value of progressBarService.content[3][0].users"> {{value}}</li>
-              </ul>
-            </div>
+        </div>
+        <div class="col-md-10">
+          <ul>
+            <li *ngFor="let value of progressBarService.content[3][0].users"> {{value}}</li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
 </div>
-
