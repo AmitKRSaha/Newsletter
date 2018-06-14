@@ -30,8 +30,8 @@
             <!-- <img src='{{file_srcs[0]}}' alt="" /> -->
           <div formArrayName="usersBusiness">
 
-            <div *ngFor="let user of usersBusiness.controls; index as idx">
-              <input [formControlName]="idx" type="text" class="form-control" aria-label="With textarea" placeholder="Bussiness Update">
+            <div *ngFor="let user of usersBusiness.controls; index as idx" >
+              <textarea [formControlName]="idx"  class="form-control" aria-label="With textarea" placeholder="Bussiness Update"></textarea>
             </div>
           </div>
           <br>

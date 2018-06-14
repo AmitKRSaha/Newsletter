@@ -23,7 +23,8 @@
           <form [formGroup]="userFormuserbrainteaserans" (ngSubmit)="onFormSubmit()">
             <div formArrayName="users">
               <div *ngFor="let user of users.controls; index as idx">
-                <input [formControlName]="idx" type="text" class="form-control" aria-label="With textarea" placeholder="Brain Teasers Answers">
+              <textarea [formControlName]="idx"  class="form-control" aria-label="With textarea" placeholder="Brain Teasers Answers"></textarea>
+
               </div>
             </div>
             <br>
