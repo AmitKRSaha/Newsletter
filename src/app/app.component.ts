@@ -7,7 +7,7 @@ import { ProgressBarService } from './progress-bar.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'Newsletter';
    completedSections: any = {
     sectionHead: {
       status: 'inactive'
