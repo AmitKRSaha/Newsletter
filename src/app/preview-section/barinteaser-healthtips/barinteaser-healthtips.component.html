@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-8">
           <ul>
-            <li *ngFor="let value of progressBarService.content[7][1].users"> {{value}}</li>
+              <li *ngFor="let value of progressBarService.content[7][1].users; index as i" >Q{{i + 1}}: {{value}}</li>
           </ul>
         </div>
         <div class="col-md-4">
