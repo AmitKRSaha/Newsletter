@@ -27,6 +27,7 @@ import { BarinteaserHealthtipsComponent } from './preview-section/barinteaser-he
 import { BarinteaserAnswerComponent } from './preview-section/barinteaser-answer/barinteaser-answer.component';
 import { TeamphotoBirthdayComponent } from './form-sections/teamphoto-birthday/teamphoto-birthday.component';
 import { ImageProcessService } from './utility-section/image-process.service';
+import { TeamPreviewComponent } from './preview-section/team-preview/team-preview.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ImageProcessService } from './utility-section/image-process.service';
     BarinteaserHealthtipsComponent,
     BarinteaserAnswerComponent,
     TeamphotoBirthdayComponent,
+    TeamPreviewComponent,
 
   ],
   imports: [

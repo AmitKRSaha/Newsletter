@@ -8,6 +8,8 @@ import { ProjectPreviewComponent } from './preview-section/project-preview/proje
 import { TechnicalPreviewComponent } from './preview-section/technical-preview/technical-preview.component';
 import { BarinteaserAnswerComponent } from './preview-section/barinteaser-answer/barinteaser-answer.component';
 import { BarinteaserHealthtipsComponent } from './preview-section/barinteaser-healthtips/barinteaser-healthtips.component';
+import { TeamphotoBirthdayComponent } from './form-sections/teamphoto-birthday/teamphoto-birthday.component';
+import { TeamPreviewComponent } from './preview-section/team-preview/team-preview.component';
 
 
 const routes: Routes = [
@@ -17,8 +19,8 @@ const routes: Routes = [
   { path: 'planned', component: ProjectPreviewComponent  },
   { path: 'technical', component: TechnicalPreviewComponent  },
   { path: 'brainteaserAndHealthtips', component: BarinteaserHealthtipsComponent  },
-  { path: 'brainteserans', component: BarinteaserAnswerComponent  }
-
+  { path: 'brainteserans', component: BarinteaserAnswerComponent  },
+  { path: 'teamimage', component: TeamPreviewComponent  }
 ];
 
 @NgModule({

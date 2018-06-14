@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
+import { ImageProcessService } from '../../utility-section/image-process.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-teamphoto-birthday',
@@ -12,6 +14,9 @@ export class TeamphotoBirthdayComponent implements OnInit {
   @Input() expandtoggle: any;
   @Input() line: any;
   @Input() showorhide: string;
+  teamImage: string[] = [];
+  birthdayImage: string[] = [];
+  anniversaryImage: string[] = [];
 
   userFormuserteam = new FormGroup({
     users: new FormArray([
@@ -19,9 +24,70 @@ export class TeamphotoBirthdayComponent implements OnInit {
     ])
   });
 
-  constructor(private progressBarService: ProgressBarService) { }
+
+  constructor(private progressBarService: ProgressBarService
+    , private imageprocessor: ImageProcessService
+    , private changeDetectorRef: ChangeDetectorRef
+    , private route: Router) { }
 
   ngOnInit() {
+  }
+
+  teamphoto(input) {
+    this.readFiles(input.files, 'team');
+  }
+
+  birthdayphoto(inputbirth) {
+    this.readFiles(inputbirth.files, 'birthday');
+    // for (let file of inputbirth.files) {
+    //   this.readFiles(file, 'birthday');
+    // }
+    // console.log(input1);
+    // this.readFiles(input1.files, 'birthday');
+  }
+
+  anniversaryphoto(input2) {
+    this.readFiles(input2.files, 'anniversary');
+  }
+
+  readFiles(files, label, index = 0) {
+
+    // Create the file reader
+    const reader = new FileReader();
+    // If there is a file
+    if (index in files) {
+      // Start reading this file
+      this.imageprocessor.readFile(files[index], reader, (result) => {
+        // Create an img element and add the image file data to it
+        const img = document.createElement('img');
+        img.src = result;
+        // Send this img to the resize function (and wait for callback)
+        this.imageprocessor.resize(img, 250, 250, (resized_jpeg, before, after) => {
+          // Add the resized jpeg img source to a list for preview
+          // This is also the file you want to upload. (either as a
+          // base64 string or img.src = resized_jpeg if you prefer a file).
+          if (label === 'team') {
+            this.teamImage.push(resized_jpeg);
+            // console.log(this.teamImage);
+          }
+          if (label === 'birthday') {
+            this.birthdayImage.push(resized_jpeg);
+            // console.log(this.birthdayImage);
+          }
+          if (label === 'anniversary') {
+            this.anniversaryImage.push(resized_jpeg);
+            // console.log(this.anniversaryImage);
+          }
+
+          // this.progressbarservice.addItemInList(['sectionhead', resized_jpeg]);
+          // Read the next file;
+          this.readFiles(files, label, index + 1);
+        });
+      });
+    } else {
+      // When all files are done This forces a change detection
+      this.changeDetectorRef.detectChanges();
+    }
   }
 
   get users(): FormArray {
@@ -31,8 +97,8 @@ export class TeamphotoBirthdayComponent implements OnInit {
   onFormSubmit() {
     this.completedSections.teamandbirthday.status = 'completed';
     this.line.teamandbirthday.status = 'completed';
-    // this.progressBarService.addItemInList(['opportunitysection', this.userFormuserProjstat.value]);
-    // this.projectstatshoworhide = 'hide';
+    this.progressBarService.addItemInList([this.teamImage, this.birthdayImage, this.anniversaryImage]);
+    this.showorhide = 'hide';
   }
   addMoreInputBox() {
     this.users.push(new FormControl());
@@ -43,6 +109,7 @@ export class TeamphotoBirthdayComponent implements OnInit {
   showActive() {
     this.completedSections.teamandbirthday.status = 'active';
     this.line.teamandbirthday.status = 'active';
+    this.route.navigateByUrl('teamimage');
   }
   expandMoreOrLess() {
     this.expandtoggle.teamandbirthday.status = (this.expandtoggle.teamandbirthday.status === 'open') ? 'closed' : 'open';

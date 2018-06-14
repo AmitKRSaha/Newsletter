@@ -1,37 +1,56 @@
 <div class="card">
-    <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven"
+  <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven"
     (click)="expandMoreOrLess()">
-      <h5 class="mb-0">
-        <button class="btn btn-link" type="button">
-          <div class="row">
-              <div class="col-md-9 plannedSection">
-                  Team Photo , Birthday and Anniversary
-              </div>
-              <div class="col-md-1" [ngClass]="{'closed': expandtoggle.teamandbirthday.status == 'closed','open': expandtoggle.teamandbirthday.status == 'open'}">
-              </div>
-            </div>
-        </button>
-      </h5>
-    </div>
-
-    <div id="collapseEleven" [ngClass]="showorhide" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample" (click)="showActive()" #patientDDL>
-      <div class="card-body">
-        Section Header Image
-      </div>
-      <div class="card-body">
-        <div>
-          <form [formGroup]="userFormuserteam" (ngSubmit)="onFormSubmit()">
-            <div class="form-group">
-              <!-- <input type="file" name="img[]" class="file"  (change)="" #input > -->
-              <!-- <img src='{{file_srcs[0]}}' alt="" /> -->
-            </div>
-            <br>
-            <div>
-              <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save All</button>
-            </div>
-          </form>
+    <h5 class="mb-0">
+      <button class="btn btn-link" type="button">
+        <div class="row">
+          <div class="col-md-9 plannedSection">
+            Team Photo , Birthday and Anniversary
+          </div>
+          <div class="col-md-1" [ngClass]="{'closed': expandtoggle.teamandbirthday.status == 'closed','open': expandtoggle.teamandbirthday.status == 'open'}">
+          </div>
         </div>
+      </button>
+    </h5>
+  </div>
+
+  <div id="collapseEleven" [ngClass]="showorhide" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample"
+    (click)="showActive()" #patientDDL>
+    <div class="card-body">
+      Section Header Image
+    </div>
+    <div class="card-body">
+      <div>
+        <form [formGroup]="userFormuserteam" (ngSubmit)="onFormSubmit()">
+
+          <div class="form-group">
+            <label for="teamImage">Team Image:</label>
+            <br>
+            <!-- <img src='{{teamImage[0]}}' alt="" /> -->
+            <input type="file" class="form-control-file" name="img[]" class="file" (change)="teamphoto(input)" #input>
+          </div>
+
+          <div class="form-group">
+              <label for="birthdayImage">Birthday Images:</label>
+              <br>
+              <!-- <img src='{{teamImage[1]}}' alt="" />
+              <img src='{{teamImage[2]}}' alt="" /> -->
+
+              <input type="file" class="form-control-file" name="img[]" class="file" (change)="birthdayphoto(inputbirth)" multiple #inputbirth>
+          </div>
+
+          <div class="form-group">
+              <label for="anniversaryImage">Anniversary Images:</label>
+              <br>
+              <input type="file" class="form-control-file" name="img[]" class="file" (change)="anniversaryphoto(input2)" #input2 multiple>
+          </div>
+
+          <br>
+          <div>
+            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save All</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-
+</div>
