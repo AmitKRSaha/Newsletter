@@ -1,13 +1,26 @@
 <div *ngIf='progressbarservice.content.length > 10'>
-  <strong>Planned</strong>
+  <strong>Team Image , Birthday, Anniversary</strong>
   <div class="row">
     <div class="col-md-12">
-      <img src='{{ progressbarservice.content[10][0]}}' width="450px" alt="" />
+      <img src='{{ progressbarservice.content[10][0]}}' width="200px" height="200px" alt="" />
     </div>
   </div>
+  <br>
   <div class="row">
-    <div class="col-md-12">
-      <!-- <img src='{{ progressbarservice.content[10][0]}}' width="432px" alt="" /> -->
+    <div class="col-md-3">
+      <img src="../../../assets/Birthday.png" width="50px" alt="" />
+    </div>
+    <div class="col-md-3"  *ngFor="let value of progressbarservice.content[10][1]">
+      <img src='{{ value }}' width="50px" alt='{{ value }}' />
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-3">
+      <img src="../../../assets/Award_Anniversaries-icon.png" width="50px" alt="" />
+    </div>
+    <div class="col-md-3"  *ngFor="let value of progressbarservice.content[10][2]">
+      <img src='{{ value }}' width="50px" alt='{{ value }}' />
     </div>
   </div>
 </div>
