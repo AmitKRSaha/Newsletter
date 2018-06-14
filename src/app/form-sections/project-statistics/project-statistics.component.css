@@ -17,3 +17,7 @@
   margin-left: 65px;
   content: url('../../../assets/sharp-expand_less-24px.svg');
 }
+
+.textbox{
+  width: 40px !important;
+}

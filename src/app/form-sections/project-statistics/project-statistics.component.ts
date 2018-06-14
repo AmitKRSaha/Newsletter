@@ -14,6 +14,16 @@ export class ProjectStatisticsComponent implements OnInit {
   @Input() completedSections: any;
   @Input() expandtoggle: any;
   @Input() line: any;
+  rlTickCount: any;
+  rlTickComment: any;
+  lsTickCount: any;
+  lsTickComment: any;
+  michelinDFA: any;
+  michelinAtter: any;
+  mGMDFA: any;
+  mGMAtter: any;
+  lGBODFA: any;
+  lGBOAtter: any;
 
   userFormuserProjstat = new FormGroup({
     users: new FormArray([
@@ -31,9 +41,12 @@ export class ProjectStatisticsComponent implements OnInit {
   }
 
   onFormSubmit() {
+    // console.log(this.rlTickCount, this.rlTickComment, this.lsTickCount, this.lsTickComment,
+    //   this.michelinDFA, this.michelinAtter, this.mGMDFA, this.mGMAtter, this.lGBODFA, this.lGBOAtter);
     this.completedSections.projstat.status = 'completed';
     this.line.projstatInPipeline.status = 'completed';
-    this.progressBarService.addItemInList([this.userFormuserProjstat.value]);
+    this.progressBarService.addItemInList([this.rlTickCount, this.rlTickComment, this.lsTickCount, this.lsTickComment,
+      this.michelinDFA, this.michelinAtter, this.mGMDFA, this.mGMAtter, this.lGBODFA, this.lGBOAtter]);
     this.projectstatshoworhide = 'hide';
     this.technicalarticle.toggletecharticle('show');
   }

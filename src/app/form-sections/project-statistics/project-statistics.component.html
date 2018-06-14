@@ -1,39 +1,53 @@
 <div class="card">
-    <div class="card-header" (click)="expandMoreOrLess()" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button">
-          <div class="row">
-            <div class="col-md-9 plannedSection">
-              Project Statistic
-            </div>
-            <div class="col-md-1" [ngClass]="{'closed': expandtoggle.projectsection.status == 'closed','open': expandtoggle.projectsection.status == 'open'}">
-            </div>
+  <div class="card-header" (click)="expandMoreOrLess()" id="headingFour" data-toggle="collapse" data-target="#collapseFour"
+    aria-expanded="false" aria-controls="collapseFour">
+    <h5 class="mb-0">
+      <button class="btn btn-link collapsed" type="button">
+        <div class="row">
+          <div class="col-md-9 plannedSection">
+            Project Statistic
           </div>
-        </button>
-
-      </h5>
-    </div>
-    <div id="collapseFour" [ngClass]='projectstatshoworhide' class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample"
-      style=" background-color: bisque !important;" (click)="showActive()">
-      <div class="card-body">
-        <h3>Project Statistic</h3>
-      </div>
-      <div class="card-body">
-        <div>
-          <form [formGroup]="userFormuserProjstat" (ngSubmit)="onFormSubmit()">
-            <div formArrayName="users">
-              <div *ngFor="let user of users.controls; index as idx">
-              <textarea [formControlName]="idx"  class="form-control" aria-label="With textarea" placeholder="Project Statistic"></textarea>
-              </div>
-            </div>
-            <br>
-            <div>
-              <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Project Statistic Section</button>
-              <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button>
-            </div>
-          </form>
+          <div class="col-md-1" [ngClass]="{'closed': expandtoggle.projectsection.status == 'closed','open': expandtoggle.projectsection.status == 'open'}">
+          </div>
         </div>
+      </button>
+
+    </h5>
+  </div>
+  <div id="collapseFour" [ngClass]='projectstatshoworhide' class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample"
+    style=" background-color: bisque !important;" (click)="showActive()">
+    <div class="card-body">
+      <h3>Project Statistic</h3>
+    </div>
+    <div class="card-body">
+      <div>
+          <!-- <input type="text" class="form-control" aria-label="With textarea" placeholder="Release Ticket Count"> -->
+
+        <!-- <form [formGroup]="userFormuserProjstat" (ngSubmit)="onFormSubmit()"> -->
+          <!-- <div formArrayName="users"> -->
+            <!-- <div *ngFor="let user of users.controls; index as idx"> -->
+              <strong>Release Ticket Count:</strong><br>
+              <input type="text"  [(ngModel)]="rlTickCount"  class="form-control" aria-label="With textarea" placeholder="Release Ticket Count">
+              <textarea  [(ngModel)]="rlTickComment"  class="form-control" aria-label="With textarea" placeholder="Comments on Release Tickets"></textarea>
+              <br>
+              <strong>LS Team Ticket Count:</strong><br>
+              <input type="text"  [(ngModel)]="lsTickCount"  class="form-control" aria-label="With textarea" placeholder="LS Team Ticket Count">
+              <textarea  [(ngModel)]="lsTickComment" class="form-control" aria-label="With textarea" placeholder="Comments on LS Team Tickets"></textarea>
+              <div class="row"><div class="col-md-4"></div><div class="col-md-4">DFA</div><div class="col-md-4">Attrition</div></div>
+            <div class="row"><div class="col-md-4">Michelin</div><div class="col-md-4"><input type="text" [(ngModel)]="michelinDFA" class="textbox"  width="30px; !important"></div><div class="col-md-4"><input type="text" [(ngModel)]="michelinAtter" class="textbox"  width="30px; !important"></div></div>
+            <div class="row"><div class="col-md-4">MGM</div><div class="col-md-4"><input type="text"   [(ngModel)]="mGMDFA" class="textbox"  width="30px; !important"></div><div class="col-md-4"><input type="text" [(ngModel)]="mGMAtter" class="textbox"  width="30px; !important"></div></div>
+            <div class="row"><div class="col-md-4">LCBO</div><div class="col-md-4"><input type="text"   [(ngModel)]="lGBODFA" class="textbox"  width="30px; !important"></div><div class="col-md-4"><input type="text" [(ngModel)]="lGBOAtter" class="textbox"  width="30px; !important"></div></div>
+            <!-- </div> -->
+
+
+          </div>
+          <br>
+          <div>
+            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px" (click)="onFormSubmit()">Save Project Statistic Section</button>
+            <!-- <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button> -->
+          <!-- </div>
+        </form> -->
       </div>
     </div>
   </div>
-
+</div>
