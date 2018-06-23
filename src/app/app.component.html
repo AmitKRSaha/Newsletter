@@ -98,12 +98,20 @@
     </div>
     <div class="col-md-5">
       <div   style="position: fixed;">
-              <!-- <a routerLink="/header">Header Section</a> -->
       <router-outlet></router-outlet></div>
 
     </div>
   </div>
+</div>
+<button class="btn btn-primary" routerLink="/newsletter">Final NewsLetter</button><br>
 
+ <!-- <a routerLink="/newsletter">News Letter Section</a>
+ <a [routerLink]="[{ outlets: { primary: ['newsletter'],sidebar: ['newsletter'] } }]">
+  Products List
+</a> -->
+
+<div class="container">
+  <router-outlet name="newsletter"></router-outlet>
 </div>
 
 <footer>

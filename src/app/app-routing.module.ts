@@ -14,13 +14,18 @@ import { TeamPreviewComponent } from './preview-section/team-preview/team-previe
 
 const routes: Routes = [
   { path: '', redirectTo: '/header', pathMatch: 'full' },
-  { path: 'header', component: HeaderPreviewComponent },
+  { path: 'header', component: HeaderPreviewComponent},
   { path: 'business', component: BusinessupdatePreviewComponent  },
   { path: 'planned', component: ProjectPreviewComponent  },
   { path: 'technical', component: TechnicalPreviewComponent  },
   { path: 'brainteaserAndHealthtips', component: BarinteaserHealthtipsComponent  },
   { path: 'brainteserans', component: BarinteaserAnswerComponent  },
   { path: 'teamimage', component: TeamPreviewComponent  }
+   , {
+        path: 'newsletter',
+        loadChildren: './final-newsletter/final-newsletter.module#FinalNewsletterModule'
+      }
+
 ];
 
 @NgModule({
