@@ -1,6 +1,8 @@
 <h1>Final News Letter</h1>
 <br>
 <div class="finalnewsletter" style="width : 900px; float: right">
+
+
   <div class="row">
     <div class="col-md-12">
       <img alt="logo" src="../../../assets/header-image.PNG" width="100%">
@@ -24,8 +26,8 @@
       </div>
       <div class="row">
         <div class="col-md-2">
-          <img src="../../../assets/Business update.png" style="width:80px; height:80px;margin: 5px;padding: 10px;" class="image"
-            alt="Business Update Image" />
+          <img src="../../../assets/Business update.png" style="width:80px; height:80px;margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
+          />
         </div>
         <div class="col-md-10">
           <div class="header-title">
@@ -41,9 +43,9 @@
         </div>
       </div>
     </div>
-    <br><br>
+    <br>
+    <br>
     <div *ngIf='progressbar.content.length > 2'>
-      <strong></strong>
       <div class="opportuniyInPipeline">
         <div class="row">
           <div class="col-md-3">
@@ -118,6 +120,111 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="Technical">
+    <div *ngIf='progressbar.content.length > 6'>
+      <div class="row">
+        <div class="col-md-12">
+          <p style="background-color:#083d6d;height: 10px;"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div style="margin-left: 50%; text-align: center;">
+          <img src='../../../assets/Tech_icon.png' alt="Technical Image">
+          <div class="header-title">Technical Article</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <p *ngFor="let value of progressbar.content[6][1].users"> {{value}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brainandhealth">
+    <div class="brainteaser">
+      <div *ngIf='progressbar.content.length > 7'>
+        <div class="row">
+          <div class="col-md-12">
+            <p style="background-color:#083d6d;height: 10px;"></p>
+          </div>
+        </div>
+        <strong class="header-title">Brain Teaser</strong>
+        <div class="row">
+          <div class="col-md-8">
+            <ul>
+              <li *ngFor="let value of progressbar.content[7][1].users; index as i">Q{{i + 1}}: {{value}}</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <img src='../../../assets/dimag-ki-batti.png' class="image" alt="Brain Teaser">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="healthTips">
+      <div *ngIf='progressbar.content.length > 8'>
+        <strong class="header-title">Health Tips</strong>
+        <div class="row">
+          <div class="col-md-8">
+            <ol>
+              <li *ngFor="let value of progressbar.content[8][1].users"> {{value}}</li>
+            </ol>
+          </div>
+          <div class="col-md-4">
+            <img src='../../../assets/Medical_health_care.png' class="image" alt="Brain Teaser">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="teamImage">
+    <div class="row">
+      <div class="col-md-12">
+        <p style="background-color:#083d6d;height: 10px;"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <img src='{{ progressbar.content[0]}}' width='100%' />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p style="background-color:#083d6d;height: 10px;"></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <img src='{{ progressbar.content[0]}}' width='100%' />
+      </div>
+    </div>
+  </div>
+
+
+  <div class="brainteaserans">
+    <div *ngIf='progressbar.content.length > 9'>
+      <div class="row">
+        <div class="col-md-12">
+          <p style="background-color:#083d6d;height: 10px;"></p>
+        </div>
+      </div>
+      <strong class="header-title">Brain Teaser Answer</strong>
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li *ngFor="let value of progressbar.content[9][1].users; index as i">A{{i}}: {{value}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

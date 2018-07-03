@@ -41,12 +41,10 @@ export class ProjectStatisticsComponent implements OnInit {
   }
 
   onFormSubmit() {
-    // console.log(this.rlTickCount, this.rlTickComment, this.lsTickCount, this.lsTickComment,
-    //   this.michelinDFA, this.michelinAtter, this.mGMDFA, this.mGMAtter, this.lGBODFA, this.lGBOAtter);
-    this.completedSections.projstat.status = 'completed';
-    this.line.projstatInPipeline.status = 'completed';
     this.progressBarService.addItemInList([this.rlTickCount, this.rlTickComment, this.lsTickCount, this.lsTickComment,
       this.michelinDFA, this.michelinAtter, this.mGMDFA, this.mGMAtter, this.lGBODFA, this.lGBOAtter]);
+      this.completedSections.projstat.status = 'completed';
+    this.line.projstatInPipeline.status = 'completed';
     this.projectstatshoworhide = 'hide';
     this.technicalarticle.toggletecharticle('show');
   }
