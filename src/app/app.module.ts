@@ -51,7 +51,6 @@ import { TeamPreviewComponent } from './preview-section/team-preview/team-previe
     BarinteaserAnswerComponent,
     TeamphotoBirthdayComponent,
     TeamPreviewComponent,
-
   ],
   imports: [
     BrowserModule,
