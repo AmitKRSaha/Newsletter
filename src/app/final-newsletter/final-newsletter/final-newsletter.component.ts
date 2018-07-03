@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgressBarService } from '../../progress-bar.service';
 
 @Component({
   selector: 'app-final-newsletter',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinalNewsletterComponent implements OnInit {
 
-  constructor() { }
+  constructor( public progressbar: ProgressBarService ) { }
 
   ngOnInit() {
   }
