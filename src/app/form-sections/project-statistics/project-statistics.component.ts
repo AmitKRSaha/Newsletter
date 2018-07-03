@@ -40,7 +40,9 @@ export class ProjectStatisticsComponent implements OnInit {
     return this.userFormuserProjstat.get('users') as FormArray;
   }
 
-  onFormSubmit() {
+  onFormSubmit(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
     this.progressBarService.addItemInList([this.rlTickCount, this.rlTickComment, this.lsTickCount, this.lsTickComment,
       this.michelinDFA, this.michelinAtter, this.mGMDFA, this.mGMAtter, this.lGBODFA, this.lGBOAtter]);
       this.completedSections.projstat.status = 'completed';
@@ -54,7 +56,8 @@ export class ProjectStatisticsComponent implements OnInit {
   toggle(showorhide: string) {
     this.projectstatshoworhide = showorhide;
   }
-  showActive() {
+  showActive(evt) {
+    evt.preventDefault();
     this.completedSections.projstat.status = 'active';
     this.line.projstatInPipeline.status = 'active';
   }

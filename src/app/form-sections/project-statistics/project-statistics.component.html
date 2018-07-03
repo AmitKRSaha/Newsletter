@@ -15,7 +15,7 @@
     </h5>
   </div>
   <div id="collapseFour" [ngClass]='projectstatshoworhide' class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample"
-    style=" background-color: bisque !important;" (click)="showActive()">
+    style=" background-color: bisque !important;" (click)="showActive($event)">
     <div class="card-body">
       <h3>Project Statistic</h3>
     </div>
@@ -23,8 +23,8 @@
       <div>
         <!-- <input type="text" class="form-control" aria-label="With textarea" placeholder="Release Ticket Count"> -->
 
-        <form [formGroup]="userFormuserProjstat" (ngSubmit)="onFormSubmit()">
-          <div formArrayName="users">
+        <!-- <form [formGroup]="userFormuserProjstat" (ngSubmit)="onFormSubmit()"> -->
+          <!-- <div formArrayName="users"> -->
             <div *ngFor="let user of users.controls; index as idx">
               <strong>Release Ticket Count:</strong>
               <br>
@@ -70,13 +70,13 @@
             </div>
 
 
-          </div>
+          <!-- </div> -->
           <br>
-          <div>
-            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px" (click)="onFormSubmit()">Save Project Statistic Section</button>
+          <!-- <div> -->
+            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px" (click)="onFormSubmit($event)">Save Project Statistic Section</button>
             <!-- <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button> -->
-          </div>
-        </form>
+          <!-- </div> -->
+        <!-- </form> -->
       </div>
     </div>
   </div>
