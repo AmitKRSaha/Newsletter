@@ -29,6 +29,12 @@ import { TeamphotoBirthdayComponent } from './form-sections/teamphoto-birthday/t
 import { ImageProcessService } from './utility-section/image-process.service';
 import { TeamPreviewComponent } from './preview-section/team-preview/team-preview.component';
 
+/* NgRx */
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +65,13 @@ import { TeamPreviewComponent } from './preview-section/team-preview/team-previe
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      name: 'APM Demo App DevTools',
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    EffectsModule.forRoot([]),
   ],
   providers: [ProgressBarService, ImageProcessService],
   bootstrap: [AppComponent]

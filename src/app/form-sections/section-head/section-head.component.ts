@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { BusinessUpdateComponent } from '../business-update/business-update.component';
 import { ProgressBarService } from '../../progress-bar.service';
 import {ImageProcessService} from '../../utility-section/image-process.service';
+import { Store, select } from '@ngrx/store';
 
 @Component({
   selector: 'app-section-head',
@@ -29,7 +30,8 @@ public debug_size_before: string[] = [];
 
   constructor(private progressbarservice: ProgressBarService
           , private changeDetectorRef: ChangeDetectorRef
-          , private imageprocessor: ImageProcessService,
+          , private imageprocessor: ImageProcessService
+          , private store: Store<any>,
            private route: Router) { }
 
   userFormuserOpportunity = new FormGroup({
@@ -77,6 +79,11 @@ public debug_size_before: string[] = [];
   }
 
   onFormSubmit() {
+    // For adding to Store
+    this.store.dispatch({
+      type: 'ADD_TO_THE_STORE',
+      payload: this.imgpath
+    });
     this.progressbarservice.addItemInList(this.imgpath);
     this.completedSections.sectionHead.status = 'completed';
     this.line.sectionHead.status = 'completed';
