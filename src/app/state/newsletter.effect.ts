@@ -18,6 +18,6 @@ export class ProductEffects {
 
 
 
-  @Effect()
-  createProduct$: Observable<Action> = this.actions$.pipe(this.progressBarService())
+  // @Effect()
+  // createProduct$: Observable<Action> = this.actions$.pipe(this.progressBarService())
 }
