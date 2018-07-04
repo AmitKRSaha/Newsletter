@@ -10,12 +10,9 @@
 
     </div>
     <div class="col-md-12">
-      <img src='{{ progressbar.content[0]}}' width='100%' />
+        <img src='{{ progressbar.content[0]?.headerimage }}' width='100%' />
     </div>
-
   </div>
-
-
 
   <div class="businessupdate">
     <div *ngIf='progressbar.content.length > 1'>
@@ -272,42 +269,5 @@
 
     </div>
   </div>
-
-  <!-- <tr id="footersec" style="height: 46px;color:#083d6d;background-color:#083d6d;">
-    <td style="padding:15px;">
-      <table style="float : right; margin-top: -10px;">
-        <tbody>
-          <tr>
-            <td>
-              <div style=" font-size: 12px; margin-top: 5px;">
-                <p style="color:white; display:inline; font-weight: bold;">Concept:</p>
-                <p style="color:white; display:inline;"> Varun Sodhi, Amit, Deepak</p>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div style="float:right; font-size: 12px; margin-top: 5px;">
-                <p style="color:white; display:inline; font-weight: bold;">Design & Execution: </p>
-                <p style="color:white; display:inline;">Amit, Deepak</p>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <table style="border: 0; border-collapse: collapse;width:100%;font-family: Century Gothic;">
-        <tbody>
-          <tr>
-            <td>
-              <img alt="Graph" src="images/common/SR_Logo_RGB_W.png">
-            </td>
-            <td style="text-align: right; font-size: 11px">
-              <a style="color:white;text-decoration: none;" href="mailto:pchakravarty@sapient.com?Subject=Newsletter%20feedback" target="_top">CLICK HERE TO GIVE FEEDBACK</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </td>
-  </tr> -->
 
 </div>

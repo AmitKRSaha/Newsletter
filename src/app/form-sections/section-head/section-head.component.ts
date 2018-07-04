@@ -6,6 +6,7 @@ import { BusinessUpdateComponent } from '../business-update/business-update.comp
 import { ProgressBarService } from '../../progress-bar.service';
 import {ImageProcessService} from '../../utility-section/image-process.service';
 import { Store, select } from '@ngrx/store';
+import * as newsletterActions from '../../state/newsletter.actions';
 
 @Component({
   selector: 'app-section-head',
@@ -84,7 +85,11 @@ public debug_size_before: string[] = [];
       type: 'ADD_TO_THE_STORE',
       payload: this.imgpath
     });
-    this.progressbarservice.addItemInList(this.imgpath);
+    const imagePath = { 'headerimage' :  this.imgpath};
+
+    this.store.dispatch(new newsletterActions.CreateHeaderImage(imagePath));
+
+    this.progressbarservice.addItemInList(imagePath);
     this.completedSections.sectionHead.status = 'completed';
     this.line.sectionHead.status = 'completed';
     this.sectionheadtoggle = 'hide';
