@@ -34,6 +34,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { SafeHtml } from './utility-section/safehtml';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { environment } from '../environments/environment';
     BarinteaserAnswerComponent,
     TeamphotoBirthdayComponent,
     TeamPreviewComponent,
+    SafeHtml
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,7 @@ import { environment } from '../environments/environment';
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([])
   ],
   providers: [ProgressBarService, ImageProcessService],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, ChangeDetectorRef } from '@angular/core';
 import { ProgressBarService } from '../../progress-bar.service';
-import { Observable, of, from } from 'rxjs';
+import { Observable, of, from, Subscription } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
 
 
 @Component({
@@ -10,11 +11,25 @@ import { Observable, of, from } from 'rxjs';
 })
 export class HeaderPreviewComponent implements OnInit {
 
-  filePath: Observable<any>;
-  constructor(private changeDetectorRef: ChangeDetectorRef, public progressbar: ProgressBarService) { }
+  filePath: any;
+  subscription: Subscription;
+  constructor(private changeDetectorRef: ChangeDetectorRef, public progressbar: ProgressBarService) {
+    // this.progressbar.getItemFromList().subscribe(
+    //   t => this.filePath = t
+    // );
+
+    this.subscription = progressbar.content$.subscribe(
+      mission => {
+        this.filePath = JSON.stringify(mission['headerimage']).replace('\"', '');
+        console.log('file ' + this.filePath);
+
+    });
+   }
 
 
   ngOnInit() {
+    // this.filePath = this.progressbar.getItemFromList;
+
   }
 
 }
