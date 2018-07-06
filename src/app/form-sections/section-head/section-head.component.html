@@ -35,3 +35,44 @@
   </div>
 </div>
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+      <div class="navbar-header">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          <li><a>File Upload</a></li>
+          </ul>
+      </div>
+      </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+          <form>
+              <div class="form-group">
+                  <label for="multiple">Multiple</label>
+                  <input type="file" class="form-control" name="multiple" ng2FileSelect [uploader]="uploader" multiple  />
+              </div>
+              <!-- <div class="form-group">
+                  <label for="single">single</label>
+                  <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />
+              </div> -->
+          </form>
+      </div>
+      <div class="col-md-8">
+          <div>
+              Queue progress:
+              <div class="progress" style="">
+                  <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+              </div>
+          </div>
+        <button type="button" class="btn btn-success btn-s"
+                      (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                  <span class="glyphicon glyphicon-upload"></span> Upload all
+              </button>
+      </div>
+     
+  </div>
+</div>
+

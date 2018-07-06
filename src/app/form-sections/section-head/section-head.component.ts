@@ -8,6 +8,8 @@ import {ImageProcessService} from '../../utility-section/image-process.service';
 import { Store, select } from '@ngrx/store';
 import * as newsletterActions from '../../state/newsletter.actions';
 
+import { FileUploader } from 'ng2-file-upload';
+
 @Component({
   selector: 'app-section-head',
   templateUrl: './section-head.component.html',
@@ -34,6 +36,8 @@ public debug_size_before: string[] = [];
           , private imageprocessor: ImageProcessService
           , private store: Store<any>,
            private route: Router) { }
+
+  public uploader: FileUploader = new FileUploader({url: 'http://localhost:3001/upload'});
 
   userFormuserOpportunity = new FormGroup({
     users: new FormArray([

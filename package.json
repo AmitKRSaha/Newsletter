@@ -26,6 +26,7 @@
     "@ngx-progressbar/core": "^5.0.1",
     "angular-in-memory-web-api": "^0.6.0",
     "core-js": "^2.5.4",
+    "ng2-file-upload": "^1.3.0",
     "ngrx": "^2.0.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

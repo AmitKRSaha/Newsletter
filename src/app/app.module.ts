@@ -36,6 +36,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { SafeHtml } from './utility-section/safehtml';
 
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +60,8 @@ import { SafeHtml } from './utility-section/safehtml';
     BarinteaserAnswerComponent,
     TeamphotoBirthdayComponent,
     TeamPreviewComponent,
-    SafeHtml
+    SafeHtml,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
