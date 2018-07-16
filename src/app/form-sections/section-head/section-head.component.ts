@@ -93,12 +93,26 @@ public debug_size_before: string[] = [];
 
     this.store.dispatch(new newsletterActions.CreateHeaderImage(imagePath));
 
+    this.uploader.uploadAll();
+    this.uploader.onErrorItem = (item, response, status, headers) => this.onErrorItem(item, response, status, headers);
+    this.uploader.onSuccessItem = (item, response, status, headers) => this.onSuccessItem(item, response, status, headers);
+
     this.progressbarservice.addItemInList(imagePath);
     this.completedSections.sectionHead.status = 'completed';
     this.line.sectionHead.status = 'completed';
     this.sectionheadtoggle = 'hide';
     this.businessupdate.toggle('show');
   }
+
+  onSuccessItem(item: any, response: string, status: number, headers: any): any {
+    const data = JSON.parse(response); // success server response
+    console.log(data);
+}
+
+onErrorItem(item: any, response: string, status: number, headers: any): any {
+    const error = JSON.parse(response); // error server response
+    console.log(error);
+}
 
   expandMoreOrLess() {
     this.expandtoggle.sectionHead.status = (this.expandtoggle.sectionHead.status === 'open') ? 'closed' : 'open';
