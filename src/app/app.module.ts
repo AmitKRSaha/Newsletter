@@ -16,7 +16,6 @@ import { TechnicalArticleComponent } from './form-sections/technical-article/tec
 import { BrainTeasersComponent } from './form-sections/brain-teasers/brain-teasers.component';
 import { HealthyTipsComponent } from './form-sections/healthy-tips/healthy-tips.component';
 import { BrainTeaserAnswerComponent } from './form-sections/brain-teaser-answer/brain-teaser-answer.component';
-import { PreviewSectionComponent } from './form-sections/preview-section/preview-section.component';
 import { AcheivementComponent } from './form-sections/acheivement/acheivement.component';
 import { PlannedComponent } from './form-sections/planned/planned.component';
 import { HeaderPreviewComponent } from './preview-section/header-preview/header-preview.component';
@@ -49,7 +48,6 @@ import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
     BrainTeasersComponent,
     HealthyTipsComponent,
     BrainTeaserAnswerComponent,
-    PreviewSectionComponent,
     AcheivementComponent,
     PlannedComponent,
     HeaderPreviewComponent,
