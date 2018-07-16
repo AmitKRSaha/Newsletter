@@ -43,13 +43,24 @@ export class ProjectStatisticsComponent implements OnInit {
   onFormSubmit(evt) {
     evt.preventDefault();
     evt.stopPropagation();
-    this.progressBarService.addItemInList([this.rlTickCount, this.rlTickComment, this.lsTickCount, this.lsTickComment,
-      this.michelinDFA, this.michelinAtter, this.mGMDFA, this.mGMAtter, this.lGBODFA, this.lGBOAtter]);
+    this.progressBarService.addItemInList(this.projectStatData());
       this.completedSections.projstat.status = 'completed';
     this.line.projstatInPipeline.status = 'completed';
     this.projectstatshoworhide = 'hide';
     this.technicalarticle.toggletecharticle('show');
   }
+
+  projectStatData() {
+      const data = {
+        'rlticketcount' : this.rlTickCount,
+        'rlticketcomment' : this.rlTickComment, 'lsticketcount': this.lsTickCount,
+        'lsticketcomment' : this.lsTickComment,
+        'michelindfa' : this.michelinDFA, 'michelinatter' : this.michelinAtter, 'mGMDFA' : this.mGMDFA,
+        'mGMAtter' : this.mGMAtter, 'lGBODFA': this.lGBODFA, 'lGBOAtter' : this.lGBOAtter
+     };
+     return data;
+  }
+
   addMoreInputBox() {
     this.users.push(new FormControl());
   }
