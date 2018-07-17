@@ -20,7 +20,7 @@ export class HeaderPreviewComponent implements OnInit {
 
     this.subscription = progressbar.content$.subscribe(
       mission => {
-        this.filePath = JSON.stringify(mission['headerimage']).replace('\"', '');
+        this.filePath = JSON.stringify(mission['headerimage']);
         console.log('file ' + this.filePath);
 
     });
