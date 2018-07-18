@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProgressBarService } from './progress-bar.service';
+import * as html2canvas from 'html2canvas';
+// import * as canvas2Image from 'Canvas2Image';
+// import * as canvas2Image from 'canvas2image';
 
 @Component({
   selector: 'app-root',
@@ -117,11 +120,21 @@ export class AppComponent implements OnInit {
   };
 
 
-
   constructor(private progressBarService: ProgressBarService) {
   }
 
   ngOnInit() {
   }
+
+
+  test() {
+    html2canvas(document.querySelector('.newsletter')).then(canvas => {
+      document.body.appendChild(canvas);
+      // window.open().document.write('<img src="' + canvas.toDataURL() + '" />');
+      // canvas2Image.saveAsPNG(canvas);
+  });
+
+  }
+
 
 }

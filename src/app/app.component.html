@@ -106,13 +106,14 @@
 
 <div  class="container">
   <button class="btn btn-primary" routerLink="/newsletter">Final NewsLetter</button><br>
+  <button class="btn btn-primary" (click)="test()">Take ScreenShot</button><br>
 </div>
  <!-- <a routerLink="/newsletter">News Letter Section</a>
  <a [routerLink]="[{ outlets: { primary: ['newsletter'],sidebar: ['newsletter'] } }]">
   Products List
 </a> -->
 
-<div class="container">
+<div class="container newsletter">
   <router-outlet name="newsletter"></router-outlet>
 </div>
 
