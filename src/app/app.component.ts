@@ -3,6 +3,7 @@ import { ProgressBarService } from './progress-bar.service';
 import * as html2canvas from 'html2canvas';
 // import * as canvas2Image from 'Canvas2Image';
 // import * as canvas2Image from 'canvas2image';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -128,10 +129,13 @@ export class AppComponent implements OnInit {
 
 
   test() {
-    html2canvas(document.querySelector('.newsletter')).then(canvas => {
+    html2canvas(document.querySelector('.finalnewsletter')).then(canvas => {
       document.body.appendChild(canvas);
       // window.open().document.write('<img src="' + canvas.toDataURL() + '" />');
       // canvas2Image.saveAsPNG(canvas);
+      $('#test').attr('href', canvas.toDataURL('image/png'));
+        $('#test').attr('download', 'Test file.png');
+        $('#test')[0].click();
   });
 
   }

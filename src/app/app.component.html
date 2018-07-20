@@ -6,7 +6,7 @@
 
 
 <div class="container">
-  <div class="row no-container" >
+  <div class="row no-container">
     <div class="col-md-2" id="sectionhead">
       <div class="liner">
         <div [ngClass]="{'sectionheadlineActive': line.sectionHead.status == 'active', 'sectionheadlineCompleted': line.sectionHead.status == 'completed'}"></div>
@@ -24,29 +24,29 @@
 
       <div class="">
         <div class="section1">
-          <div class="navbar-brand section"  [ngClass]="{'active': completedSections.sectionHead.status == 'active', 'completed': completedSections.sectionHead.status == 'completed'}">
-              <img src="../assets/attrition_icon.png" height="20px" width="20px">
+          <div class="navbar-brand section" [ngClass]="{'active': completedSections.sectionHead.status == 'active', 'completed': completedSections.sectionHead.status == 'completed'}">
+            <img src="../assets/attrition_icon.png" height="20px" width="20px">
           </div>
         </div>
         <div class="section1">
           <div class="navbar-brand section" [ngClass]="{'active': completedSections.businessupdate.status == 'active', 'completed': completedSections.businessupdate.status == 'completed'}">
             <img src="../assets/Business update.png" height="20px" width="20px">
-            </div>
+          </div>
         </div>
-        <div class="section1" >
+        <div class="section1">
           <div class="navbar-brand section" [ngClass]="{'active':completedSections.opportunityInPipeline.status == 'active', 'completed': completedSections.opportunityInPipeline.status == 'completed'}">
             <img src="../assets/Opprtunities_Img.png" height="20px" width="20px">
-            </div>
+          </div>
         </div>
-        <div class="section1" >
+        <div class="section1">
           <div class="navbar-brand section" [ngClass]="{'active':completedSections.acheivement.status == 'active', 'completed': completedSections.acheivement.status == 'completed'}">
             <img src="../assets/Achieved.png" height="20px" width="20px">
-            </div>
+          </div>
         </div>
-        <div class="section1" >
+        <div class="section1">
           <div class="navbar-brand section" [ngClass]="{'active':completedSections.planned.status == 'active', 'completed': completedSections.planned.status == 'completed'}">
             <img src="../assets/Planning.png" height="20px" width="20px">
-            </div>
+          </div>
         </div>
         <div class="section1">
           <div class="navbar-brand section" [ngClass]="{'active': completedSections.projstat.status == 'active', 'completed': completedSections.projstat.status == 'completed'}">
@@ -54,14 +54,14 @@
           </div>
         </div>
         <div class="section1">
-          <div class="navbar-brand section"  [ngClass]="{'active': completedSections.tech.status == 'active', 'completed': completedSections.tech.status == 'completed'}">
+          <div class="navbar-brand section" [ngClass]="{'active': completedSections.tech.status == 'active', 'completed': completedSections.tech.status == 'completed'}">
             <img src="../assets/Tech_icon.png" height="20px" width="20px">
-            </div>
+          </div>
         </div>
         <div class="section1">
-          <div class="navbar-brand section"  [ngClass]="{'active': completedSections.brainteaser.status == 'active', 'completed': completedSections.brainteaser.status == 'completed'}">
+          <div class="navbar-brand section" [ngClass]="{'active': completedSections.brainteaser.status == 'active', 'completed': completedSections.brainteaser.status == 'completed'}">
             <img src="../assets/dimag-ki-batti.png" height="20px" width="20px">
-         </div>
+          </div>
         </div>
         <div class="section1">
           <div class="navbar-brand section" [ngClass]="{'active': completedSections.healthcare.status == 'active', 'completed': completedSections.healthcare.status == 'completed'}">
@@ -69,12 +69,12 @@
           </div>
         </div>
         <div class="section1">
-          <div class="navbar-brand section"  [ngClass]="{'active': completedSections.brainteaseranswer.status == 'active', 'completed': completedSections.brainteaseranswer.status == 'completed'}">
+          <div class="navbar-brand section" [ngClass]="{'active': completedSections.brainteaseranswer.status == 'active', 'completed': completedSections.brainteaseranswer.status == 'completed'}">
             <img src="../assets/baseline-question_answer-24px.svg" height="20px" width="20px">
           </div>
         </div>
         <div class="section1">
-          <div class="navbar-brand section"  [ngClass]="{'active': completedSections.teamandbirthday.status == 'active', 'completed': completedSections.teamandbirthday.status == 'completed'}">
+          <div class="navbar-brand section" [ngClass]="{'active': completedSections.teamandbirthday.status == 'active', 'completed': completedSections.teamandbirthday.status == 'completed'}">
             <img src="../assets/teamicon.png" height="20px" width="20px">
           </div>
         </div>
@@ -84,31 +84,51 @@
     <div class="col-md-5">
       <div class="accordion" id="accordionExample">
         <app-section-head [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [businessupdate]="businessupdate"></app-section-head>
-        <app-business-update [expandtoggle]="expandtoggle"  [opportunityPipeline]="opportunityPipeline" [line]="line" [completedSections]="completedSections" #businessupdate></app-business-update>
-        <app-opportunity-pipeline [expandtoggle]="expandtoggle"  [completedSections]="completedSections" [line]="line" [acheivement]="acheivement" #opportunityPipeline></app-opportunity-pipeline>
-        <app-acheivement [expandtoggle]="expandtoggle"  [completedSections]="completedSections" [line]="line"  [planned]="planned" #acheivement></app-acheivement>
-        <app-planned [expandtoggle]="expandtoggle"  [completedSections]="completedSections" [line]="line" [projectstat]="projectstat" #planned ></app-planned>
-        <app-project-statistics [expandtoggle]="expandtoggle" [completedSections]="completedSections"  [line]="line" [technicalarticle]="technicalarticle" #projectstat></app-project-statistics>
-        <app-technical-article [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [brainteaser]="brainteaser" #technicalarticle></app-technical-article>
-        <app-brain-teasers  [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [healthytips]="healthytips"  #brainteaser></app-brain-teasers>
-        <app-healthy-tips  [expandtoggle]="expandtoggle" [completedSections]="completedSections"  [line]="line" [brainteaseranswer]="brainteaseranswer" #healthytips></app-healthy-tips>
-        <app-brain-teaser-answer  [expandtoggle]="expandtoggle" [completedSections]="completedSections" [teamphotobirthday]="teamphotobirthday" #brainteaseranswer></app-brain-teaser-answer>
-        <app-teamphoto-birthday  [expandtoggle]="expandtoggle" [completedSections]="completedSections"  [line]="line" #teamphotobirthday></app-teamphoto-birthday>
+        <app-business-update [expandtoggle]="expandtoggle" [opportunityPipeline]="opportunityPipeline" [line]="line" [completedSections]="completedSections"
+          #businessupdate></app-business-update>
+        <app-opportunity-pipeline [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [acheivement]="acheivement"
+          #opportunityPipeline></app-opportunity-pipeline>
+        <app-acheivement [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [planned]="planned"
+          #acheivement></app-acheivement>
+        <app-planned [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [projectstat]="projectstat"
+          #planned></app-planned>
+        <app-project-statistics [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [technicalarticle]="technicalarticle"
+          #projectstat></app-project-statistics>
+        <app-technical-article [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [brainteaser]="brainteaser"
+          #technicalarticle></app-technical-article>
+        <app-brain-teasers [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [healthytips]="healthytips"
+          #brainteaser></app-brain-teasers>
+        <app-healthy-tips [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [brainteaseranswer]="brainteaseranswer"
+          #healthytips></app-healthy-tips>
+        <app-brain-teaser-answer [expandtoggle]="expandtoggle" [completedSections]="completedSections" [teamphotobirthday]="teamphotobirthday"
+          #brainteaseranswer></app-brain-teaser-answer>
+        <app-teamphoto-birthday [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" #teamphotobirthday></app-teamphoto-birthday>
       </div>
     </div>
     <div class="col-md-5">
-      <div   style="position: fixed;">
-      <router-outlet></router-outlet></div>
+      <div style="position: fixed;">
+        <router-outlet></router-outlet>
+      </div>
 
     </div>
   </div>
 </div>
 
-<div  class="container">
-  <button class="btn btn-primary" routerLink="/newsletter">Final NewsLetter</button><br>
-  <button class="btn btn-primary" (click)="test()">Take ScreenShot</button><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <button class="btn btn-primary" routerLink="/newsletter">Final NewsLetter</button>
+      <br>
+
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="test()">Take ScreenShot</button>
+      <br>
+
+    </div>
+  </div>
 </div>
- <!-- <a routerLink="/newsletter">News Letter Section</a>
+<!-- <a routerLink="/newsletter">News Letter Section</a>
  <a [routerLink]="[{ outlets: { primary: ['newsletter'],sidebar: ['newsletter'] } }]">
   Products List
 </a> -->
@@ -117,10 +137,10 @@
   <router-outlet name="newsletter"></router-outlet>
 </div>
 
+<div id="test"></div>
+
 <!-- <footer>
   <div class="footer">
     &copy; Sapient Razorfish - 2018
   </div>
 </footer> -->
-
-
