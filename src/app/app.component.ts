@@ -5,6 +5,7 @@ import * as html2canvas from 'html2canvas';
 // import * as canvas2Image from 'canvas2image';
 import * as $ from 'jquery';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +13,8 @@ import * as $ from 'jquery';
 })
 export class AppComponent implements OnInit {
   title = 'Newsletter';
-   completedSections: any = {
+  textFile = null;
+  completedSections: any = {
     sectionHead: {
       status: 'inactive'
     },
@@ -128,17 +130,88 @@ export class AppComponent implements OnInit {
   }
 
 
-  test() {
+  test(text) {
+    let imagePath;
+
     html2canvas(document.querySelector('.finalnewsletter')).then(canvas => {
       document.body.appendChild(canvas);
       // window.open().document.write('<img src="' + canvas.toDataURL() + '" />');
       // canvas2Image.saveAsPNG(canvas);
-      $('#test').attr('href', canvas.toDataURL('image/png'));
-        $('#test').attr('download', 'Test file.png');
-        $('#test')[0].click();
-  });
+      imagePath = canvas.toDataURL('image/png');
+    //   $.ajax({
+    //     type: 'post',
+    //     url: 'http://localhost:3001/upload',
+    //     data: {
+    //         image: imagePath
+    //     },
+    //     error: function(e) {
+    //         console.error(e);
+    //     },
+    //     success: function(response) {
+    //         console.log(response);
+    //         const imageHTML = '<img ' +
+    //             'src="' + response + '" img/>';
+    //         console.log(imageHTML);
+
+    //         // //Add an image as a link
+    //         // Office.cast.item.toItemCompose(Office.context.mailbox.item).body.setSelectedDataAsync(imageHTML, {
+    //         //         coercionType: Office.CoercionType.Html,
+    //         //     },
+    //         //     function(asyncResult) {
+    //         //         if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    //         //             app.showNotification("Action failed with error: " + asyncResult.error.message);
+    //         //         }
+    //         //     });
+    //     }
+    // });
+
+
+      // $('#test').attr('href', canvas.toDataURL('image/png'));
+      // $('#test').attr('download', 'Test file.png');
+      // $('#test')[0].click();
+      const finalData = data + '<img src= "' +  imagePath + '" />' + bottomData;
+      const downloadedfileData = heading + finalData;
+      console.log(downloadedfileData);
+      const hrefValue = this.makeFile(downloadedfileData);
+      const finalValue = '<a download="message.eml" id="downloadlink" href="' + hrefValue + '">Download</a>';
+      const val =  '<textarea id="textbox" style="width: 300px; height: 600px;">' + downloadedfileData + '</textarea>';
+      window.open().document.write( finalValue +  finalData + val);
+    });
+
+    const heading = `To:AmitKrSaha
+<amisaha@publicisgroupe.net>
+Subject: Subject
+X-Unsent: 1
+Content-Type: text/html
+
+    `;
+
+    const data = `
+<html>
+<head>
+</head>
+<body>
+<table width=100%>
+	<tr>
+		<td>
+`;
+
+    const bottomData = `
+    </td>
+  </tr>
+</table>
+</body>
+</html>`;
 
   }
 
 
+  makeFile(text) {
+    const data = new Blob([text], {type: 'text/plain'});
+    if (this.textFile !== null) {
+      window.URL.revokeObjectURL(this.textFile);
+    }
+    this.textFile = window.URL.createObjectURL(data);
+    return this.textFile;
+  }
 }
