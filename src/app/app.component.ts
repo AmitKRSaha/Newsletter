@@ -134,7 +134,7 @@ export class AppComponent implements OnInit {
     let imagePath;
 
     html2canvas(document.querySelector('.finalnewsletter')).then(canvas => {
-      document.body.appendChild(canvas);
+      // document.body.appendChild(canvas);
       // window.open().document.write('<img src="' + canvas.toDataURL() + '" />');
       // canvas2Image.saveAsPNG(canvas);
       imagePath = canvas.toDataURL('image/png');
@@ -164,9 +164,9 @@ Content-Type: text/html
       // $('#test').attr('download', 'Test file.png');
       // $('#test')[0].click();
       // imagePath = './assets/tea.png';
-      const finalData = data + '<img src= "' +  imagePath + '" />' + bottomData;
-      const downloadedfileData = heading + finalData;
-      console.log(downloadedfileData);
+      // const finalData = data + '<img src= "' +  imagePath + '" />' + bottomData;
+      // const downloadedfileData = heading + finalData;
+      // console.log(downloadedfileData);
       // const hrefValue = this.makeFile(downloadedfileData);
       // const finalValue = '<a download="message.eml" id="downloadlink" href="' + hrefValue + '">Download</a>';
        const val1 =  val;
@@ -196,31 +196,6 @@ Content-Type: text/html
 </html>
 
     `;
-
-    const heading = `To:AmitKrSaha
-<amisaha@publicisgroupe.net>
-Subject: Subject
-X-Unsent: 1
-Content-Type: text/html
-
-    `;
-
-    const data = `
-<html>
-<head>
-</head>
-<body>
-<table width=100%>
-	<tr>
-		<td>
-`;
-
-    const bottomData = `
-    </td>
-  </tr>
-</table>
-</body>
-</html>`;
 
   }
 
