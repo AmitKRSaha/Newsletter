@@ -138,45 +138,64 @@ export class AppComponent implements OnInit {
       // window.open().document.write('<img src="' + canvas.toDataURL() + '" />');
       // canvas2Image.saveAsPNG(canvas);
       imagePath = canvas.toDataURL('image/png');
-    //   $.ajax({
-    //     type: 'post',
-    //     url: 'http://localhost:3001/upload',
-    //     data: {
-    //         image: imagePath
-    //     },
-    //     error: function(e) {
-    //         console.error(e);
-    //     },
-    //     success: function(response) {
-    //         console.log(response);
-    //         const imageHTML = '<img ' +
-    //             'src="' + response + '" img/>';
-    //         console.log(imageHTML);
 
-    //         // //Add an image as a link
-    //         // Office.cast.item.toItemCompose(Office.context.mailbox.item).body.setSelectedDataAsync(imageHTML, {
-    //         //         coercionType: Office.CoercionType.Html,
-    //         //     },
-    //         //     function(asyncResult) {
-    //         //         if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-    //         //             app.showNotification("Action failed with error: " + asyncResult.error.message);
-    //         //         }
-    //         //     });
-    //     }
-    // });
+       imagePath = 'http://localhost:4200/assets/tea.png';
 
+      const val = `To: User <user@domain.demo>
+Subject: Subject
+X-Unsent: 1
+Content-Type: text/html
+
+<html>
+<head>
+</head>
+<body>
+<table width=100%>
+  <tr>
+    <td><img src="` + imagePath + `" width="100%" height="57" alt=""></td>
+  </tr>
+</table>
+</body>
+</html>
+
+          `;
 
       // $('#test').attr('href', canvas.toDataURL('image/png'));
       // $('#test').attr('download', 'Test file.png');
       // $('#test')[0].click();
+      // imagePath = './assets/tea.png';
       const finalData = data + '<img src= "' +  imagePath + '" />' + bottomData;
       const downloadedfileData = heading + finalData;
       console.log(downloadedfileData);
-      const hrefValue = this.makeFile(downloadedfileData);
-      const finalValue = '<a download="message.eml" id="downloadlink" href="' + hrefValue + '">Download</a>';
-      const val =  '<textarea id="textbox" style="width: 300px; height: 600px;">' + downloadedfileData + '</textarea>';
-      window.open().document.write( finalValue +  finalData + val);
+      // const hrefValue = this.makeFile(downloadedfileData);
+      // const finalValue = '<a download="message.eml" id="downloadlink" href="' + hrefValue + '">Download</a>';
+       const val1 =  val;
+      // window.open().document.write( finalValue +  finalData + val);
+
+      const hrefValue = this.makeFile(val);
+      window.open().document.write('<a download="message.eml" id="downloadlink" style="display: visible" href="' +  hrefValue + '">Download</a>' + val + '<textarea style="width: 300px; height: 600px;">' + val + '</textarea>');
     });
+
+    imagePath = 'http://localhost:4200/assets/tea.png';
+
+    const val5 = `To: User <user@domain.demo>
+Subject: Subject
+X-Unsent: 1
+Content-Type: text/html
+
+<html>
+<head>
+</head>
+<body>
+<table width=100%>
+    <tr>
+      <td><img src="` + imagePath + `" width="200" height="57" alt=""></td>
+    </tr>
+</table>
+</body>
+</html>
+
+    `;
 
     const heading = `To:AmitKrSaha
 <amisaha@publicisgroupe.net>
