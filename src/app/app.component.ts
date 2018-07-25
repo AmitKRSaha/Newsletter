@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   expandtoggle = expandtoggle;
 
-  line: any = line
+  line: any = line;
 
 
   constructor(private progressBarService: ProgressBarService) {
