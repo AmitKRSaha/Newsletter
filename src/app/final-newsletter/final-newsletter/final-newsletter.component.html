@@ -10,7 +10,7 @@
 
     </div>
     <div class="col-md-12">
-        <img src='{{ progressbar.content[0]?.headerimage }}' width='100%' />
+      <img src='{{ progressbar.content[0]?.headerimage }}' width='100%' />
     </div>
   </div>
 
@@ -105,13 +105,48 @@
       </div>
     </div>
     <div *ngIf='progressbar.content.length > 5'>
-      <strong>Project Statistics</strong>
+      <strong class="header-title" style="text-align: center">Project Statistics</strong>
       <div class="projectstat">
         <div class="row">
-          <div class="col-md-5">
-            <ul>
-              <!-- <li *ngFor="let value of progressbar.content[5]"> {{value}}</li> -->
-            </ul>
+          <div class="col-md-6" style="padding-top: 8%">
+            <div class="row">
+              <div class="col-md-12">
+                <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
+                />
+                <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.content[5].rlticketcount}} + </strong> Tickets cleaned up from the backlog.
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
+                />
+                <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.content[5].lsticketcount}} + </strong> Tickets cleaned up from the backlog.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-5"></div>
+              <div class="col-md-3"><img src="../../../assets/DFA.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
+                /></div>
+              <div class="col-md-3"><img src="../../../assets/Attrition.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
+                /></div>
+            </div>
+            <div class="row">
+              <div class="col-md-6"><strong>Michelin</strong></div>
+              <div class="col-md-3 projstat-values">{{progressbar.content[5].michelindfa}}%</div>
+              <div class="col-md-3 projstat-values">{{progressbar.content[5].michelinatter}}%</div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 projstat-values"><strong>MGM</strong></div>
+              <div class="col-md-3 projstat-values">{{progressbar.content[5].mGMDFA}}%</div>
+              <div class="col-md-3 projstat-values">{{progressbar.content[5].mGMAtter}}%</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 projstat-values"><strong>Goldman Sachs</strong></div>
+                <div class="col-md-3 projstat-values">{{progressbar.content[5].michelindfa}}%</div>
+                <div class="col-md-3 projstat-values">{{progressbar.content[5].michelindfa}}%</div>
+              </div>
           </div>
         </div>
       </div>
@@ -208,7 +243,7 @@
     </div>
 
     <br>
-    <div class="row"  *ngIf='progressbar.content.length > 10'>
+    <div class="row" *ngIf='progressbar.content.length > 10'>
       <div class="col-md-3">
         <img src="../../../assets/Award_Anniversaries-icon.png" width="50px" alt="" />
       </div>

@@ -18,12 +18,13 @@ export class HeaderPreviewComponent implements OnInit {
     //   t => this.filePath = t
     // );
 
-    this.subscription = progressbar.content$.subscribe(
-      mission => {
-        this.filePath = JSON.stringify(mission['headerimage']);
-        console.log('file ' + this.filePath);
+    // Working
+    // this.subscription = progressbar.content$.subscribe(
+    //   mission => {
+    //     this.filePath = JSON.stringify(mission['headerimage']);
+    //     console.log('file ' + this.filePath);
 
-    });
+    // });
    }
 
 

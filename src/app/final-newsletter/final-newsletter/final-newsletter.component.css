@@ -7,3 +7,10 @@
 .brainteaser{
   list-style-type: none;
 }
+
+.projstat-values {
+  font-family: Impact;
+  font-size: 18px
+  ;margin-right: 13px;
+  color:#083d6d
+}

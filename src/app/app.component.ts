@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProgressBarService } from './progress-bar.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+
 import * as html2canvas from 'html2canvas';
 import * as $ from 'jquery';
 import { completedSections } from '../app/models/completed-section';
@@ -23,7 +26,7 @@ export class AppComponent implements OnInit {
   line: any = line;
 
 
-  constructor(private progressBarService: ProgressBarService) {
+  constructor(private sanitizer: DomSanitizer, private progressBarService: ProgressBarService, private http: HttpClient ) {
   }
 
   ngOnInit() {
@@ -68,12 +71,15 @@ Content-Type: text/html
       // const downloadedfileData = heading + finalData;
       // console.log(downloadedfileData);
       // const hrefValue = this.makeFile(downloadedfileData);
-      // const finalValue = '<a download="message.eml" id="downloadlink" href="' + hrefValue + '">Download</a>';
+       const finalValue = '<textarea style="width: 300px; height: 600px;">' + val + '</textarea>';
        const val1 =  val;
       // window.open().document.write( finalValue +  finalData + val);
+      this.http.get('http://localhost:3001/file-1532116274008.png', { responseType: 'blob' })
+      .toPromise()
+      .then(data => this.showImage(data));
 
       const hrefValue = this.makeFile(val);
-      window.open().document.write('<a download="message.eml" id="downloadlink" style="display: visible" href="' +  hrefValue + '">Download</a>' + val + '<textarea style="width: 300px; height: 600px;">' + val + '</textarea>');
+      window.open().document.write('<a download="message.eml" id="downloadlink" style="display: visible" href="' +  hrefValue + '">Download</a>' + val + finalValue);
     });
 
     imagePath = 'http://localhost:4200/assets/tea.png';
@@ -99,6 +105,13 @@ Content-Type: text/html
 
   }
 
+  showImage(data: any): any {
+    console.log(data);
+    const urlCreator = window.URL;
+    const imgsrc = this.sanitizer.bypassSecurityTrustUrl(
+            urlCreator.createObjectURL(data));
+
+  }
 
   makeFile(text) {
     const data = new Blob([text], {type: 'text/plain'});

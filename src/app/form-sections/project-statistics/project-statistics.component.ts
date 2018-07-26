@@ -22,8 +22,8 @@ export class ProjectStatisticsComponent implements OnInit {
   michelinAtter: any;
   mGMDFA: any;
   mGMAtter: any;
-  lGBODFA: any;
-  lGBOAtter: any;
+  goldDFA: any;
+  goldAtter: any;
 
   userFormuserProjstat = new FormGroup({
     users: new FormArray([
@@ -56,7 +56,7 @@ export class ProjectStatisticsComponent implements OnInit {
         'rlticketcomment' : this.rlTickComment, 'lsticketcount': this.lsTickCount,
         'lsticketcomment' : this.lsTickComment,
         'michelindfa' : this.michelinDFA, 'michelinatter' : this.michelinAtter, 'mGMDFA' : this.mGMDFA,
-        'mGMAtter' : this.mGMAtter, 'lGBODFA': this.lGBODFA, 'lGBOAtter' : this.lGBOAtter
+        'mGMAtter' : this.mGMAtter, 'goldDFA': this.goldDFA, 'goldAtter' : this.goldAtter
      };
      return data;
   }
