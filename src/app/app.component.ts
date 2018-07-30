@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   expandtoggle = expandtoggle;
 
   line: any = line;
+  imagePath: any ;
 
 
   constructor(private sanitizer: DomSanitizer, private progressBarService: ProgressBarService, private http: HttpClient ) {
@@ -34,15 +35,15 @@ export class AppComponent implements OnInit {
 
 
   test(text) {
-    let imagePath;
+
 
     html2canvas(document.querySelector('.finalnewsletter')).then(canvas => {
       // document.body.appendChild(canvas);
       // window.open().document.write('<img src="' + canvas.toDataURL() + '" />');
       // canvas2Image.saveAsPNG(canvas);
-      imagePath = canvas.toDataURL('image/png');
+      this.imagePath = canvas.toDataURL('image/png');
 
-       imagePath = 'http://localhost:4200/assets/tea.png';
+      this.imagePath = 'http://localhost:4200/assets/tea.png';
 
       const val = `To: User <user@domain.demo>
 Subject: Subject
@@ -55,7 +56,7 @@ Content-Type: text/html
 <body>
 <table width=100%>
   <tr>
-    <td><img src="` + imagePath + `" width="100%" height="57" alt=""></td>
+    <td><img src="` + this.imagePath + `" width="100%" height="57" alt=""></td>
   </tr>
 </table>
 </body>
@@ -81,29 +82,7 @@ Content-Type: text/html
       const hrefValue = this.makeFile(val);
       window.open().document.write('<a download="message.eml" id="downloadlink" style="display: visible" href="' +  hrefValue + '">Download</a>' + val + finalValue);
     });
-
-    imagePath = 'http://localhost:4200/assets/tea.png';
-
-    const val5 = `To: User <user@domain.demo>
-Subject: Subject
-X-Unsent: 1
-Content-Type: text/html
-
-<html>
-<head>
-</head>
-<body>
-<table width=100%>
-    <tr>
-      <td><img src="` + imagePath + `" width="200" height="57" alt=""></td>
-    </tr>
-</table>
-</body>
-</html>
-
-    `;
-
-  }
+ }
 
   showImage(data: any): any {
     console.log(data);
