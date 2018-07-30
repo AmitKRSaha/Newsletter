@@ -80,7 +80,8 @@ Content-Type: text/html
       .then(data => this.showImage(data));
 
       const hrefValue = this.makeFile(val);
-      window.open().document.write('<a download="message.eml" id="downloadlink" style="display: visible" href="' +  hrefValue + '">Download</a>' + val + finalValue);
+      const outputValue = '<a download="message.eml" id="downloadlink" style="display: visible" href="' +  hrefValue;
+      window.open().document.write(outputValue + '">Download</a>' + val + finalValue);
     });
  }
 
