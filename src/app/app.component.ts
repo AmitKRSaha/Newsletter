@@ -42,8 +42,10 @@ export class AppComponent implements OnInit {
       // window.open().document.write('<img src="' + canvas.toDataURL() + '" />');
       // canvas2Image.saveAsPNG(canvas);
       this.imagePath = canvas.toDataURL('image/png');
-
-      this.imagePath = 'http://localhost:4200/assets/tea.png';
+      this.http.post('http://localhost:3001/uploadscreenshot', this.imagePath)
+      .toPromise()
+      .then(x => console.log(x));
+      this.imagePath = 'http://localhost:3001/screen.png';
 
       const val = `To: User <user@domain.demo>
 Subject: Subject
@@ -56,7 +58,7 @@ Content-Type: text/html
 <body>
 <table width=100%>
   <tr>
-    <td><img src="` + this.imagePath + `" width="100%" height="57" alt=""></td>
+    <td><img src="` + this.imagePath + `" width="100%" height="100%" alt=""></td>
   </tr>
 </table>
 </body>
@@ -75,9 +77,9 @@ Content-Type: text/html
        const finalValue = '<textarea style="width: 300px; height: 600px;">' + val + '</textarea>';
        const val1 =  val;
       // window.open().document.write( finalValue +  finalData + val);
-      this.http.get('http://localhost:3001/file-1532116274008.png', { responseType: 'blob' })
-      .toPromise()
-      .then(data => this.showImage(data));
+      // this.http.get('http://localhost:3001/file-1532116274008.png', { responseType: 'blob' })
+      // .toPromise()
+      // .then(data => this.showImage(data));
 
       const hrefValue = this.makeFile(val);
       const outputValue = '<a download="message.eml" id="downloadlink" style="display: visible" href="' +  hrefValue;
