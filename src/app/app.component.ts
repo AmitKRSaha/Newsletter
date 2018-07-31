@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
       this.imagePath = canvas.toDataURL('image/png');
       this.http.post('http://localhost:3001/uploadscreenshot', this.imagePath)
       .toPromise()
-      .then(x => console.log(x));
+      .then(x => { console.log(x);
       this.imagePath = 'http://localhost:3001/screen.png';
 
       const val = `To: User <user@domain.demo>
@@ -56,7 +56,7 @@ Content-Type: text/html
 <head>
 </head>
 <body>
-<table width=100%>
+<table width="80%" style="margin-left: 10%;">
   <tr>
     <td><img src="` + this.imagePath + `" width="100%" height="100%" alt=""></td>
   </tr>
@@ -84,6 +84,7 @@ Content-Type: text/html
       const hrefValue = this.makeFile(val);
       const outputValue = '<a download="message.eml" id="downloadlink" style="display: visible" href="' +  hrefValue;
       window.open().document.write(outputValue + '">Download</a>' + val + finalValue);
+    });
     });
  }
 
