@@ -3,7 +3,7 @@
     <h5 class="mb-0">
       <button class="btn btn-link collapsed" type="button">
         <div class="row">
-          <div class="col-md-9 plannedSection">
+          <div class="col-md-9 acheivementSection">
            Acheivement
           </div>
           <div class="col-md-1" [ngClass]="{'closed': expandtoggle.acheivement.status == 'closed','open': expandtoggle.acheivement.status == 'open'}">
@@ -16,7 +16,7 @@
   <div id="collapseEight" [ngClass]='showorhide' class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample"
     style=" background-color: bisque !important;" (click)="showActive()">
     <div class="card-body">
-      <h3>Acheivement</h3>
+      <h3>Acheivements</h3>
     </div>
     <div class="card-body">
       <div>
@@ -29,7 +29,7 @@
           <br>
           <div>
             <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Acheivement Section</button>
-            <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button>
+            <button type="button" class="btn btn-primary" id="btnAddMoreAcheivement" (click)="addMoreInputBox()">Add More Update</button>
           </div>
         </form>
       </div>
