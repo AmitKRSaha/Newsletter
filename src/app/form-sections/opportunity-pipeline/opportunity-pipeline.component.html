@@ -4,7 +4,7 @@
     <h5 class="mb-0">
       <button class="btn btn-link collapsed" type="button">
         <div class="row">
-          <div class="col-md-9 plannedSection">
+          <div class="col-md-9 opportunitySection">
             Opportunitis In PipeLine
           </div>
           <div class="col-md-1" [ngClass]="{'closed': expandtoggle.planningsection.status == 'closed','open': expandtoggle.planningsection.status == 'open'}">
@@ -30,7 +30,7 @@
           <br>
           <div>
             <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Opportunity Section</button>
-            <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button>
+            <button type="button" class="btn btn-primary" id="btnAddMoreOpportunity" (click)="addMoreInputBox()">Add More Update</button>
           </div>
         </form>
       </div>

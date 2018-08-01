@@ -3,7 +3,7 @@
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button">
           <div class="row">
-            <div class="col-md-9 plannedSection">
+            <div class="col-md-9 brainSection">
               Brain Teasers
             </div>
             <div class="col-md-1" [ngClass]="{'closed': this.expandtoggle.brainteasersection.status == 'closed','open': this.expandtoggle.brainteasersection.status == 'open'}">
@@ -29,7 +29,7 @@
             <br>
             <div>
               <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Brain Teasers</button>
-              <button type="button" class="btn btn-primary" id="btnAddMorePlannedUpdate" (click)="addMoreInputBox()">Add More Update</button>
+              <button type="button" class="btn btn-primary" id="btnAddMorebrainSection" (click)="addMoreInputBox()">Add More Update</button>
             </div>
           </form>
         </div>
