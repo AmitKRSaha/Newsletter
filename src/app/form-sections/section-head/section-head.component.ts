@@ -34,8 +34,8 @@ public debug_size_before: string[] = [];
   constructor(private progressbarservice: ProgressBarService
           , private changeDetectorRef: ChangeDetectorRef
           , private imageprocessor: ImageProcessService
-          , private store: Store<any>,
-           private route: Router) { }
+          // , private store: Store<any>
+          , private route: Router) { }
 
   public uploader: FileUploader = new FileUploader({url: 'http://localhost:3001/upload'});
 
