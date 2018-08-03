@@ -31,17 +31,7 @@ import { BarinteaserAnswerComponent } from './preview-section/barinteaser-answer
 import { TeamphotoBirthdayComponent } from './form-sections/teamphoto-birthday/teamphoto-birthday.component';
 import { TeamPreviewComponent } from './preview-section/team-preview/team-preview.component';
 
-@Component({
-  selector: 'container',
-  template: `<input type="file"
-                    ng2FileSelect
-                    [uploader]="uploader"
-             />`
-})
-export class ContainerComponent {
-  public get url(): string { return 'localhost:3000'; }
-  public uploader: FileUploader = new FileUploader({ url: this.url });
-}
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -86,5 +76,54 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to Newsletter');
+    expect(compiled.querySelectorAll('div.liner')[0].childElementCount).toBe(10);
   }));
+  it('should have 10 divs inside liner div', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelectorAll('div.liner')[0].childElementCount).toBe(10);
+  }));
+  it('should have 11 divs inside status div', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelectorAll('div.status')[0].childElementCount).toBe(11);
+  }));
+  it('should have divs inside status div with different images', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    // tslint:disable-next-line:max-line-length
+    expect(compiled.querySelectorAll('div.status')[0].querySelectorAll('div')[0].querySelectorAll('div img')[0].src).toContain('attrition_icon');
+  }));
+  it('should have other components', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-section-head')).not.toBe(null);
+    expect(compiled.querySelector('app-business-update')).not.toBe(null);
+    expect(compiled.querySelector('app-opportunity-pipeline')).not.toBe(null);
+    expect(compiled.querySelector('app-acheivement')).not.toBe(null);
+    expect(compiled.querySelector('app-planned')).not.toBe(null);
+    expect(compiled.querySelector('app-project-statistics')).not.toBe(null);
+    expect(compiled.querySelector('app-technical-article')).not.toBe(null);
+    expect(compiled.querySelector('app-brain-teasers')).not.toBe(null);
+    expect(compiled.querySelector('app-healthy-tips')).not.toBe(null);
+    expect(compiled.querySelector('app-brain-teaser-answer')).not.toBe(null);
+    expect(compiled.querySelector('app-teamphoto-birthday')).not.toBe(null);
+  }));
+  it('should have router outlet for preview section', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('router-outlet')).not.toBe(null);
+  }));
+  it('should have button with Final NewsLetter', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.container-finalnewsletter button').textContent).toEqual('Final NewsLetter');
+  }));
+
 });

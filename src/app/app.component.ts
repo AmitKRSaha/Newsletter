@@ -34,8 +34,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  test(text) {
-
+  generateNewsLetter(text) {
 
     html2canvas(document.querySelector('.finalnewsletter')).then(canvas => {
       // document.body.appendChild(canvas);
