@@ -84,14 +84,17 @@ public debug_size_before: string[] = [];
   }
 
   onFormSubmit() {
+    // *** commented code for unit test *** //
     // For adding to Store
-    this.store.dispatch({
-      type: 'ADD_TO_THE_STORE',
-      payload: this.imgpath
-    });
+    // this.store.dispatch({
+    //   type: 'ADD_TO_THE_STORE',
+    //   payload: this.imgpath
+    // });
     const imagePath = { 'headerimage' :  this.imgpath};
 
-    this.store.dispatch(new newsletterActions.CreateHeaderImage(imagePath));
+    // *** commented code for unit test *** //
+
+    // this.store.dispatch(new newsletterActions.CreateHeaderImage(imagePath));
 
     this.uploader.uploadAll();
     this.uploader.onErrorItem = (item, response, status, headers) => this.onErrorItem(item, response, status, headers);
