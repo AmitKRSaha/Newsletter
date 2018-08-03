@@ -27,7 +27,9 @@ export class AppComponent implements OnInit {
   imagePath: any ;
 
 
-  constructor(private sanitizer: DomSanitizer, private progressBarService: ProgressBarService, private http: HttpClient ) {
+  constructor(private sanitizer: DomSanitizer,
+     private progressBarService: ProgressBarService,
+     private http: HttpClient ) {
   }
 
   ngOnInit() {

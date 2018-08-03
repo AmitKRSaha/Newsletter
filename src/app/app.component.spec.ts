@@ -34,7 +34,14 @@ import { TeamPreviewComponent } from './preview-section/team-preview/team-previe
 
 
 describe('AppComponent', () => {
+  let userServiceStub: Partial<ProgressBarService>;
+  let progressBarService;
+
   beforeEach(async(() => {
+    userServiceStub = {
+      content : ['1', '2']
+    };
+
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
@@ -58,19 +65,38 @@ describe('AppComponent', () => {
     TeamPreviewComponent,
       ], imports: [ RouterTestingModule, FormsModule, FileUploadModule,
         ReactiveFormsModule,
-        HttpClientModule ]
+        HttpClientModule ],
+        providers:    [ {provide: ProgressBarService, useValue: userServiceStub } ]
     }).compileComponents();
+
   }));
+
+  it('stub object and injected UserService should not be the same', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+
+    // UserService from the root injector
+    progressBarService = TestBed.get(ProgressBarService);
+
+    expect(userServiceStub === ProgressBarService).toBe(false);
+
+    // Changing the stub object has no effect on the injected service
+    // userServiceStub.isLoggedIn = false;
+    // expect(userService.isLoggedIn).toBe(true);
+  });
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'app'`, async(() => {
+  it(`should display a different test title`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect('Welcome to ' + app.title).toEqual('Welcome to Newsletter');
+    app.title = 'Test Title';
+    fixture.detectChanges();
+    expect('Welcome to ' + app.title).toContain('Test Title');
   }));
+
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
