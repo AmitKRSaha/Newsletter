@@ -79,7 +79,7 @@ export class BusinessUpdateComponent implements OnInit {
 
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
-    this.progressBarService.addBackgroundImage(data.path);
+    this.progressBarService.addBackgroundImage({'business': data.path });
     console.log(data);
 }
 

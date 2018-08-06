@@ -6,7 +6,7 @@ import { Observable, of, from, BehaviorSubject, Subject  } from 'rxjs';
 })
 export class ProgressBarService {
   content: string[] = [];
-  businessupdateBackgroundImage: string[] = [];
+  backgroundImage: string[] = [];
 
   private _todos: BehaviorSubject<any[]>;
 
@@ -32,8 +32,8 @@ export class ProgressBarService {
   }
 
  addBackgroundImage(item) {
-   this.businessupdateBackgroundImage.push(item);
-   console.log(this.businessupdateBackgroundImage);
+   this.backgroundImage.push(item);
+   console.log(this.backgroundImage);
  }
 
   addItemInList(items)  {
