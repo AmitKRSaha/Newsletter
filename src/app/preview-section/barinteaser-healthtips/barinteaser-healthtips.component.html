@@ -1,4 +1,4 @@
-<div class="brainandhealth">
+<div class="brainandhealth"   [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage[3]?.brainandhealth + ')'">
   <div class="brainteaser">
     <div *ngIf='progressBarService.content.length > 7'>
       <strong>Brain Teaser</strong>

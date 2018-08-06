@@ -176,7 +176,7 @@
     </div>
   </div>
 
-  <div class="brainandhealth">
+  <div class="brainandhealth"  [style.background]="'url(http://localhost:3001/' + progressbar.backgroundImage[3]?.brainandhealth + ')'">
     <div class="brainteaser">
       <div *ngIf='progressbar.content.length > 7'>
         <div class="row">

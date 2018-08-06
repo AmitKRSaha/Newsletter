@@ -1,5 +1,5 @@
-import { Component,  Input } from '@angular/core';
-import { FormControl,  FormGroup, FormArray } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormControl, FormGroup, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProgressBarService } from '../../progress-bar.service';
 import { ProjectStatisticsComponent } from '../project-statistics/project-statistics.component';
@@ -17,7 +17,7 @@ export class PlannedComponent {
   @Input() expandtoggle: any;
   @Input() line: any;
 
-  public uploader: FileUploader = new FileUploader({url: 'http://localhost:3001/upload'});
+  public uploader: FileUploader = new FileUploader({ url: 'http://localhost:3001/upload' });
 
   userFormuserplanned = new FormGroup({
     users: new FormArray([
@@ -65,12 +65,12 @@ export class PlannedComponent {
 
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
-    this.progressBarService.addBackgroundImage({'planned': data.path });
+    this.progressBarService.addBackgroundImage({ 'planned': data.path });
     console.log(data);
-}
+  }
 
-onErrorItem(item: any, response: string, status: number, headers: any): any {
+  onErrorItem(item: any, response: string, status: number, headers: any): any {
     const error = JSON.parse(response); // error server response
     console.log(error);
-}
+  }
 }

@@ -1,39 +1,62 @@
 <div class="card">
-    <div class="card-header" (click)="expandMoreOrLess()" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button">
-          <div class="row">
-            <div class="col-md-9 brainSection">
-              Brain Teasers
-            </div>
-            <div class="col-md-1" [ngClass]="{'closed': this.expandtoggle.brainteasersection.status == 'closed','open': this.expandtoggle.brainteasersection.status == 'open'}">
-            </div>
+  <div class="card-header" (click)="expandMoreOrLess()" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+    aria-controls="collapseSix">
+    <h5 class="mb-0">
+      <button class="btn btn-link collapsed" type="button">
+        <div class="row">
+          <div class="col-md-9 brainSection">
+            Brain Teasers
           </div>
-        </button>
+          <div class="col-md-1" [ngClass]="{'closed': this.expandtoggle.brainteasersection.status == 'closed','open': this.expandtoggle.brainteasersection.status == 'open'}">
+          </div>
+        </div>
+      </button>
 
-      </h5>
+    </h5>
+  </div>
+  <div id="collapseSix" [ngClass]='showorhide' class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample"
+    style=" background-color: bisque !important;" (click)="showActive()">
+    <div class="card-body">
+      <h3>Brain Teasers</h3>
     </div>
-    <div id="collapseSix" [ngClass]='showorhide' class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample"
-      style=" background-color: bisque !important;" (click)="showActive()">
-      <div class="card-body">
-        <h3>Brain Teasers</h3>
-      </div>
-      <div class="card-body">
-        <div>
-          <form [formGroup]="userFormuserbrainteaser" (ngSubmit)="onFormSubmit()">
-            <div formArrayName="users">
-              <div *ngFor="let user of users.controls; index as idx">
-              <textarea [formControlName]="idx"  class="form-control" aria-label="With textarea" placeholder="Brain Teasers"></textarea>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <form>
+            <!-- <div class="form-group">
+                                      <label for="multiple">Multiple</label>
+                                      <input type="file" class="form-control" name="multiple" ng2FileSelect [uploader]="uploader" multiple  />
+                                  </div> -->
+            <div class="form-group">
+              <label for="single">Please Upload Background Image</label>
+              <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />
+            </div>
+            <div class="form-group">
+              Queue progress:
+              <div class="progress" style="">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
               </div>
             </div>
-            <br>
-            <div>
-              <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Brain Teasers</button>
-              <button type="button" class="btn btn-primary" id="btnAddMorebrainSection" (click)="addMoreInputBox()">Add More Update</button>
-            </div>
+            <button type="button" class="btn btn-success btn-s" (click)="backgroundImageUpload()" [disabled]="!uploader.getNotUploadedItems().length">
+              <span class="glyphicon glyphicon-upload"></span> Upload all
+            </button>
           </form>
         </div>
       </div>
+      <div style="margin-top: 2%">
+        <form [formGroup]="userFormuserbrainteaser" (ngSubmit)="onFormSubmit()">
+          <div formArrayName="users">
+            <div *ngFor="let user of users.controls; index as idx">
+              <textarea [formControlName]="idx" class="form-control" aria-label="With textarea" placeholder="Brain Teasers"></textarea>
+            </div>
+          </div>
+          <br>
+          <div>
+            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Brain Teasers</button>
+            <button type="button" class="btn btn-primary" id="btnAddMorebrainSection" (click)="addMoreInputBox()">Add More Update</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-
+</div>
