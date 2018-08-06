@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { Component,  Input } from '@angular/core';
+import { FormControl,  FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
 import { TeamphotoBirthdayComponent } from '../teamphoto-birthday/teamphoto-birthday.component';
 import { Router } from '@angular/router';

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { FormControl,  FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
 import { ImageProcessService } from '../../utility-section/image-process.service';
 import { Router } from '@angular/router';
