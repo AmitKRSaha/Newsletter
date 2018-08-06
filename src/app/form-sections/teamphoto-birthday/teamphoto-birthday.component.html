@@ -27,7 +27,8 @@
             <label for="teamImage">Team Image:</label>
             <br>
             <!-- <img src='{{teamImage[0]}}' alt="" /> -->
-            <input type="file" class="form-control-file" name="img[]" class="file" (change)="teamphoto(input)" #input>
+            <!-- <input type="file" class="form-control-file" name="img[]" class="file" (change)="teamphoto(input)" #input> -->
+            <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />
           </div>
 
           <div class="form-group">

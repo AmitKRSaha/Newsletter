@@ -3,6 +3,7 @@ import { FormControl,  FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
 import { ImageProcessService } from '../../utility-section/image-process.service';
 import { Router } from '@angular/router';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-teamphoto-birthday',
@@ -17,6 +18,8 @@ export class TeamphotoBirthdayComponent implements OnInit {
   teamImage: string[] = [];
   birthdayImage: string[] = [];
   anniversaryImage: string[] = [];
+
+  public uploader: FileUploader = new FileUploader({url: 'http://localhost:3001/upload'});
 
   userFormuserteam = new FormGroup({
     users: new FormArray([
@@ -97,7 +100,10 @@ export class TeamphotoBirthdayComponent implements OnInit {
   onFormSubmit() {
     this.completedSections.teamandbirthday.status = 'completed';
     this.line.teamandbirthday.status = 'completed';
-    this.progressBarService.addItemInList([this.teamImage, this.birthdayImage, this.anniversaryImage]);
+    this.uploader.uploadAll();
+    this.uploader.onErrorItem = (item, response, status, headers) => this.onErrorItem(item, response, status, headers);
+    this.uploader.onSuccessItem = (item, response, status, headers) => this.onSuccessItem(item, response, status, headers);
+    // this.progressBarService.addItemInList([this.teamImage, this.birthdayImage, this.anniversaryImage]);
     this.showorhide = 'hide';
   }
   addMoreInputBox() {
@@ -114,5 +120,16 @@ export class TeamphotoBirthdayComponent implements OnInit {
   expandMoreOrLess() {
     this.expandtoggle.teamandbirthday.status = (this.expandtoggle.teamandbirthday.status === 'open') ? 'closed' : 'open';
   }
+
+  onSuccessItem(item: any, response: string, status: number, headers: any): any {
+    const data = JSON.parse(response); // success server response
+    this.progressBarService.addItemInList([ data.path, this.birthdayImage, this.anniversaryImage]);
+    console.log(data);
+}
+
+onErrorItem(item: any, response: string, status: number, headers: any): any {
+    const error = JSON.parse(response); // error server response
+    console.log(error);
+}
 
 }
