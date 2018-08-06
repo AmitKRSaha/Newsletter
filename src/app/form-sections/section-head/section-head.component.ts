@@ -100,7 +100,7 @@ public debug_size_before: string[] = [];
     this.uploader.onErrorItem = (item, response, status, headers) => this.onErrorItem(item, response, status, headers);
     this.uploader.onSuccessItem = (item, response, status, headers) => this.onSuccessItem(item, response, status, headers);
 
-    this.progressbarservice.addItemInList(imagePath);
+    // this.progressbarservice.addItemInList(imagePath);
     this.completedSections.sectionHead.status = 'completed';
     this.line.sectionHead.status = 'completed';
     this.sectionheadtoggle = 'hide';
@@ -109,6 +109,7 @@ public debug_size_before: string[] = [];
 
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
+    this.progressbarservice.addItemInList({'sectionheadImage' : data.path});
     console.log(data);
 }
 

@@ -13,7 +13,7 @@
         </tr>
       </tbody>
 
-      <tbody *ngIf = 'progressbar.content[0]?.headerimage'>
+      <tbody *ngIf = 'progressbar.content[0]?.sectionheadImage'>
         <tr id="biz-text">
           <td style="text-align: left;color: #000; font-size: 12px">
             <p style="background-repeat: no-repeat;background-color: none;margin-top:-5px;margin-bottom:-3px;color:#083d6d;">
@@ -23,7 +23,7 @@
                 <!-- {{this.filePath}}
                 {{progressbar.content[0].headerimage}}
                 <img [src]='this.filePath | safeHtml' width="432px" /> -->
-                <img [src]='progressbar.content[0].headerimage' width="432px" />
+                <img src = "http://localhost:3001/{{progressbar.content[0].sectionheadImage}}" width="432px" />
             </p>
           </td>
         </tr>
