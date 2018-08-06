@@ -3,6 +3,7 @@ import { FormControl,  FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
 import { TeamphotoBirthdayComponent } from '../teamphoto-birthday/teamphoto-birthday.component';
 import { Router } from '@angular/router';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-brain-teaser-answer',
@@ -15,7 +16,7 @@ export class BrainTeaserAnswerComponent {
   @Input() expandtoggle: any;
   @Input() teamphotobirthday: TeamphotoBirthdayComponent;
 
-
+  public uploader: FileUploader = new FileUploader({ url: 'http://localhost:3001/upload' });
 
   userFormuserbrainteaserans = new FormGroup({
     users: new FormArray([
@@ -50,6 +51,24 @@ export class BrainTeaserAnswerComponent {
   }
   expandMoreOrLess() {
     this.expandtoggle.brainteaseranssection.status = (this.expandtoggle.brainteaseranssection.status === 'open') ? 'closed' : 'open';
+  }
+
+  backgroundImageUpload() {
+    this.uploader.uploadAll();
+    this.uploader.onErrorItem = (item, response, status, headers) => this.onErrorItem(item, response, status, headers);
+    this.uploader.onSuccessItem = (item, response, status, headers) => this.onSuccessItem(item, response, status, headers);
+
+  }
+
+  onSuccessItem(item: any, response: string, status: number, headers: any): any {
+    const data = JSON.parse(response); // success server response
+    this.progressBarService.addBackgroundImage({ 'brainteaserans': data.path });
+    console.log(data);
+  }
+
+  onErrorItem(item: any, response: string, status: number, headers: any): any {
+    const error = JSON.parse(response); // error server response
+    console.log(error);
   }
 
 }
