@@ -83,7 +83,7 @@
     </div>
   </div>
 
-  <div class="planning">
+  <div class="planning"  [style.background]="'url(http://localhost:3001/' + progressbar.backgroundImage[1]?.planned + ')'">
     <div *ngIf='progressbar.content.length > 4'>
       <div class="row">
         <div class="col-md-12">
