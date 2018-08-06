@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProgressBarService } from '../../progress-bar.service';
 
 @Component({
@@ -8,11 +8,12 @@ import { ProgressBarService } from '../../progress-bar.service';
 })
 export class BusinessupdatePreviewComponent implements OnInit {
 
+  backgroundImage = 'http://localhost:3001/file-1533059929487.jpg';
 
   constructor(public progressBarService: ProgressBarService) { }
 
   ngOnInit() {
 
-    }
+  }
 
 }

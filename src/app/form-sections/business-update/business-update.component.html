@@ -16,22 +16,45 @@
     </h5>
   </div>
   <div id="collapseTwo" [ngClass]='businessShowOrHide' class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample"
-    style=" background-color: bisque !important;"  (click)="showActive()">
+    style=" background-color: bisque !important;" (click)="showActive()">
     <div class="card-body">
       <h3>Business Update</h3>
     </div>
     <div class="card-body">
-      <div>
+      <div class="row">
+        <div class="col-md-12">
+          <form>
+            <!-- <div class="form-group">
+                            <label for="multiple">Multiple</label>
+                            <input type="file" class="form-control" name="multiple" ng2FileSelect [uploader]="uploader" multiple  />
+                        </div> -->
+            <div class="form-group">
+              <label for="single">single</label>
+              <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />
+            </div>
+            <div class="form-group">
+              Queue progress:
+              <div class="progress" style="">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-success btn-s" (click)="backgroundImageUpload()" [disabled]="!uploader.getNotUploadedItems().length">
+              <span class="glyphicon glyphicon-upload"></span> Upload all
+            </button>
+          </form>
+        </div>
+      </div>
+      <div style="margin-top: 2%;">
         <form [formGroup]="userFormBusiness" (ngSubmit)="onFormSubmit()">
           <!-- <div class="form-group">
             <input type="file" name="img[]" class="file"  (change)="fileChange(input)" #input >
           </div>
           <br> -->
-            <!-- <img src='{{file_srcs[0]}}' alt="" /> -->
+          <!-- <img src='{{file_srcs[0]}}' alt="" /> -->
           <div formArrayName="usersBusiness">
 
-            <div *ngFor="let user of usersBusiness.controls; index as idx" >
-              <textarea [formControlName]="idx"  class="form-control" aria-label="With textarea" placeholder="Bussiness Update"></textarea>
+            <div *ngFor="let user of usersBusiness.controls; index as idx">
+              <textarea [formControlName]="idx" class="form-control" aria-label="With textarea" placeholder="Bussiness Update"></textarea>
             </div>
           </div>
           <br>
@@ -45,4 +68,3 @@
 
   </div>
 </div>
-

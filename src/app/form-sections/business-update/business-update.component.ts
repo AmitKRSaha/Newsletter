@@ -3,6 +3,7 @@ import { FormControl,  FormGroup, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OpportunityPipelineComponent } from '../opportunity-pipeline/opportunity-pipeline.component';
 import { ProgressBarService } from '../../progress-bar.service';
+import { FileUploader } from 'ng2-file-upload';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class BusinessUpdateComponent implements OnInit {
   businessShowOrHide: any = 'hide';
   showorhide: any = 'show';
   path = '';
-
+  public uploader: FileUploader = new FileUploader({url: 'http://localhost:3001/upload'});
 
   constructor(private progressBarService: ProgressBarService, private route: Router,
     private changeDetectorRef: ChangeDetectorRef) {
@@ -68,5 +69,23 @@ export class BusinessUpdateComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  backgroundImageUpload() {
+    this.uploader.uploadAll();
+    this.uploader.onErrorItem = (item, response, status, headers) => this.onErrorItem(item, response, status, headers);
+    this.uploader.onSuccessItem = (item, response, status, headers) => this.onSuccessItem(item, response, status, headers);
+
+  }
+
+  onSuccessItem(item: any, response: string, status: number, headers: any): any {
+    const data = JSON.parse(response); // success server response
+    this.progressBarService.addBackgroundImage(data.path);
+    console.log(data);
+}
+
+onErrorItem(item: any, response: string, status: number, headers: any): any {
+    const error = JSON.parse(response); // error server response
+    console.log(error);
+}
 
 }
