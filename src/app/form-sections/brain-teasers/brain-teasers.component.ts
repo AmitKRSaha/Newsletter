@@ -42,7 +42,7 @@ export class BrainTeasersComponent {
   onFormSubmit() {
     this.completedSections.brainteaser.status = 'completed';
     this.line.brainteaser.status = 'completed';
-    this.progressBarService.addItemInList(['opportunitysection', this.userFormuserbrainteaser.value]);
+    this.progressBarService.addItemInList(['brainteaser', this.userFormuserbrainteaser.value]);
     this.showorhide = 'hide';
     this.healthytips.toggle('show');
 

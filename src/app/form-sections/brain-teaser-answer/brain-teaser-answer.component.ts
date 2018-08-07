@@ -38,7 +38,7 @@ export class BrainTeaserAnswerComponent {
 
   onFormSubmit() {
     this.completedSections.brainteaseranswer.status = 'completed';
-    this.progressBarService.addItemInList(['opportunitysection', this.userFormuserbrainteaserans.value]);
+    this.progressBarService.addItemInList(['brainteaserans', this.userFormuserbrainteaserans.value]);
     this.showorhide = 'hide';
     this.teamphotobirthday.toggle('show');
 
