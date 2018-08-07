@@ -24,7 +24,9 @@ export class AppComponent implements OnInit {
   expandtoggle = expandtoggle;
 
   line: any = line;
-  imagePath: any ;
+  fstimagePath: any ;
+  sndimagePath: any ;
+  thrdtimagePath: any ;
 
 
   constructor(private sanitizer: DomSanitizer,
@@ -37,16 +39,30 @@ export class AppComponent implements OnInit {
 
 
   generateNewsLetter(text) {
+    html2canvas(document.querySelector('.firstImage')).then(canvas => {
+      this.http.post('http://localhost:3001/uploadscreenshot', { canvas: canvas.toDataURL('image/png'), name: 'first'})
+      .toPromise()
+      .then(x => { console.log(x);
+      this.fstimagePath = 'http://localhost:4200/uploads/first.png';
+      });
+    });
+    html2canvas(document.querySelector('.secondImage')).then(canvas => {
+      this.http.post('http://localhost:3001/uploadscreenshot', { canvas: canvas.toDataURL('image/png'), name: 'second'})
+      .toPromise()
+      .then(x => { console.log(x);
+      this.sndimagePath = 'http://localhost:4200/uploads/second.png';
+      });
+    });
 
-    html2canvas(document.querySelector('.finalnewsletter')).then(canvas => {
+    html2canvas(document.querySelector('.thirdImage')).then(canvas => {
       // document.body.appendChild(canvas);
       // window.open().document.write('<img src="' + canvas.toDataURL() + '" />');
       // canvas2Image.saveAsPNG(canvas);
-      this.imagePath = canvas.toDataURL('image/png');
-      this.http.post('http://localhost:3001/uploadscreenshot', this.imagePath)
+      // this.sndimagePath = canvas.toDataURL('image/png');
+      this.http.post('http://localhost:3001/uploadscreenshot', { canvas: canvas.toDataURL('image/png'), name: 'third'})
       .toPromise()
       .then(x => { console.log(x);
-      this.imagePath = 'http://localhost:4200/uploads/screen.png';
+      this.thrdtimagePath = 'http://localhost:4200/uploads/third.png';
 
       const val = `To: User <user@domain.demo>
 Subject: Subject
@@ -59,7 +75,13 @@ Content-Type: text/html
 <body>
 <table width="80%" style="margin-left: 10%;">
   <tr>
-    <td><img src="` + this.imagePath + `" width="100%" height="100%" alt=""></td>
+    <td><img src="` + this.fstimagePath + `" width="100%" height="100%" alt=""></td>
+  </tr>
+  <tr>
+    <td><img src="` + this.sndimagePath + `" width="100%" height="100%" alt=""></td>
+  </tr>
+  <tr>
+    <td><img src="` + this.thrdtimagePath + `" width="100%" height="100%" alt=""></td>
   </tr>
 </table>
 </body>
