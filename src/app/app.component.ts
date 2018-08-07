@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
       this.http.post('http://localhost:3001/uploadscreenshot', this.imagePath)
       .toPromise()
       .then(x => { console.log(x);
-      this.imagePath = 'http://localhost:3001/screen.png';
+      this.imagePath = 'http://localhost:4200/uploads/screen.png';
 
       const val = `To: User <user@domain.demo>
 Subject: Subject
