@@ -49,7 +49,7 @@ export class ProgressBarService {
 
   createItemList(items): Observable<any> {
     this._todos.next(items);
-    console.log('From Obserbale' + this.content);
+    // console.log('From Obserbale' + this.content);
     return this._todos;
 
   }
