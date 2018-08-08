@@ -22,13 +22,13 @@
       <div>
         <form [formGroup]="userFormuserOpportunity" (ngSubmit)="onFormSubmit()">
           <div class="form-group">
-            <input type="file" name="img[]" class="form-control"  (change)="fileChange(input)" ng2FileSelect [uploader]="uploader" #input >
+            <input type="file" name="img[]" class="form-control" id="schuploadButton" (change)="fileChange(input)" ng2FileSelect [uploader]="uploader" #input >
             <!-- <input type="file" class="form-control" name="multiple" ng2FileSelect [uploader]="uploader" multiple  /> -->
             <!-- <img src='{{file_srcs[0]}}' alt="" /> -->
           </div>
           <br>
           <div>
-            <button type="submit" class="btn btn-primary" id="btnPlanned" style="margin-right: 6px; margin-bottom: 2px">Save Business Article Image</button>
+            <button type="submit" class="btn btn-primary" id="btnsectionHead" style="margin-right: 6px; margin-bottom: 2px">Save Business Article Image</button>
           </div>
         </form>
       </div>

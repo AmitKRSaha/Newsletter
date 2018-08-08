@@ -1,6 +1,7 @@
 import { AppPage } from './app.po';
+import { element, by, browser } from '../../node_modules/protractor';
 
-describe('workspace-project App', () => {
+describe('workspace-project App with different navigation', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -47,4 +48,23 @@ describe('workspace-project App', () => {
     expect(page.getFinalNewsletterParagraphText()).toEqual('Final News Letter');
   });
 
+});
+
+describe('workspace-project App', () => {
+  let page: AppPage;
+  let path: any ;
+
+  beforeEach(() => {
+    page = new AppPage();
+    path = require('path');
+  });
+
+it('should upload a file', function() {
+  const fileToUpload = '../../../form-app/src/assets/baseline-question_answer-24px.svg',
+      absolutePath = path.resolve(__dirname, fileToUpload);
+
+  // browser.pause();
+  element(by.css('app-section-head input')).sendKeys(absolutePath);
+  element(by.id('schuploadButton')).click();
+});
 });
