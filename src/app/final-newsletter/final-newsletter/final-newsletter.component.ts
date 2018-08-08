@@ -14,7 +14,7 @@ export class FinalNewsletterComponent implements OnInit {
   imgsrc: any;
   month = 'Amit';
 
-  constructor( public progressbar: ProgressBarService, private http: HttpClient,
+  constructor( public progressbar: ProgressBarService, // private http: HttpClient,
     private sanitizer: DomSanitizer, public utility: UtilityService) { }
 
   ngOnInit() {
