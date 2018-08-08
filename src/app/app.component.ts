@@ -73,7 +73,7 @@ Content-Type: text/html
 <head>
 </head>
 <body>
-<table width="80%" style="margin-left: 10%;">
+<table style="padding-left: 25%;">
   <tr>
     <td><img src="` + this.fstimagePath + `" width="100%" height="100%" alt=""></td>
   </tr>
