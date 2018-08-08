@@ -27,6 +27,7 @@ import { BarinteaserAnswerComponent } from './preview-section/barinteaser-answer
 import { TeamphotoBirthdayComponent } from './form-sections/teamphoto-birthday/teamphoto-birthday.component';
 import { ImageProcessService } from './utility-section/image-process.service';
 import { TeamPreviewComponent } from './preview-section/team-preview/team-preview.component';
+import { UtilityService } from './utility-section/utility.service';
 
 /* NgRx */
 import { StoreModule } from '@ngrx/store';
@@ -36,6 +37,7 @@ import { environment } from '../environments/environment';
 import { SafeHtml } from './utility-section/safehtml';
 
 import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+
 
 @NgModule({
   declarations: [
@@ -75,7 +77,7 @@ import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
     }),
     EffectsModule.forRoot([])
   ],
-  providers: [ProgressBarService, ImageProcessService],
+  providers: [ProgressBarService, ImageProcessService, UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
