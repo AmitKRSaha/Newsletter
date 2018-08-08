@@ -1,4 +1,4 @@
-<div class="planning"  [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage[2]?.technical + ')'">
+<div class="planning" *ngIf="progressBarService.backgroundImage[2]" [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage[2]?.technical + ')'">
   <div *ngIf='progressBarService.content.length > 6'>
     <div class="row">
       <div style="margin-left: 50%;">
