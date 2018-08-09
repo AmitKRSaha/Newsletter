@@ -1,3 +1,35 @@
+## Website View
+
+ > This Project requrired Node Js server [server](https://github.com/AmitKRSaha/NewsLetter-Server)
+
+Once you install all dependencies and run NPM Start , below screen should apear.
+![Sample Screen](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/samplescreen.png)
+
+When adding data and images(along wih background images) it will show a preview section.
+![Sample Screen](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/sample_data.png)
+
+Once all data and images are saved, click `Final News Letter` button
+![Buttons](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/takescreenshot.png)
+
+Down it will generate the UI for the final Newsletter
+![Newsletter with all data](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/final_screen.png)
+
+After that click `Take screenshot` button
+![Buttons](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/takescreenshot.png)
+
+It will open new window with final image that will be going to add in New mail.
+
+Click `download` link at the leftmost
+![Download](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/Download_Button.png)
+
+It will download `.eml` file
+![Downloaded Mail](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/mail.png).
+
+Now click that mail and start forwrding the newsletter as need. 
+![Downloaded Mail](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/mailwithattachment.png).
+
+
+
 # FormApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
@@ -27,6 +59,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## Sample Screen
-## Website View
 
-![Sample Screen](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/samplescreen.png)
