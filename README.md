@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Sample Screen
 ## Website View
 
-<img src='../form-app/src/assets/samplescreen.png'>
+<img src='https://github.com/AmitKRSaha/Newsletter/tree/master/src/assets/samplescreen.png'>
