@@ -4,7 +4,8 @@ import { UtilityService } from './utility.service';
 describe('ValueService', () => {
   let service: UtilityService;
   const mockMonth = new Array();
-  beforeEach(() => { service = new UtilityService();
+  beforeEach(() => {
+    service = new UtilityService();
 
     mockMonth[0] = 'Jan';
     mockMonth[1] = 'Feb';
