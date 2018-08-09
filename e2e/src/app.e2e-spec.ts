@@ -30,12 +30,16 @@ describe('workspace-project App with different navigation', () => {
 
   it('should display brain teaser and healt tips section message', () => {
     page.navigateToBrainteaserAndHealthtips();
-    expect(page.getBrainteaserAndHealthtipsParagraphText()).toEqual('Brain Teaser and Health Tips');
+    expect(page.getBrainteaserAndHealthtipsParagraphText()).toEqual(
+      'Brain Teaser and Health Tips'
+    );
   });
 
   it('should display brain teaser answer section message', () => {
     page.navigateToBrainteaserAnswer();
-    expect(page.getBrainteaserAnswerParagraphText()).toEqual('Brain Teaser Answer');
+    expect(page.getBrainteaserAnswerParagraphText()).toEqual(
+      'Brain Teaser Answer'
+    );
   });
 
   it('should display team image section message', () => {
@@ -47,24 +51,29 @@ describe('workspace-project App with different navigation', () => {
     page.navigateToFinalNewsletter();
     expect(page.getFinalNewsletterParagraphText()).toEqual('Final News Letter');
   });
-
 });
 
-describe('workspace-project App', () => {
+describe('workspace-project App with image upload', () => {
   let page: AppPage;
-  let path: any ;
+  let path: any;
 
   beforeEach(() => {
     page = new AppPage();
     path = require('path');
   });
 
-it('should upload a file', function() {
-  const fileToUpload = '../../../form-app/src/assets/baseline-question_answer-24px.svg',
-      absolutePath = path.resolve(__dirname, fileToUpload);
+  it('should upload section head image', function() {
+    page.navigateTo();
 
-  // browser.pause();
-  element(by.css('app-section-head input')).sendKeys(absolutePath);
-  element(by.id('schuploadButton')).click();
-});
+    expect(element(by.id('biz-text')).isPresent()).toBeFalsy();
+
+    const fileToUpload =
+        '../../../form-app/src/assets/baseline-question_answer-24px.svg',
+      absolutePath = path.resolve(__dirname, fileToUpload);
+    // browser.pause();
+    element(by.css('app-section-head input')).sendKeys(absolutePath);
+    element(by.id('btnsectionHead')).click();
+    expect(element(by.id('biz-text')).isPresent()).toBeTruthy();
+    expect(element(by.css('app-header-preview img')[1])).not.toContain('null');
+  });
 });

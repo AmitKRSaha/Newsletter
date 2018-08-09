@@ -58,4 +58,5 @@ export class AppPage {
     return element(by.css('app-final-newsletter h1')).getText();
   }
 
+
 }
