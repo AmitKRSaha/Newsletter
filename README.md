@@ -9,7 +9,7 @@ When adding data and images(along wih background images) it will show a preview 
 ![Sample Screen](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/sample_data.png)
 
 Once all data and images are saved, click `Final News Letter` button
-![Buttons](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/takescreenshot.png)
+![Buttons](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/takescreenshot.PNG)
 
 Down it will generate the UI for the final Newsletter
 ![Newsletter with all data](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/final_screen.png)
