@@ -91,7 +91,6 @@ export class SectionHeadComponent {
     //   payload: this.imgpath
     // });
     const imagePath = { 'headerimage': this.imgpath };
-
     // *** commented code for unit test *** //
 
     // this.store.dispatch(new newsletterActions.CreateHeaderImage(imagePath));
@@ -110,6 +109,8 @@ export class SectionHeadComponent {
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
     this.progressbarservice.addItemInList({ 'sectionheadImage': data.path });
+    this.progressbarservice.additem('headerimage', this.imgpath);
+
     console.log(data);
   }
 

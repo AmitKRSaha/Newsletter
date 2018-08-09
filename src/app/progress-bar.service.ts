@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, from, BehaviorSubject, Subject  } from 'rxjs';
+import { Observable, of, from, BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +7,7 @@ import { Observable, of, from, BehaviorSubject, Subject  } from 'rxjs';
 export class ProgressBarService {
   content: string[] = [];
   backgroundImage: string[] = [];
+  saveddata = {};
 
   private _todos: BehaviorSubject<any[]>;
 
@@ -31,16 +32,21 @@ export class ProgressBarService {
     this._todos = <BehaviorSubject<any[]>>new BehaviorSubject([]);
   }
 
- addBackgroundImage(item) {
-   this.backgroundImage.push(item);
-   console.log(this.backgroundImage);
- }
+  addBackgroundImage(item) {
+    this.backgroundImage.push(item);
+    // console.log(this.backgroundImage);
+  }
 
-  addItemInList(items)  {
+  addItemInList(items) {
     this.content.push(items);
-     this.createItemList(items);
-     this.announceMission(items);
-     console.log(this.content);
+    // this.createItemList(items);
+    // this.announceMission(items);
+
+  }
+
+  additem(key, value) {
+    this.saveddata[key] = value;
+    console.log(this.saveddata);
   }
 
   getItemFromList(): Observable<any> {

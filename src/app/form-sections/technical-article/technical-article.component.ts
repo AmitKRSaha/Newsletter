@@ -46,6 +46,8 @@ export class TechnicalArticleComponent implements OnInit {
     this.completedSections.tech.status = 'completed';
     this.line.tech.status = 'completed';
     this.progressBarService.addItemInList(['technicalsection', this.userFormuserProjstat.value]);
+  this.progressBarService.additem('technicalsection', this.userFormuserProjstat.value);
+
     this.technicalarticleshoworhide = 'hide';
     this.brainteaser.toggle('show');
   }

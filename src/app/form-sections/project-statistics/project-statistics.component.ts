@@ -44,7 +44,9 @@ export class ProjectStatisticsComponent implements OnInit {
     evt.preventDefault();
     evt.stopPropagation();
     this.progressBarService.addItemInList(this.projectStatData());
-      this.completedSections.projstat.status = 'completed';
+  this.progressBarService.additem('projstat', this.projectStatData());
+
+    this.completedSections.projstat.status = 'completed';
     this.line.projstatInPipeline.status = 'completed';
     this.projectstatshoworhide = 'hide';
     this.technicalarticle.toggletecharticle('show');

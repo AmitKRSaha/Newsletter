@@ -33,6 +33,8 @@ export class OpportunityPipelineComponent implements OnInit {
   this.completedSections.opportunityInPipeline.status = 'completed';
   this.line.opportunityInPipeline.status = 'completed';
   this.progressBarService.addItemInList([this.userFormuserOpportunity.value]);
+  this.progressBarService.additem('opportunity', this.userFormuserOpportunity.value);
+
   this.opportunityshoworhide = 'hide';
   this.acheivement.toggle('show');
  }

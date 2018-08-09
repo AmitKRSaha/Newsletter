@@ -124,6 +124,8 @@ export class TeamphotoBirthdayComponent implements OnInit {
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
     this.progressBarService.addItemInList([ data.path, this.birthdayImage, this.anniversaryImage]);
+  this.progressBarService.additem('teamimage', [ data.path, this.birthdayImage, this.anniversaryImage]);
+
     console.log(data);
 }
 
