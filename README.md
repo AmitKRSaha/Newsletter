@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Sample Screen
 ## Website View
 
-![Sample Screen](https://github.com/AmitKRSaha/Newsletter/tree/master/src/assets/samplescreen.png)
+![Sample Screen](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/samplescreen.png)
