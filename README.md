@@ -15,18 +15,18 @@ Down it will generate the UI for the final Newsletter
 ![Newsletter with all data](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/final_screen.png)
 
 After that click `Take screenshot` button
-![Buttons](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/takescreenshot.png)
+![Buttons](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/takescreenshot.PNG)
 
 It will open new window with final image that will be going to add in New mail.
 
 Click `download` link at the leftmost
-![Download](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/Download_Button.png)
+![Download](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/Download_Button.PNG)
 
 It will download `.eml` file
-![Downloaded Mail](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/mail.png).
+![Downloaded Mail](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/mail.PNG).
 
 Now click that mail and start forwrding the newsletter as need. 
-![Downloaded Mail](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/mailwithattachment.png).
+![Downloaded Mail](https://github.com/AmitKRSaha/Newsletter/blob/master/src/assets/mailwithattachment.PNG).
 
 
 
