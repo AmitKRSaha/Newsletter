@@ -3,7 +3,7 @@
   <strong>Team Image , Birthday, Anniversary</strong>
   <div class="row">
     <div class="col-md-12">
-      <img src = "http://localhost:3001/{{progressbarservice.content[10][0]}}" width="432px" />
+      <img src = "http://localhost:3001/{{progressbarservice.newsletterContent.teamimage[0]}}" width="432px" />
     </div>
   </div>
   <br>
@@ -11,7 +11,7 @@
     <div class="col-md-3">
       <img src="../../../assets/Birthday.png" width="50px" alt="" />
     </div>
-    <div class="col-md-3"  *ngFor="let value of progressbarservice.content[10][1]">
+    <div class="col-md-3"  *ngFor="let value of progressbarservice.newsletterContent.teamimage[1]">
       <img src='{{ value }}' width="50px" alt='{{ value }}' />
     </div>
   </div>
@@ -20,7 +20,7 @@
     <div class="col-md-3">
       <img src="../../../assets/Award_Anniversaries-icon.png" width="50px" alt="" />
     </div>
-    <div class="col-md-3"  *ngFor="let value of progressbarservice.content[10][2]">
+    <div class="col-md-3"  *ngFor="let value of progressbarservice.newsletterContent.teamimage[2]">
       <img src='{{ value }}' width="50px" alt='{{ value }}' />
     </div>
   </div>

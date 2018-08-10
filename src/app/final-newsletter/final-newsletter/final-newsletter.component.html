@@ -184,7 +184,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <p style="margin-left: 1%" *ngFor="let value of progressbar.content[6][1].users"> {{value}}</p>
+          <p style="margin-left: 1%" *ngFor="let value of progressbar.newsletterContent.technicalsection"> {{value}}</p>
         </div>
       </div>
     </div>
@@ -202,7 +202,7 @@
         <div class="row">
           <div class="col-md-8">
             <ul class="brainteaser">
-              <li *ngFor="let value of progressbar.content[7][1].users; index as i">Q{{i + 1}}: {{value}}</li>
+              <li *ngFor="let value of progressbar.newsletterContent.brainteaser; index as i">Q{{i + 1}}: {{value}}</li>
             </ul>
           </div>
           <div class="col-md-4" style="height: 50px; !important">
@@ -218,7 +218,7 @@
         <div class="row">
           <div class="col-md-8">
             <ol>
-              <li *ngFor="let value of progressbar.content[8][1].users"> {{value}}</li>
+              <li *ngFor="let value of progressbar.newsletterContent.healthtips"> {{value}}</li>
             </ol>
           </div>
           <div class="col-md-4">
@@ -238,7 +238,7 @@
     </div>
     <div class="row" *ngIf='progressbar.content.length > 9'>
       <div class="col-md-12">
-        <img src="http://localhost:4200/uploads/{{progressbar.content[10][0]}}" width="100%" />
+        <img src="http://localhost:4200/uploads/{{progressbar.newsletterContent.teamimage[0]}}" width="100%" />
 
         <!-- <img src='{{ progressbar.content[10][0]}}' width="100%" alt="" /> -->
       </div>
@@ -254,7 +254,7 @@
       <div class="col-md-3" style="padding-left: 5%;">
         <img src="../../../assets/Birthday.png" width="50px" alt="" />
       </div>
-      <div class="col-md-3" *ngFor="let value of progressbar.content[10][1]">
+      <div class="col-md-3" *ngFor="let value of progressbar.newsletterContent.teamimage[1]">
         <img src='{{ value }}' width="50px" alt='{{ value }}' />
       </div>
     </div>
@@ -264,7 +264,7 @@
       <div class="col-md-3" style="padding-left: 5%;">
         <img src="../../../assets/Award_Anniversaries-icon.png" width="50px" alt="" />
       </div>
-      <div class="col-md-3" *ngFor="let value of progressbar.content[10][2]">
+      <div class="col-md-3" *ngFor="let value of progressbar.newsletterContent.teamimage[2]">
         <img src='{{ value }}' width="50px" alt='{{ value }}' />
       </div>
     </div>
@@ -282,7 +282,7 @@
       <div class="row">
         <div class="col-md-12">
           <ul style="list-style: none;">
-            <li *ngFor="let value of progressbar.content[9][1].users; index as i">A{{i}}: {{value}}</li>
+            <li *ngFor="let value of progressbar.newsletterContent.brainteaserans; index as i">A{{i}}: {{value}}</li>
           </ul>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
-import { FormControl,  FormGroup, FormArray } from '@angular/forms';
+import { FormControl, FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
 import { ImageProcessService } from '../../utility-section/image-process.service';
 import { Router } from '@angular/router';
@@ -19,7 +19,7 @@ export class TeamphotoBirthdayComponent implements OnInit {
   birthdayImage: string[] = [];
   anniversaryImage: string[] = [];
 
-  public uploader: FileUploader = new FileUploader({url: 'http://localhost:3001/upload'});
+  public uploader: FileUploader = new FileUploader({ url: 'http://localhost:3001/upload' });
 
   userFormuserteam = new FormGroup({
     users: new FormArray([
@@ -123,15 +123,15 @@ export class TeamphotoBirthdayComponent implements OnInit {
 
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
-    this.progressBarService.addItemInList([ data.path, this.birthdayImage, this.anniversaryImage]);
-  this.progressBarService.additem('teamimage', [ data.path, this.birthdayImage, this.anniversaryImage]);
+    this.progressBarService.addItemInList([data.path, this.birthdayImage, this.anniversaryImage]);
+    this.progressBarService.additem('teamimage', [data.path, this.birthdayImage, this.anniversaryImage]);
 
     console.log(data);
-}
+  }
 
-onErrorItem(item: any, response: string, status: number, headers: any): any {
+  onErrorItem(item: any, response: string, status: number, headers: any): any {
     const error = JSON.parse(response); // error server response
     console.log(error);
-}
+  }
 
 }
