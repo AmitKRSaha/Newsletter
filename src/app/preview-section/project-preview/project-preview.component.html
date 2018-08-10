@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-10">
         <ul>
-          <li *ngFor="let value of progressBarService.content[4][0].users"> {{value}}</li>
+          <li *ngFor="let value of progressBarService.newsletterContent.planned"> {{value}}</li>
         </ul>
       </div>
       <div class="col-md-2">
@@ -23,14 +23,14 @@
             <div class="col-md-12">
               <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
               />
-              <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressBarService.content[5].rlticketcount}} + </strong> Tickets cleaned up from the backlog.
+              <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressBarService.newsletterContent.projstat.rlticketcount}} + </strong> Tickets cleaned up from the backlog.
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
               />
-              <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressBarService.content[5].lsticketcount}} + </strong> Tickets cleaned up from the backlog.
+              <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressBarService.newsletterContent.projstat.lsticketcount}} + </strong> Tickets cleaned up from the backlog.
             </div>
           </div>
         </div>
@@ -44,18 +44,18 @@
           </div>
           <div class="row">
             <div class="col-md-6"><strong>Michelin</strong></div>
-            <div class="col-md-3 projstat-values">{{progressBarService.content[5].michelindfa}}%</div>
-            <div class="col-md-3 projstat-values">{{progressBarService.content[5].michelinatter}}%</div>
+            <div class="col-md-3 projstat-values">{{progressBarService.newsletterContent.projstat.michelindfa}}%</div>
+            <div class="col-md-3 projstat-values">{{progressBarService.newsletterContent.projstat.michelinatter}}%</div>
           </div>
           <div class="row">
             <div class="col-md-6 projstat-values"><strong>MGM</strong></div>
-            <div class="col-md-3 projstat-values">{{progressBarService.content[5].mGMDFA}}%</div>
-            <div class="col-md-3 projstat-values">{{progressBarService.content[5].mGMAtter}}%</div>
+            <div class="col-md-3 projstat-values">{{progressBarService.newsletterContent.projstat.mGMDFA}}%</div>
+            <div class="col-md-3 projstat-values">{{progressBarService.newsletterContent.projstat.mGMAtter}}%</div>
           </div>
           <div class="row">
               <div class="col-md-6 projstat-values"><strong>Goldman Sachs</strong></div>
-              <div class="col-md-3 projstat-values">{{progressBarService.content[5].michelindfa}}%</div>
-              <div class="col-md-3 projstat-values">{{progressBarService.content[5].michelindfa}}%</div>
+              <div class="col-md-3 projstat-values">{{progressBarService.newsletterContent.projstat.goldDFA}}%</div>
+              <div class="col-md-3 projstat-values">{{progressBarService.newsletterContent.projstat.goldAtter}}%</div>
             </div>
         </div>
       </div>

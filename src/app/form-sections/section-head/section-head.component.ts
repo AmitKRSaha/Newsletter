@@ -109,7 +109,7 @@ export class SectionHeadComponent {
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
     this.progressbarservice.addItemInList({ 'sectionheadImage': data.path });
-    this.progressbarservice.additem('headerimage', this.imgpath);
+    this.progressbarservice.additem('headerimage', data.path);
 
     console.log(data);
   }

@@ -11,7 +11,7 @@
 
     </div>
     <div class="col-md-12">
-      <img src="http://localhost:4200/uploads/{{progressbar.content[0]?.sectionheadImage}}" width="100%" />
+      <img src="http://localhost:4200/uploads/{{progressbar.newsletterContent.headerimage}}" width="100%" />
     </div>
   </div>
 
@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-md-12">
           <ul>
-            <li *ngFor="let value of progressbar.content[1][0].usersBusiness"> {{value}}</li>
+            <li *ngFor="let value of progressbar.newsletterContent.business"> {{value}}</li>
           </ul>
         </div>
       </div>
@@ -59,7 +59,7 @@
           </div>
           <div class="col-md-9">
             <ul>
-              <li *ngFor="let value of progressbar.content[2][0].users"> {{value}}</li>
+              <li *ngFor="let value of progressbar.newsletterContent.business"> {{value}}</li>
             </ul>
           </div>
         </div>
@@ -78,7 +78,7 @@
             <div class="header-title"> Acheivements </div>
             <br>
             <ul>
-              <li *ngFor="let value of progressbar.content[3][0].users"> {{value}}</li>
+              <li *ngFor="let value of progressbar.newsletterContent.business"> {{value}}</li>
             </ul>
           </div>
         </div>
@@ -97,7 +97,7 @@
         <div class="col-md-10">
           <div class="header-title">Planned</div>
           <ul>
-            <li *ngFor="let value of progressbar.content[4][0].users"> {{value}}</li>
+            <li *ngFor="let value of progressbar.newsletterContent.planned"> {{value}}</li>
           </ul>
         </div>
         <div class="col-md-2">
@@ -116,14 +116,14 @@
               <div class="col-md-12">
                 <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
                 />
-                <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.content[5].rlticketcount}} + </strong> Tickets cleaned up from the backlog.
+                <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.newsletterContent.projstat.rlticketcount}} + </strong> Tickets cleaned up from the backlog.
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
                 />
-                <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.content[5].lsticketcount}} + </strong> Tickets cleaned up from the backlog.
+                <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.newsletterContent.projstat.lsticketcount}} + </strong> Tickets cleaned up from the backlog.
               </div>
             </div>
           </div>
@@ -143,22 +143,22 @@
               <div class="col-md-4 projstat-values">
                 <strong>Michelin</strong>
               </div>
-              <div class="col-md-3 projstat-values">{{progressbar.content[5].michelindfa}}%</div>
-              <div class="col-md-3 projstat-values">{{progressbar.content[5].michelinatter}}%</div>
+              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.michelindfa}}%</div>
+              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.michelinatter}}%</div>
             </div>
             <div class="row">
               <div class="col-md-4 projstat-values">
                 <strong>MGM</strong>
               </div>
-              <div class="col-md-3 projstat-values">{{progressbar.content[5].mGMDFA}}%</div>
-              <div class="col-md-3 projstat-values">{{progressbar.content[5].mGMAtter}}%</div>
+              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.mGMDFA}}%</div>
+              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.mGMAtter}}%</div>
             </div>
             <div class="row">
               <div class="col-md-4 projstat-values">
                 <strong>Goldman Sachs</strong>
               </div>
-              <div class="col-md-3 projstat-values">{{progressbar.content[5].michelindfa}}%</div>
-              <div class="col-md-3 projstat-values">{{progressbar.content[5].michelindfa}}%</div>
+              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.goldDFA}}%</div>
+              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.goldAtter}}%</div>
             </div>
           </div>
         </div>
