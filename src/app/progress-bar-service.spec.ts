@@ -63,22 +63,22 @@ describe('ProgressBarService', () => {
     expect(service.newsletterContent[key]).toEqual(value);
   });
 
-  // it('#addBackgroundImage should return correct image path for correct value', () => {
-  //   const imagepath = 'c:/fakepath';
-  //   service.addBackgroundImage('fake',imagepath);
-  //   expect(service.backgroundImage[0]).toEqual(imagepath);
-  // });
+  it('#addBackgroundImage should return correct image path for correct value', () => {
+    const imagepath = 'c:/fakepath';
+    service.addBackgroundImage('fake', imagepath);
+    expect(service.backgroundImage.fake).toEqual(imagepath);
+  });
 
-  // it('#addBackgroundImage should not return correct image path for incorrect value', () => {
-  //   const imagepath = '';
-  //   service.addBackgroundImage(imagepath);
-  //   expect(service.backgroundImage[0]).toEqual(imagepath);
-  // });
+  it('#addBackgroundImage should not return correct image path for incorrect value', () => {
+    const imagepath = '';
+    service.addBackgroundImage('fake', imagepath);
+    expect(service.backgroundImage.fake).toEqual('');
+  });
 
-  // it('#addBackgroundImage should not return correct image path for incorrect value', () => {
-  //   const imagepath = undefined;
-  //   service.addBackgroundImage(imagepath);
-  //   expect(service.backgroundImage[0]).toEqual(imagepath);
-  // });
+  it('#addBackgroundImage should not return correct image path for incorrect value', () => {
+    const imagepath = undefined;
+    service.addBackgroundImage('fake', imagepath);
+    expect(service.backgroundImage.fake).toEqual(undefined);
+  });
 });
 

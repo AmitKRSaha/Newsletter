@@ -16,7 +16,7 @@
   </div>
 
   <div class="businessupdate" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.business + ')'">
-    <div *ngIf='progressbar.content.length > 1'>
+    <div *ngIf='progressbar.newsletterContent.business'>
       <div class="row">
         <div class="col-md-12">
           <p style="background-color:#083d6d;height: 10px;"></p>
@@ -43,7 +43,7 @@
     </div>
     <br>
     <br>
-    <div *ngIf='progressbar.content.length > 2'>
+    <div *ngIf='progressbar.newsletterContent.opportunity'>
       <div class="opportuniyInPipeline">
         <div class="row" style="margin-left: 0px;">
           <div class="header-title">
@@ -59,13 +59,13 @@
           </div>
           <div class="col-md-9">
             <ul>
-              <li *ngFor="let value of progressbar.newsletterContent.business"> {{value}}</li>
+              <li *ngFor="let value of progressbar.newsletterContent.opportunity"> {{value}}</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div *ngIf='progressbar.content.length > 3'>
+    <div *ngIf='progressbar.newsletterContent.acheivemnt'>
       <div class="opportuniyInPipeline">
         <div class="row">
           <div class="col-md-2">
@@ -78,7 +78,7 @@
             <div class="header-title"> Acheivements </div>
             <br>
             <ul>
-              <li *ngFor="let value of progressbar.newsletterContent.business"> {{value}}</li>
+              <li *ngFor="let value of progressbar.newsletterContent.acheivemnt"> {{value}}</li>
             </ul>
           </div>
         </div>
@@ -87,7 +87,7 @@
   </div>
 
   <div class="planning" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.planned + ')'">
-    <div *ngIf='progressbar.content.length > 4'>
+    <div *ngIf='progressbar.newsletterContent.planned'>
       <div class="row">
         <div class="col-md-12">
           <p style="background-color:#083d6d;height: 10px;"></p>
@@ -107,7 +107,7 @@
 
       </div>
     </div>
-    <div *ngIf='progressbar.content.length > 5'>
+    <div *ngIf='progressbar.newsletterContent.projstat.rlticketcount'>
       <strong class="header-title" style="text-align: center">Project Statistics</strong>
       <div class="projectstat">
         <div class="row">
@@ -169,7 +169,7 @@
 </div>
 <div class="secondImage">
   <div class="Technical" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.technical + ')'">
-    <div *ngIf='progressbar.content.length > 6'>
+    <div *ngIf='progressbar.newsletterContent.technicalsection'>
       <div class="row">
         <div class="col-md-12">
           <p style="background-color:#083d6d;height: 10px;"></p>
@@ -192,7 +192,7 @@
 
   <div class="brainandhealth" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.brainandhealth + ')'">
     <div class="brainteaser">
-      <div *ngIf='progressbar.content.length > 7'>
+      <div *ngIf='progressbar.newsletterContent.brainteaser'>
         <div class="row">
           <div class="col-md-12">
             <p style="background-color:#083d6d;height: 10px;"></p>
@@ -213,7 +213,7 @@
     </div>
 
     <div class="healthTips">
-      <div *ngIf='progressbar.content.length > 8'>
+      <div *ngIf='progressbar.newsletterContent.healthtips'>
         <strong class="header-title">Health Tips</strong>
         <div class="row">
           <div class="col-md-8">
@@ -231,12 +231,12 @@
 </div>
 <div class="thirdImage">
   <div class="teamImage">
-    <div class="row" *ngIf='progressbar.content.length > 9'>
+    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
       <div class="col-md-12">
         <p style="background-color:#083d6d;height: 100%;"></p>
       </div>
     </div>
-    <div class="row" *ngIf='progressbar.content.length > 9'>
+    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
       <div class="col-md-12">
         <img src="http://localhost:4200/uploads/{{progressbar.newsletterContent.teamimage[0]}}" width="100%" />
 
@@ -244,13 +244,13 @@
       </div>
     </div>
 
-    <div class="row" *ngIf='progressbar.content.length > 10'>
+    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
       <div class="col-md-12">
         <p style="background-color:#083d6d;height: 10px;"></p>
       </div>
     </div>
 
-    <div class="row" *ngIf='progressbar.content.length > 10'>
+    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
       <div class="col-md-3" style="padding-left: 5%;">
         <img src="../../../assets/Birthday.png" width="50px" alt="" />
       </div>
@@ -260,7 +260,7 @@
     </div>
 
     <br>
-    <div class="row" *ngIf='progressbar.content.length > 10'>
+    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
       <div class="col-md-3" style="padding-left: 5%;">
         <img src="../../../assets/Award_Anniversaries-icon.png" width="50px" alt="" />
       </div>
@@ -272,7 +272,7 @@
 
 
   <div class="brainteaserans" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.brainteaserans + ')'">
-    <div *ngIf='progressbar.content.length > 9'>
+    <div *ngIf='progressbar.newsletterContent.brainteaserans'>
       <div class="row">
         <div class="col-md-12">
           <p style="background-color:#083d6d;height: 10px;"></p>

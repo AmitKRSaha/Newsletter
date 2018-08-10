@@ -42,7 +42,6 @@ export class BrainTeasersComponent {
   onFormSubmit() {
     this.completedSections.brainteaser.status = 'completed';
     this.line.brainteaser.status = 'completed';
-    this.progressBarService.addItemInList(['brainteaser', this.userFormuserbrainteaser.value]);
     this.progressBarService.additem('brainteaser', this.users.value);
 
     this.showorhide = 'hide';

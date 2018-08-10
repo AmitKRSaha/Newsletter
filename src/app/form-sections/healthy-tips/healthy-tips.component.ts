@@ -37,7 +37,6 @@ export class HealthyTipsComponent {
   onFormSubmit() {
     this.completedSections.healthcare.status = 'completed';
     this.line.healthtips.status = 'completed';
-    this.progressBarService.addItemInList(['healthtips', this.userFormuserhealthytips.value]);
     this.progressBarService.additem('healthtips', this.users.value);
 
     this.showorhide = 'hide';

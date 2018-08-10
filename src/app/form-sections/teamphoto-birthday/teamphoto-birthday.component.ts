@@ -82,7 +82,6 @@ export class TeamphotoBirthdayComponent implements OnInit {
             // console.log(this.anniversaryImage);
           }
 
-          // this.progressbarservice.addItemInList(['sectionhead', resized_jpeg]);
           // Read the next file;
           this.readFiles(files, label, index + 1);
         });
@@ -103,7 +102,6 @@ export class TeamphotoBirthdayComponent implements OnInit {
     this.uploader.uploadAll();
     this.uploader.onErrorItem = (item, response, status, headers) => this.onErrorItem(item, response, status, headers);
     this.uploader.onSuccessItem = (item, response, status, headers) => this.onSuccessItem(item, response, status, headers);
-    // this.progressBarService.addItemInList([this.teamImage, this.birthdayImage, this.anniversaryImage]);
     this.showorhide = 'hide';
   }
   addMoreInputBox() {
@@ -123,7 +121,6 @@ export class TeamphotoBirthdayComponent implements OnInit {
 
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
-    this.progressBarService.addItemInList([data.path, this.birthdayImage, this.anniversaryImage]);
     this.progressBarService.additem('teamimage', [data.path, this.birthdayImage, this.anniversaryImage]);
 
     console.log(data);

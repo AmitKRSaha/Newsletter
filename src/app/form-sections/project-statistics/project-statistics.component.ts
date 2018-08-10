@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl,  FormGroup, FormArray } from '@angular/forms';
+import { FormControl, FormGroup, FormArray } from '@angular/forms';
 import { ProgressBarService } from '../../progress-bar.service';
 import { TechnicalArticleComponent } from '../technical-article/technical-article.component';
 
@@ -43,8 +43,7 @@ export class ProjectStatisticsComponent implements OnInit {
   onFormSubmit(evt) {
     evt.preventDefault();
     evt.stopPropagation();
-    this.progressBarService.addItemInList(this.projectStatData());
-  this.progressBarService.additem('projstat', this.projectStatData());
+    this.progressBarService.additem('projstat', this.projectStatData());
 
     this.completedSections.projstat.status = 'completed';
     this.line.projstatInPipeline.status = 'completed';
@@ -53,14 +52,14 @@ export class ProjectStatisticsComponent implements OnInit {
   }
 
   projectStatData() {
-      const data = {
-        'rlticketcount' : this.rlTickCount,
-        'rlticketcomment' : this.rlTickComment, 'lsticketcount': this.lsTickCount,
-        'lsticketcomment' : this.lsTickComment,
-        'michelindfa' : this.michelinDFA, 'michelinatter' : this.michelinAtter, 'mGMDFA' : this.mGMDFA,
-        'mGMAtter' : this.mGMAtter, 'goldDFA': this.goldDFA, 'goldAtter' : this.goldAtter
-     };
-     return data;
+    const data = {
+      'rlticketcount': this.rlTickCount,
+      'rlticketcomment': this.rlTickComment, 'lsticketcount': this.lsTickCount,
+      'lsticketcomment': this.lsTickComment,
+      'michelindfa': this.michelinDFA, 'michelinatter': this.michelinAtter, 'mGMDFA': this.mGMDFA,
+      'mGMAtter': this.mGMAtter, 'goldDFA': this.goldDFA, 'goldAtter': this.goldAtter
+    };
+    return data;
   }
 
   addMoreInputBox() {

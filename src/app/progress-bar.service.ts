@@ -5,7 +5,6 @@ import { Observable, of, from, BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ProgressBarService {
-  content: string[] = [];
   backgroundImage: any = {};
   newsletterContent: any = {};
 
@@ -40,19 +39,14 @@ export class ProgressBarService {
      console.log(this.backgroundImage);
   }
 
-  addItemInList(items) {
-    this.content.push(items);
-
-    // this.createItemList(items);
-    // this.announceMission(items);
-
-  }
-
   additem(key, value) {
     if (key !== undefined || key !== null || value !== undefined || value !== null) {
       this.newsletterContent[key] = value;
     }
     // console.log(this.newsletterContent);
+    // this.createItemList(items);
+    // this.announceMission(items);
+
   }
 
   getItemFromList(): Observable<any> {

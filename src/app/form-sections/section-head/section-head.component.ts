@@ -65,7 +65,6 @@ export class SectionHeadComponent {
           // This is also the file you want to upload. (either as a
           // base64 string or img.src = resized_jpeg if you prefer a file).
           this.imgpath = resized_jpeg;
-          // this.progressbarservice.addItemInList(['sectionhead', resized_jpeg]);
           // Read the next file;
           // this.readFiles(files, index + 1);
         });
@@ -99,7 +98,6 @@ export class SectionHeadComponent {
     this.uploader.onErrorItem = (item, response, status, headers) => this.onErrorItem(item, response, status, headers);
     this.uploader.onSuccessItem = (item, response, status, headers) => this.onSuccessItem(item, response, status, headers);
 
-    // this.progressbarservice.addItemInList(imagePath);
     this.completedSections.sectionHead.status = 'completed';
     this.line.sectionHead.status = 'completed';
     this.sectionheadtoggle = 'hide';
@@ -108,7 +106,6 @@ export class SectionHeadComponent {
 
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
-    this.progressbarservice.addItemInList({ 'sectionheadImage': data.path });
     this.progressbarservice.additem('headerimage', data.path);
 
     console.log(data);

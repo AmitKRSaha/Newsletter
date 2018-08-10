@@ -42,7 +42,6 @@ export class BusinessUpdateComponent implements OnInit {
   }
 
   onFormSubmit() {
-    this.progressBarService.addItemInList([this.userFormBusiness.value]);
     this.progressBarService.additem('business', this.usersBusiness.value);
     this.completedSections.businessupdate.status = 'completed';
     this.line.businessupdate.status = 'completed';

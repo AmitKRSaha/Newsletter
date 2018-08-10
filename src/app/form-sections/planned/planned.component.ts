@@ -42,7 +42,6 @@ export class PlannedComponent {
     this.completedSections.planned.status = 'completed';
     this.line.planned.status = 'completed';
 
-    this.progressBarService.addItemInList([this.userFormuserplanned.value]);
     this.progressBarService.additem('planned', this.users.value);
 
     this.showorhide = 'hide';

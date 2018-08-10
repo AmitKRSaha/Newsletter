@@ -40,7 +40,6 @@ export class ImageProcessService {
           // base64 string or img.src = resized_jpeg if you prefer a file).
           this.file_srcs.push(resized_jpeg);
           this.imgpath =  resized_jpeg;
-          // this.progressbarservice.addItemInList(['sectionhead', resized_jpeg]);
           // Read the next file;
           // this.readFiles(files, index + 1);
         });
