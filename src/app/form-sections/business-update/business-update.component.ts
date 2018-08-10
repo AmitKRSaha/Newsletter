@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl,  FormGroup, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OpportunityPipelineComponent } from '../opportunity-pipeline/opportunity-pipeline.component';
@@ -17,14 +17,12 @@ export class BusinessUpdateComponent implements OnInit {
   @Input() completedSections: any;
   @Input() expandtoggle: any;
   @Input() line: any;
-  @Input() routeactivate: any;
   businessShowOrHide: any = 'hide';
   showorhide: any = 'show';
   path = '';
   public uploader: FileUploader = new FileUploader({url: 'http://localhost:3001/upload'});
 
-  constructor(private progressBarService: ProgressBarService, private route: Router,
-    private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private progressBarService: ProgressBarService, private route: Router) {
 
   }
 
