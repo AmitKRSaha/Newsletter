@@ -71,7 +71,7 @@ export class TechnicalArticleComponent implements OnInit {
 
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
-    this.progressBarService.addBackgroundImage({ 'technical': data.path });
+    this.progressBarService.addBackgroundImage('technical', data.path );
     console.log(data);
   }
 

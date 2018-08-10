@@ -1,5 +1,5 @@
 <h3>Business Section</h3>
-<div class="businessupdate" *ngIf="progressBarService.backgroundImage[0]" [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage[0]?.business + ')'">
+<div class="businessupdate" *ngIf="progressBarService.backgroundImage.business" [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage?.business + ')'">
   <div *ngIf='progressBarService.newsletterContent.business'>
     <div class="row">
       <div class="col-md-12">

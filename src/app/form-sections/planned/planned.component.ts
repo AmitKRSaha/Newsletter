@@ -67,7 +67,7 @@ export class PlannedComponent {
 
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
-    this.progressBarService.addBackgroundImage({ 'planned': data.path });
+    this.progressBarService.addBackgroundImage('planned', data.path );
     console.log(data);
   }
 

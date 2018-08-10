@@ -70,7 +70,7 @@ export class BrainTeasersComponent {
 
   onSuccessItem(item: any, response: string, status: number, headers: any): any {
     const data = JSON.parse(response); // success server response
-    this.progressBarService.addBackgroundImage({ 'brainandhealth': data.path });
+    this.progressBarService.addBackgroundImage('brainandhealth', data.path );
     console.log(data);
   }
 

@@ -6,7 +6,7 @@ import { Observable, of, from, BehaviorSubject, Subject } from 'rxjs';
 })
 export class ProgressBarService {
   content: string[] = [];
-  backgroundImage: string[] = [];
+  backgroundImage: any = {};
   newsletterContent: any = {};
 
   private _todos: BehaviorSubject<any[]>;
@@ -32,12 +32,12 @@ export class ProgressBarService {
     this._todos = <BehaviorSubject<any[]>>new BehaviorSubject([]);
   }
 
-  addBackgroundImage(item) {
+  addBackgroundImage(key, value) {
 
-    if (item !== undefined || item !== null) {
-      this.backgroundImage.push(item);
+    if (key !== undefined || key !== null || value !== undefined || value !== null) {
+      this.backgroundImage[key] = value;
     }
-    // console.log(this.backgroundImage);
+     console.log(this.backgroundImage);
   }
 
   addItemInList(items) {
@@ -52,7 +52,7 @@ export class ProgressBarService {
     if (key !== undefined || key !== null || value !== undefined || value !== null) {
       this.newsletterContent[key] = value;
     }
-    console.log(this.newsletterContent);
+    // console.log(this.newsletterContent);
   }
 
   getItemFromList(): Observable<any> {

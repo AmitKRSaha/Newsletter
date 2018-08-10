@@ -1,5 +1,5 @@
 <h3>Brain Teaser and Health Tips</h3>
-<div class="brainandhealth" *ngIf="progressBarService.backgroundImage[3]"  [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage[3]?.brainandhealth + ')'">
+<div class="brainandhealth" *ngIf="progressBarService.backgroundImage.brainandhealth"  [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage?.brainandhealth + ')'">
   <div class="brainteaser">
     <div *ngIf='progressBarService.newsletterContent.brainteaser'>
       <strong>Brain Teaser</strong>

@@ -1,5 +1,5 @@
 <h3>Planned Section</h3>
-<div class="planning" *ngIf="progressBarService.backgroundImage[1]" [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage[1]?.planned + ')'">
+<div class="planning" *ngIf="progressBarService.backgroundImage.planned" [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage?.planned + ')'">
   <div *ngIf='progressBarService.newsletterContent.planned'>
     <strong>Planned</strong>
     <div class="row">
