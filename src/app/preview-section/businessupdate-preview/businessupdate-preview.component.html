@@ -1,6 +1,6 @@
 <h3>Business Section</h3>
 <div class="businessupdate" *ngIf="progressBarService.backgroundImage[0]" [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage[0]?.business + ')'">
-  <div *ngIf='progressBarService.content.length > 1'>
+  <div *ngIf='progressBarService.newsletterContent.business'>
     <div class="row">
       <div class="col-md-12">
         <img src="../../../assets/Business update.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"/>
@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf='progressBarService.content.length > 2'>
+  <div *ngIf='progressBarService.newsletterContent.opportunity'>
     <strong> Opportunities In Pipeline</strong>
     <div class="opportuniyInPipeline">
       <div class="row">
@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf='progressBarService.content.length > 3'>
+  <div *ngIf='progressBarService.newsletterContent.acheivemnt'>
     <strong> Acheivement </strong>
     <div class="opportuniyInPipeline">
       <div class="row">

@@ -1,6 +1,6 @@
 <h3>Planned Section</h3>
 <div class="planning" *ngIf="progressBarService.backgroundImage[1]" [style.background]="'url(http://localhost:3001/' + progressBarService.backgroundImage[1]?.planned + ')'">
-  <div *ngIf='progressBarService.content.length > 4'>
+  <div *ngIf='progressBarService.newsletterContent.planned'>
     <strong>Planned</strong>
     <div class="row">
       <div class="col-md-10">
@@ -14,7 +14,7 @@
 
     </div>
   </div>
-  <div *ngIf='progressBarService.content.length > 5'>
+  <div *ngIf='progressBarService.newsletterContent.projstat'>
     <strong class="header-title" style="text-align: center">Project Statistics</strong>
     <div class="projectstat">
       <div class="row">

@@ -7,7 +7,7 @@ import { Observable, of, from, BehaviorSubject, Subject } from 'rxjs';
 export class ProgressBarService {
   content: string[] = [];
   backgroundImage: string[] = [];
-  newsletterContent = {};
+  newsletterContent: any = {};
 
   private _todos: BehaviorSubject<any[]>;
 
