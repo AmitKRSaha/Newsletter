@@ -11,7 +11,6 @@ import { UtilityService } from '../../utility-section/utility.service';
   styleUrls: ['./final-newsletter.component.css']
 })
 export class FinalNewsletterComponent implements OnInit {
-  imgsrc: any;
   month = 'Amit';
 
   constructor(public progressbar: ProgressBarService, // private http: HttpClient,
@@ -22,13 +21,5 @@ export class FinalNewsletterComponent implements OnInit {
     //     .toPromise()
     //     .then(data => this.showImage(data));
     this.month = this.utility.getMonthName();
-  }
-
-  showImage(data: any): any {
-    console.log(data);
-    const urlCreator = window.URL;
-    this.imgsrc = this.sanitizer.bypassSecurityTrustUrl(
-      urlCreator.createObjectURL(data));
-
   }
 }
