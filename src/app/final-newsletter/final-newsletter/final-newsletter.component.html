@@ -2,324 +2,322 @@
 <br>
 <div class="finalnewsletter" style="width : 900px; position: relative; left: 10%;">
 
-<div class="firstImage">
+  <div class="firstImage">
 
-  <div class="row">
-    <div class="col-md-12">
-      <img alt="logo" src="../../../assets/header-image.PNG" width="100%">
-      <div style="position: absolute;bottom: 8px;right: 5%;font:bold;/* float: right; */">{{ month }}'18 Edition</div>
-
-    </div>
-    <div class="col-md-12">
-      <img src="http://localhost:4200/uploads/{{progressbar.newsletterContent.headerimage}}" width="100%" />
-    </div>
-  </div>
-
-  <div class="businessupdate" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.business + ')'">
-    <div *ngIf='progressbar.newsletterContent.business'>
-      <div class="row">
-        <div class="col-md-12">
-          <p style="background-color:#083d6d;height: 10px;"></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">
-          <img src="../../../assets/Business update.png" style="width:80px; height:80px;margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
-          />
-        </div>
-        <div class="col-md-10">
-          <div class="header-title">
-            Business Updates
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <ul>
-            <li *ngFor="let value of progressbar.newsletterContent.business"> {{value}}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div *ngIf='progressbar.newsletterContent.opportunity'>
-      <div class="opportuniyInPipeline">
-        <div class="row" style="margin-left: 0px;">
-          <div class="header-title">
-            Opportunities In Pipeline
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">
-            <div>
-              <img src="../../../assets/Opprtunities_Img.png" style="margin: 5px;padding: 10px;height: 75px;width: 75px;" class="image"
-                alt="Opportunity Image" />
-            </div>
-          </div>
-          <div class="col-md-9">
-            <ul>
-              <li *ngFor="let value of progressbar.newsletterContent.opportunity"> {{value}}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div *ngIf='progressbar.newsletterContent.acheivemnt'>
-      <div class="opportuniyInPipeline">
-        <div class="row">
-          <div class="col-md-2">
-            <div>
-              <img src="../../../assets/Achieved.png" style="margin: 5px;padding: 10px;width: 100px;height:100px;" class="image" alt="Opportunity Image"
-              />
-            </div>
-          </div>
-          <div class="col-md-10">
-            <div class="header-title"> Acheivements </div>
-            <br>
-            <ul>
-              <li *ngFor="let value of progressbar.newsletterContent.acheivemnt"> {{value}}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="planning" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.planned + ')'">
-    <div *ngIf='progressbar.newsletterContent.planned'>
-      <div class="row">
-        <div class="col-md-12">
-          <p style="background-color:#083d6d;height: 10px;"></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-10">
-          <div class="header-title">Planned</div>
-          <ul>
-            <li *ngFor="let value of progressbar.newsletterContent.planned"> {{value}}</li>
-          </ul>
-        </div>
-        <div class="col-md-2">
-          <img src="../../../assets/Planning.png" style="margin: 5px;padding: 10px;height: 137px; width: 107px;" class="image" alt="Business Update Image"
-          />
-        </div>
+    <div class="row">
+      <div class="col-md-12">
+        <img alt="logo" src="../../../assets/header-image.PNG" width="100%">
+        <div style="position: absolute;bottom: 8px;right: 5%;font:bold;/* float: right; */">{{ month }}'18 Edition</div>
 
       </div>
-    </div>
-    <div *ngIf='progressbar.newsletterContent.projstat.rlticketcount'>
-      <strong class="header-title" style="text-align: center">Project Statistics</strong>
-      <div class="projectstat">
-        <div class="row">
-          <div class="col-md-6" style="padding-top: 8%">
-            <div class="row">
-              <div class="col-md-12">
-                <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
-                />
-                <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.newsletterContent.projstat.rlticketcount}} + </strong> Tickets cleaned up from the backlog.
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
-                />
-                <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.newsletterContent.projstat.lsticketcount}} + </strong> Tickets cleaned up from the backlog.
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-4"></div>
-              <div class="col-md-3" style="padding-left: 0px">
-                <img src="../../../assets/DFA.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
-                />
-              </div>
-              <div class="col-md-3" style="padding-left: 0px">
-                <img src="../../../assets/Attrition.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 projstat-values">
-                <strong>Michelin</strong>
-              </div>
-              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.michelindfa}}%</div>
-              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.michelinatter}}%</div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 projstat-values">
-                <strong>MGM</strong>
-              </div>
-              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.mGMDFA}}%</div>
-              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.mGMAtter}}%</div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 projstat-values">
-                <strong>Goldman Sachs</strong>
-              </div>
-              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.goldDFA}}%</div>
-              <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.goldAtter}}%</div>
-            </div>
-          </div>
-        </div>
+      <div class="col-md-12">
+        <img src="http://localhost:4200/uploads/{{progressbar.newsletterContent.headerimage}}" width="100%" />
       </div>
     </div>
 
-  </div>
-</div>
-<div class="secondImage">
-  <div class="Technical" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.technical + ')'">
-    <div *ngIf='progressbar.newsletterContent.technicalsection'>
-      <div class="row">
-        <div class="col-md-12">
-          <p style="background-color:#083d6d;height: 10px;"></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div style="margin-left: 35%;text-align: center;width: 100%;">
-          <img src='../../../assets/Tech_icon.png' alt="Technical Image" style="float: left;">
-          <div class="header-title" style="float: right;padding-right: 53%;">Technical Article</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <p style="margin-left: 1%" *ngFor="let value of progressbar.newsletterContent.technicalsection"> {{value}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="brainandhealth" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.brainandhealth + ')'">
-    <div class="brainteaser">
-      <div *ngIf='progressbar.newsletterContent.brainteaser'>
+    <div class="businessupdate" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.business + ')'">
+      <div *ngIf='progressbar.newsletterContent.business'>
         <div class="row">
           <div class="col-md-12">
             <p style="background-color:#083d6d;height: 10px;"></p>
           </div>
         </div>
-        <strong class="header-title">Brain Teaser</strong>
         <div class="row">
-          <div class="col-md-8">
-            <ul class="brainteaser">
-              <li *ngFor="let value of progressbar.newsletterContent.brainteaser; index as i">Q{{i + 1}}: {{value}}</li>
+          <div class="col-md-2">
+            <img src="../../../assets/Business update.png" style="width:80px; height:80px;margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
+            />
+          </div>
+          <div class="col-md-10">
+            <div class="header-title">
+              Business Updates
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul>
+              <li *ngFor="let value of progressbar.newsletterContent.business"> {{value}}</li>
             </ul>
           </div>
-          <div class="col-md-4" style="height: 50px; !important">
-            <img src='../../../assets/dimag-ki-batti.png' class="image" alt="Brain Teaser" style="height: 113px; ">
+        </div>
+      </div>
+      <br>
+      <br>
+      <div *ngIf='progressbar.newsletterContent.opportunity'>
+        <div class="opportuniyInPipeline">
+          <div class="row" style="margin-left: 0px;">
+            <div class="header-title">
+              Opportunities In Pipeline
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div>
+                <img src="../../../assets/Opprtunities_Img.png" style="margin: 5px;padding: 10px;height: 75px;width: 75px;" class="image"
+                  alt="Opportunity Image" />
+              </div>
+            </div>
+            <div class="col-md-9">
+              <ul>
+                <li *ngFor="let value of progressbar.newsletterContent.opportunity"> {{value}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf='progressbar.newsletterContent.acheivemnt'>
+        <div class="opportuniyInPipeline">
+          <div class="row">
+            <div class="col-md-2">
+              <div>
+                <img src="../../../assets/Achieved.png" style="margin: 5px;padding: 10px;width: 100px;height:100px;" class="image" alt="Opportunity Image"
+                />
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="header-title"> Acheivements </div>
+              <br>
+              <ul>
+                <li *ngFor="let value of progressbar.newsletterContent.acheivemnt"> {{value}}</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="healthTips">
-      <div *ngIf='progressbar.newsletterContent.healthtips'>
-        <strong class="header-title">Health Tips</strong>
+    <div class="planning" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.planned + ')'">
+      <div *ngIf='progressbar.newsletterContent.planned'>
         <div class="row">
-          <div class="col-md-8">
-            <ol>
-              <li *ngFor="let value of progressbar.newsletterContent.healthtips"> {{value}}</li>
-            </ol>
+          <div class="col-md-12">
+            <p style="background-color:#083d6d;height: 10px;"></p>
           </div>
-          <div class="col-md-4">
-            <img src='../../../assets/Medical_health_care.png' class="image" alt="Brain Teaser">
+        </div>
+        <div class="row">
+          <div class="col-md-10">
+            <div class="header-title">Planned</div>
+            <ul>
+              <li *ngFor="let value of progressbar.newsletterContent.planned"> {{value}}</li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <img src="../../../assets/Planning.png" style="margin: 5px;padding: 10px;height: 137px; width: 107px;" class="image" alt="Business Update Image"
+            />
+          </div>
+
+        </div>
+      </div>
+      <div *ngIf='progressbar.newsletterContent.projstat.rlticketcount'>
+        <strong class="header-title" style="text-align: center">Project Statistics</strong>
+        <div class="projectstat">
+          <div class="row">
+            <div class="col-md-6" style="padding-top: 8%">
+              <div class="row">
+                <div class="col-md-12">
+                  <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
+                  />
+                  <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.newsletterContent.projstat.rlticketcount}} + </strong> Tickets cleaned up from the backlog.
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <img src="../../../assets/chart-pie-512.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image"
+                  />
+                  <strong style="font-family: Impact;font-size: 21pt;text-align: center">{{progressbar.newsletterContent.projstat.lsticketcount}} + </strong> Tickets cleaned up from the backlog.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-3" style="padding-left: 0px">
+                  <img src="../../../assets/DFA.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image" />
+                </div>
+                <div class="col-md-3" style="padding-left: 0px">
+                  <img src="../../../assets/Attrition.png" style="margin: 5px;padding: 10px;" class="image" alt="Business Update Image" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 projstat-values">
+                  <strong>Michelin</strong>
+                </div>
+                <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.michelindfa}}%</div>
+                <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.michelinatter}}%</div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 projstat-values">
+                  <strong>MGM</strong>
+                </div>
+                <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.mGMDFA}}%</div>
+                <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.mGMAtter}}%</div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 projstat-values">
+                  <strong>Goldman Sachs</strong>
+                </div>
+                <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.goldDFA}}%</div>
+                <div class="col-md-3 projstat-values">{{progressbar.newsletterContent.projstat.goldAtter}}%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="secondImage">
+    <div class="Technical" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.technical + ')'">
+      <div *ngIf='progressbar.newsletterContent.technicalsection'>
+        <div class="row">
+          <div class="col-md-12">
+            <p style="background-color:#083d6d;height: 10px;"></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div style="margin-left: 35%;text-align: center;width: 100%;">
+            <img src='../../../assets/Tech_icon.png' alt="Technical Image" style="float: left;">
+            <div class="header-title" style="float: right;padding-right: 53%;">Technical Article</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p style="margin-left: 1%" *ngFor="let value of progressbar.newsletterContent.technicalsection"> {{value}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="brainandhealth" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.brainandhealth + ')'">
+      <div class="brainteaser">
+        <div *ngIf='progressbar.newsletterContent.brainteaser'>
+          <div class="row">
+            <div class="col-md-12">
+              <p style="background-color:#083d6d;height: 10px;"></p>
+            </div>
+          </div>
+          <strong class="header-title">Brain Teaser</strong>
+          <div class="row">
+            <div class="col-md-8">
+              <ul class="brainteaser">
+                <li *ngFor="let value of progressbar.newsletterContent.brainteaser; index as i">Q{{i + 1}}: {{value}}</li>
+              </ul>
+            </div>
+            <div class="col-md-4" style="height: 50px; !important">
+              <img src='../../../assets/dimag-ki-batti.png' class="image" alt="Brain Teaser" style="height: 113px; ">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="healthTips">
+        <div *ngIf='progressbar.newsletterContent.healthtips'>
+          <strong class="header-title">Health Tips</strong>
+          <div class="row">
+            <div class="col-md-8">
+              <ol>
+                <li *ngFor="let value of progressbar.newsletterContent.healthtips"> {{value}}</li>
+              </ol>
+            </div>
+            <div class="col-md-4">
+              <img src='../../../assets/Medical_health_care.png' class="image" alt="Brain Teaser">
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="thirdImage">
-  <div class="teamImage">
-    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
-      <div class="col-md-12">
-        <p style="background-color:#083d6d;height: 100%;"></p>
+  <div class="thirdImage">
+    <div class="teamImage">
+      <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
+        <div class="col-md-12">
+          <p style="background-color:#083d6d;height: 100%;"></p>
+        </div>
       </div>
-    </div>
-    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
-      <div class="col-md-12">
-        <img src="http://localhost:4200/uploads/{{progressbar.newsletterContent.teamimage[0]}}" width="100%" />
+      <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
+        <div class="col-md-12">
+          <img src="http://localhost:4200/uploads/{{progressbar.newsletterContent.teamimage[0]}}" width="100%" />
 
-        <!-- <img src='{{ progressbar.content[10][0]}}' width="100%" alt="" /> -->
+          <!-- <img src='{{ progressbar.content[10][0]}}' width="100%" alt="" /> -->
+        </div>
       </div>
-    </div>
 
-    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
-      <div class="col-md-12">
-        <p style="background-color:#083d6d;height: 10px;"></p>
-      </div>
-    </div>
-
-    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
-      <div class="col-md-3" style="padding-left: 5%;">
-        <img src="../../../assets/Birthday.png" width="50px" alt="" />
-      </div>
-      <div class="col-md-3" *ngFor="let value of progressbar.newsletterContent.teamimage[1]">
-        <img src='{{ value }}' width="50px" alt='{{ value }}' />
-      </div>
-    </div>
-
-    <br>
-    <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
-      <div class="col-md-3" style="padding-left: 5%;">
-        <img src="../../../assets/Award_Anniversaries-icon.png" width="50px" alt="" />
-      </div>
-      <div class="col-md-3" *ngFor="let value of progressbar.newsletterContent.teamimage[2]">
-        <img src='{{ value }}' width="50px" alt='{{ value }}' />
-      </div>
-    </div>
-  </div>
-
-
-  <div class="brainteaserans" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.brainteaserans + ')'">
-    <div *ngIf='progressbar.newsletterContent.brainteaserans'>
-      <div class="row">
+      <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
         <div class="col-md-12">
           <p style="background-color:#083d6d;height: 10px;"></p>
         </div>
       </div>
-      <strong class="header-title">Brain Teaser Answer</strong>
-      <div class="row">
-        <div class="col-md-12">
-          <ul style="list-style: none;">
-            <li *ngFor="let value of progressbar.newsletterContent.brainteaserans; index as i">A{{i}}: {{value}}</li>
-          </ul>
+
+      <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
+        <div class="col-md-3" style="padding-left: 5%;">
+          <img src="../../../assets/Birthday.png" width="50px" alt="" />
+        </div>
+        <div class="col-md-3" *ngFor="let value of progressbar.newsletterContent.teamimage[1]">
+          <img src='{{ value }}' width="50px" alt='{{ value }}' />
+        </div>
+      </div>
+
+      <br>
+      <div class="row" *ngIf='progressbar.newsletterContent.teamimage'>
+        <div class="col-md-3" style="padding-left: 5%;">
+          <img src="../../../assets/Award_Anniversaries-icon.png" width="50px" alt="" />
+        </div>
+        <div class="col-md-3" *ngFor="let value of progressbar.newsletterContent.teamimage[2]">
+          <img src='{{ value }}' width="50px" alt='{{ value }}' />
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="footersec">
-    <div class="row" style="height: 100px;color:#083d6d;background-color:#083d6d;margin-left:0px;margin-right:0px">
-      <div class="col-md-6">
-        <img alt="Graph" src="../../../assets/SR_Logo_RGB_W.png" style="margin-top: 50px;">
+
+    <div class="brainteaserans" [style.background]="'url(http://localhost:4200/uploads/' + progressbar.backgroundImage?.brainteaserans + ')'">
+      <div *ngIf='progressbar.newsletterContent.brainteaserans'>
+        <div class="row">
+          <div class="col-md-12">
+            <p style="background-color:#083d6d;height: 10px;"></p>
+          </div>
+        </div>
+        <strong class="header-title">Brain Teaser Answer</strong>
+        <div class="row">
+          <div class="col-md-12">
+            <ul style="list-style: none;">
+              <li *ngFor="let value of progressbar.newsletterContent.brainteaserans; index as i">A{{i}}: {{value}}</li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="col-md-6">
-        <table style="float : right; margin-top: 10px;">
-          <tbody>
-            <tr>
-              <td>
-                <div style=" font-size: 12px; margin-top: 5px;">
-                  <p style="color:white; display:inline; font-weight: bold;">Concept:</p>
-                  <p style="color:white; display:inline;"> Varun Sodhi, Amit, Deepak</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div style="float:right; font-size: 12px; margin-top: 5px;">
-                  <p style="color:white; display:inline; font-weight: bold;">Design & Execution: </p>
-                  <p style="color:white; display:inline;">Amit, Deepak</p>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="footersec">
+      <div class="row" style="height: 100px;color:#083d6d;background-color:#083d6d;margin-left:0px;margin-right:0px">
+        <div class="col-md-6">
+          <img alt="Graph" src="../../../assets/SR_Logo_RGB_W.png" style="margin-top: 50px;">
+        </div>
+
+        <div class="col-md-6">
+          <table style="float : right; margin-top: 10px;">
+            <tbody>
+              <tr>
+                <td>
+                  <div style=" font-size: 12px; margin-top: 5px;">
+                    <p style="color:white; display:inline; font-weight: bold;">Concept:</p>
+                    <p style="color:white; display:inline;"> Varun Sodhi, Amit, Deepak</p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="float:right; font-size: 12px; margin-top: 5px;">
+                    <p style="color:white; display:inline; font-weight: bold;">Design & Execution: </p>
+                    <p style="color:white; display:inline;">Amit, Deepak</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
 
       </div>
-
     </div>
   </div>
-</div>
 </div>

@@ -5,10 +5,7 @@ import { FinalNewsletterRoutingModule } from './final-newsletter-routing.module'
 import { FinalNewsletterComponent } from './final-newsletter/final-newsletter.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FinalNewsletterRoutingModule
-  ],
+  imports: [CommonModule, FinalNewsletterRoutingModule],
   declarations: [FinalNewsletterComponent]
 })
-export class FinalNewsletterModule { }
+export class FinalNewsletterModule {}

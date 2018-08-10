@@ -7,9 +7,9 @@ describe('FinalNewsletterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FinalNewsletterComponent ]
+      declarations: [FinalNewsletterComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
