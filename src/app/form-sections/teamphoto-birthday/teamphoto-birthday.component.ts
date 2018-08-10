@@ -96,7 +96,10 @@ export class TeamphotoBirthdayComponent implements OnInit {
     return this.userFormuserteam.get('users') as FormArray;
   }
 
-  onFormSubmit() {
+  onFormSubmit(event) {
+    if (event.srcElement.offsetParent.children[1].classList.contains('show')) {
+      event.srcElement.offsetParent.children[1].classList.remove('show');
+    }
     this.completedSections.teamandbirthday.status = 'completed';
     this.line.teamandbirthday.status = 'completed';
     this.uploader.uploadAll();

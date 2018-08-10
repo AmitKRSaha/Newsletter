@@ -40,9 +40,12 @@ export class ProjectStatisticsComponent implements OnInit {
     return this.userFormuserProjstat.get('users') as FormArray;
   }
 
-  onFormSubmit(evt) {
-    evt.preventDefault();
-    evt.stopPropagation();
+  onFormSubmit(event) {
+    if (event.srcElement.offsetParent.children[1].classList.contains('show')) {
+      event.srcElement.offsetParent.children[1].classList.remove('show');
+    }
+    event.preventDefault();
+    event.stopPropagation();
     this.progressBarService.additem('projstat', this.projectStatData());
 
     this.completedSections.projstat.status = 'completed';

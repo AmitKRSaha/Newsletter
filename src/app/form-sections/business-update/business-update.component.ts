@@ -41,7 +41,10 @@ export class BusinessUpdateComponent implements OnInit {
     this.usersBusiness.push(new FormControl());
   }
 
-  onFormSubmit() {
+  onFormSubmit(event) {
+    if (event.srcElement.offsetParent.children[1].classList.contains('show')) {
+      event.srcElement.offsetParent.children[1].classList.remove('show');
+    }
     this.progressBarService.additem('business', this.usersBusiness.value);
     this.completedSections.businessupdate.status = 'completed';
     this.line.businessupdate.status = 'completed';

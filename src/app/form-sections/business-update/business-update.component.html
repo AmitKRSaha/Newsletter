@@ -45,7 +45,7 @@
         </div>
       </div>
       <div style="margin-top: 2%;">
-        <form [formGroup]="userFormBusiness" (ngSubmit)="onFormSubmit()">
+        <form [formGroup]="userFormBusiness" (ngSubmit)="onFormSubmit($event)">
           <!-- <div class="form-group">
             <input type="file" name="img[]" class="file"  (change)="fileChange(input)" #input >
           </div>

@@ -38,7 +38,10 @@ export class PlannedComponent {
     this.route.navigateByUrl('planned');
   }
 
-  onFormSubmit() {
+  onFormSubmit(event) {
+    if (event.srcElement.offsetParent.children[1].classList.contains('show')) {
+      event.srcElement.offsetParent.children[1].classList.remove('show');
+    }
     this.completedSections.planned.status = 'completed';
     this.line.planned.status = 'completed';
 

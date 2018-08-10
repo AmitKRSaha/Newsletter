@@ -43,7 +43,7 @@
               </div>
             </div>
         <div style="margin-top: 2%">
-          <form [formGroup]="userFormuserbrainteaserans" (ngSubmit)="onFormSubmit()">
+          <form [formGroup]="userFormuserbrainteaserans" (ngSubmit)="onFormSubmit($event)">
             <div formArrayName="users">
               <div *ngFor="let user of users.controls; index as idx">
               <textarea [formControlName]="idx"  class="form-control" aria-label="With textarea" placeholder="Brain Teasers Answers"></textarea>

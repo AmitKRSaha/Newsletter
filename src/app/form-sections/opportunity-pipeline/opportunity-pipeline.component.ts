@@ -29,7 +29,10 @@ export class OpportunityPipelineComponent implements OnInit {
     return this.userFormuserOpportunity.get('users') as FormArray;
  }
 
- onFormSubmit() {
+ onFormSubmit(event) {
+  if (event.srcElement.offsetParent.children[1].classList.contains('show')) {
+    event.srcElement.offsetParent.children[1].classList.remove('show');
+  }
   this.completedSections.opportunityInPipeline.status = 'completed';
   this.line.opportunityInPipeline.status = 'completed';
   this.progressBarService.additem('opportunity', this.users.value);

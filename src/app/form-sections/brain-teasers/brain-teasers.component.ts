@@ -39,7 +39,10 @@ export class BrainTeasersComponent {
 
   }
 
-  onFormSubmit() {
+  onFormSubmit(event) {
+    if (event.srcElement.offsetParent.children[1].classList.contains('show')) {
+      event.srcElement.offsetParent.children[1].classList.remove('show');
+    }
     this.completedSections.brainteaser.status = 'completed';
     this.line.brainteaser.status = 'completed';
     this.progressBarService.additem('brainteaser', this.users.value);

@@ -21,7 +21,7 @@
     </div>
     <div class="card-body">
       <div>
-        <form [formGroup]="userFormuserteam" (ngSubmit)="onFormSubmit()">
+        <form [formGroup]="userFormuserteam" (ngSubmit)="onFormSubmit($event)">
 
           <div class="form-group">
             <label for="teamImage">Team Image:</label>

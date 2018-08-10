@@ -39,7 +39,7 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     userServiceStub = {
-      content : ['1', '2']
+      newsletterContent : {'a' : '1'}
     };
 
     TestBed.configureTestingModule({

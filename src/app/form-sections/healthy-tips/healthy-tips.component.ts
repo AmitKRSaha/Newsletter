@@ -34,7 +34,10 @@ export class HealthyTipsComponent {
     this.line.healthtips.status = 'active';
   }
 
-  onFormSubmit() {
+  onFormSubmit(event) {
+    if (event.srcElement.offsetParent.children[1].classList.contains('show')) {
+      event.srcElement.offsetParent.children[1].classList.remove('show');
+    }
     this.completedSections.healthcare.status = 'completed';
     this.line.healthtips.status = 'completed';
     this.progressBarService.additem('healthtips', this.users.value);

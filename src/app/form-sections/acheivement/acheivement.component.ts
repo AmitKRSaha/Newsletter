@@ -35,7 +35,10 @@ export class AcheivementComponent {
     this.line.acheivement.status = 'active';
   }
 
-  onFormSubmit() {
+  onFormSubmit(event) {
+    if (event.srcElement.offsetParent.children[1].classList.contains('show')) {
+      event.srcElement.offsetParent.children[1].classList.remove('show');
+    }
     this.completedSections.acheivement.status = 'completed';
     this.line.acheivement.status = 'completed';
     this.progressBarService.additem('acheivemnt', this.users.value);

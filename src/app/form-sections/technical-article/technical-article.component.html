@@ -37,14 +37,14 @@
                 <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
               </div>
             </div>
-            <button type="button" class="btn btn-success btn-s" (click)="backgroundImageUpload()" [disabled]="!uploader.getNotUploadedItems().length">
+            <button type="button" style="margin-bottom: 2%;" class="btn btn-success btn-s" (click)="backgroundImageUpload()" [disabled]="!uploader.getNotUploadedItems().length">
               <span class="glyphicon glyphicon-upload"></span> Upload all
             </button>
           </form>
         </div>
       </div>
       <div>
-        <form [formGroup]="userFormuserProjstat" (ngSubmit)="onFormSubmit()">
+        <form [formGroup]="userFormuserProjstat" (ngSubmit)="onFormSubmit($event)">
           <div formArrayName="users">
             <div *ngFor="let user of users.controls; index as idx">
               <textarea [formControlName]="idx" class="form-control" aria-label="With textarea" placeholder="Technical Arcitle"></textarea>

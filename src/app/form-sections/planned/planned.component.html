@@ -44,7 +44,7 @@
         </div>
       </div>
       <div style="margin-top: 2%">
-        <form [formGroup]="userFormuserplanned" (ngSubmit)="onFormSubmit()">
+        <form [formGroup]="userFormuserplanned" (ngSubmit)="onFormSubmit($event)">
           <div formArrayName="users">
             <div *ngFor="let user of users.controls; index as idx">
               <textarea [formControlName]="idx" class="form-control" aria-label="With textarea" placeholder="Planned"></textarea>

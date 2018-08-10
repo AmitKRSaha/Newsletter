@@ -42,7 +42,10 @@ export class TechnicalArticleComponent implements OnInit {
     this.route.navigateByUrl('technical');
   }
 
-  onFormSubmit() {
+  onFormSubmit(event) {
+    if (event.srcElement.offsetParent.children[1].classList.contains('show')) {
+      event.srcElement.offsetParent.children[1].classList.remove('show');
+    }
     this.completedSections.tech.status = 'completed';
     this.line.tech.status = 'completed';
     this.progressBarService.additem('technicalsection', this.users.value);
