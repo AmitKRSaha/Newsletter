@@ -160,20 +160,27 @@ describe('workspace-project App with different navigation', () => {
 describe('workspace-project App with image upload', () => {
   let page: AppPage;
   let path: any;
+  let fileToUpload: any;
+  let sampleText: string;
+  let absolutePath: any;
 
   beforeEach(() => {
     page = new AppPage();
     path = require('path');
+    page.navigateTo();
+
+    fileToUpload =
+      '../../../form-app/src/assets/baseline-question_answer-24px.svg',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    sampleText = 'This is dummy text for e2e testing';
   });
 
   it('should upload section head image', function () {
-    page.navigateTo();
+
 
     expect(element(by.id('biz-text')).isPresent()).toBeFalsy();
 
-    const fileToUpload =
-      '../../../form-app/src/assets/baseline-question_answer-24px.svg',
-      absolutePath = path.resolve(__dirname, fileToUpload);
+
     // browser.pause();
     element(by.css('app-section-head input')).sendKeys(absolutePath);
     element(by.id('btnsectionHead')).click();
@@ -181,19 +188,19 @@ describe('workspace-project App with image upload', () => {
     expect(element(by.css('app-header-preview img')[1])).not.toContain('null');
   });
 
-  // it('should upload section head image', function () {
-  //   page.navigateToBusiness();
+  it('should upload business section image', function () {
 
-  //   expect(element(by.id('biz-text')).isPresent()).toBeFalsy();
+    expect(element(by.css('app-business-update businessUpdate'))).toBeTruthy();
 
-  //   const fileToUpload =
-  //     '../../../form-app/src/assets/business-update-background.png',
-  //     absolutePath = path.resolve(__dirname, fileToUpload);
-  //   element(by.css('app-business-update input')).sendKeys(absolutePath);
-  //   expect(element(by.id('btnuploadBusinessBckImage')).isPresent()).toBeTruthy();
-  //   element(by.id('btnuploadBusinessBckImage')).click();
-  //   element(by.css('app-business-update textarea')).click();
-  //   expect(element(by.css('.amit')).isPresent()).toBeTruthy();
-  //   expect(element(by.css('app-header-preview img')[1])).not.toContain('null');
-  // });
+    element(by.css('app-business-update .businessUpdate')).click();
+    fileToUpload =
+      '../../../form-app/src/assets/business-update-background.png',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    element(by.css('app-business-update input')).sendKeys(absolutePath);
+    expect(by.css('app-business-update btn-success')).toBeTruthy();
+    element(by.css('app-business-update .btn-success')).click();
+    element(by.css('app-business-update textarea')).click();
+    element(by.css('app-business-update textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Business Update')).click();
+  });
 });
