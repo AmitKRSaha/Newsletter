@@ -44,36 +44,6 @@ export class SectionHeadComponent {
       new FormControl()
     ])
   });
-  fileChange(input) {
-    this.readFiles(input.files);
-  }
-
-  readFiles(files, index = 0) {
-
-    // Create the file reader
-    const reader = new FileReader();
-    // If there is a file
-    if (index in files) {
-      // Start reading this file
-      this.imageprocessor.readFile(files[index], reader, (result) => {
-        // Create an img element and add the image file data to it
-        const img = document.createElement('img');
-        img.src = result;
-        // Send this img to the resize function (and wait for callback)
-        this.imageprocessor.resize(img, 250, 250, (resized_jpeg, before, after) => {
-          // Add the resized jpeg img source to a list for preview
-          // This is also the file you want to upload. (either as a
-          // base64 string or img.src = resized_jpeg if you prefer a file).
-          this.imgpath = resized_jpeg;
-          // Read the next file;
-          // this.readFiles(files, index + 1);
-        });
-      });
-    } else {
-      // When all files are done This forces a change detection
-      this.changeDetectorRef.detectChanges();
-    }
-  }
 
 
   showactivestatus() {

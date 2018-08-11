@@ -180,4 +180,20 @@ describe('workspace-project App with image upload', () => {
     expect(element(by.id('biz-text')).isPresent()).toBeTruthy();
     expect(element(by.css('app-header-preview img')[1])).not.toContain('null');
   });
+
+  // it('should upload section head image', function () {
+  //   page.navigateToBusiness();
+
+  //   expect(element(by.id('biz-text')).isPresent()).toBeFalsy();
+
+  //   const fileToUpload =
+  //     '../../../form-app/src/assets/business-update-background.png',
+  //     absolutePath = path.resolve(__dirname, fileToUpload);
+  //   element(by.css('app-business-update input')).sendKeys(absolutePath);
+  //   expect(element(by.id('btnuploadBusinessBckImage')).isPresent()).toBeTruthy();
+  //   element(by.id('btnuploadBusinessBckImage')).click();
+  //   element(by.css('app-business-update textarea')).click();
+  //   expect(element(by.css('.amit')).isPresent()).toBeTruthy();
+  //   expect(element(by.css('app-header-preview img')[1])).not.toContain('null');
+  // });
 });
