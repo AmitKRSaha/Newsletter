@@ -259,6 +259,56 @@ describe('workspace-project App with image upload', () => {
     expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-businessupdate-preview/div/div/div[4]/div/ul/li'))).not.toContain('null');
 
 
-    // browser.sleep(5000);
+    //
+  });
+
+
+  it('should upload planned section image', function () {
+
+    expect(element(by.css('app-planned plannedSection'))).toBeTruthy();
+
+    element(by.css('app-planned .plannedSection')).click();
+    fileToUpload =
+      '../../../form-app/src/assets/business-update-background.png',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    element(by.css('app-planned input')).sendKeys(absolutePath);
+    expect(by.css('app-planned btn-success')).toBeTruthy();
+    element(by.css('app-planned .btn-success')).click();
+    element(by.css('app-planned textarea')).click();
+    element(by.css('app-planned textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Planned Section')).click();
+    expect(element(by.css('app-project-preview img')[1])).not.toContain('null');
+    // tslint:disable-next-line:max-line-length
+    expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-project-preview/div/div[1]/div/div[1]/ul/li'))).not.toContain('null');
+  });
+
+  it('should upload project statistic section data', function () {
+
+    element(by.css('app-planned .plannedSection')).click();
+    fileToUpload =
+      '../../../form-app/src/assets/business-update-background.png',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    element(by.css('app-planned input')).sendKeys(absolutePath);
+    expect(by.css('app-planned btn-success')).toBeTruthy();
+    element(by.css('app-planned .btn-success')).click();
+    element(by.css('app-planned textarea')).click();
+    element(by.css('app-planned textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Planned Section')).click();
+    expect(element(by.css('app-project-preview img')[1])).not.toContain('null');
+
+    expect(element(by.css('app-project-statistics input[type = "text"]'))).toBeTruthy();
+    element(by.css('app-project-statistics .rlTickCount')).sendKeys(sampleText);
+    element(by.css('app-project-statistics .lsTickCount')).sendKeys(sampleText);
+
+    element(by.css('app-project-statistics .michelinAtter')).sendKeys('12');
+    element(by.css('app-project-statistics .michelinDFA')).sendKeys('12');
+
+    element(by.css('app-project-statistics .mGMDFA')).sendKeys('12');
+    element(by.css('app-project-statistics .mGMAtter')).sendKeys('12');
+    element(by.css('app-project-statistics .goldDFA')).sendKeys('12');
+    element(by.css('app-project-statistics .goldAtter')).sendKeys('12');
+    element(by.buttonText('Save Project Statistic Section')).click();
+
+    expect(element(by.css('app-project-preview img')[2])).not.toContain('null');
   });
 });
