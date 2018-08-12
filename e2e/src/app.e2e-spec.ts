@@ -177,9 +177,7 @@ describe('workspace-project App with image upload', () => {
 
   it('should upload section head image', function () {
 
-
     expect(element(by.id('biz-text')).isPresent()).toBeFalsy();
-
 
     // browser.pause();
     element(by.css('app-section-head input')).sendKeys(absolutePath);
@@ -202,5 +200,65 @@ describe('workspace-project App with image upload', () => {
     element(by.css('app-business-update textarea')).click();
     element(by.css('app-business-update textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Business Update')).click();
+    expect(element(by.css('app-businessupdate-preview img')[1])).not.toContain('null');
+    // tslint:disable-next-line:max-line-length
+    expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-businessupdate-preview/div/div/div[2]/div/ul/li'))).not.toContain('null');
+
+  });
+
+  it('should upload opportunity section data', function () {
+
+    element(by.css('app-business-update .businessUpdate')).click();
+    fileToUpload =
+      '../../../form-app/src/assets/business-update-background.png',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    element(by.css('app-business-update input')).sendKeys(absolutePath);
+    expect(by.css('app-business-update btn-success')).toBeTruthy();
+    element(by.css('app-business-update .btn-success')).click();
+    element(by.css('app-business-update textarea')).click();
+    element(by.css('app-business-update textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Business Update')).click();
+    expect(element(by.css('app-businessupdate-preview img')[1])).not.toContain('null');
+
+    expect(element(by.css('app-opportunity-pipeline textarea'))).toBeTruthy();
+    element(by.css('app-opportunity-pipeline textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Opportunity Section')).click();
+    expect(element(by.css('app-businessupdate-preview img')[2])).not.toContain('null');
+
+    // tslint:disable-next-line:max-line-length
+    expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-businessupdate-preview/div/div/div[3]/div/ul/li'))).not.toContain('null');
+
+
+  });
+
+  it('should upload acheivement section data', function () {
+
+    element(by.css('app-business-update .businessUpdate')).click();
+    fileToUpload =
+      '../../../form-app/src/assets/business-update-background.png',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    element(by.css('app-business-update input')).sendKeys(absolutePath);
+    expect(by.css('app-business-update btn-success')).toBeTruthy();
+    element(by.css('app-business-update .btn-success')).click();
+    element(by.css('app-business-update textarea')).click();
+    element(by.css('app-business-update textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Business Update')).click();
+    expect(element(by.css('app-businessupdate-preview img')[1])).not.toContain('null');
+
+    expect(element(by.css('app-opportunity-pipeline textarea'))).toBeTruthy();
+    element(by.css('app-opportunity-pipeline textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Opportunity Section')).click();
+
+    expect(element(by.css('app-acheivement textarea'))).toBeTruthy();
+    element(by.css('app-acheivement textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Acheivement Section')).click();
+
+    expect(element(by.css('app-businessupdate-preview img')[3])).not.toContain('null');
+
+    // tslint:disable-next-line:max-line-length
+    expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-businessupdate-preview/div/div/div[4]/div/ul/li'))).not.toContain('null');
+
+
+    // browser.sleep(5000);
   });
 });
