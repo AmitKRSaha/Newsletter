@@ -1,5 +1,6 @@
 import { AppPage } from './app.po';
 import { element, by, browser } from '../../node_modules/protractor';
+import { BrowserStack } from '../../node_modules/protractor/built/driverProviders';
 
 describe('workspace-project App should have different sections with all input properties', () => {
   let page: AppPage;
@@ -200,6 +201,7 @@ describe('workspace-project App with image upload', () => {
     element(by.css('app-business-update textarea')).click();
     element(by.css('app-business-update textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Business Update')).click();
+    browser.waitForAngular();
     expect(element(by.css('app-businessupdate-preview img')[1])).not.toContain('null');
     // tslint:disable-next-line:max-line-length
     expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-businessupdate-preview/div/div/div[2]/div/ul/li'))).not.toContain('null');
@@ -223,6 +225,7 @@ describe('workspace-project App with image upload', () => {
     expect(element(by.css('app-opportunity-pipeline textarea'))).toBeTruthy();
     element(by.css('app-opportunity-pipeline textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Opportunity Section')).click();
+    browser.waitForAngular();
     expect(element(by.css('app-businessupdate-preview img')[2])).not.toContain('null');
 
     // tslint:disable-next-line:max-line-length
@@ -252,14 +255,11 @@ describe('workspace-project App with image upload', () => {
     expect(element(by.css('app-acheivement textarea'))).toBeTruthy();
     element(by.css('app-acheivement textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Acheivement Section')).click();
-
+    browser.waitForAngular();
     expect(element(by.css('app-businessupdate-preview img')[3])).not.toContain('null');
 
     // tslint:disable-next-line:max-line-length
     expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-businessupdate-preview/div/div/div[4]/div/ul/li'))).not.toContain('null');
-
-
-    //
   });
 
 
@@ -277,6 +277,7 @@ describe('workspace-project App with image upload', () => {
     element(by.css('app-planned textarea')).click();
     element(by.css('app-planned textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Planned Section')).click();
+    browser.waitForAngular();
     expect(element(by.css('app-project-preview img')[1])).not.toContain('null');
     // tslint:disable-next-line:max-line-length
     expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-project-preview/div/div[1]/div/div[1]/ul/li'))).not.toContain('null');
@@ -294,12 +295,15 @@ describe('workspace-project App with image upload', () => {
     element(by.css('app-planned textarea')).click();
     element(by.css('app-planned textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Planned Section')).click();
+    browser.waitForAngular();
     expect(element(by.css('app-project-preview img')[1])).not.toContain('null');
 
     expect(element(by.css('app-project-statistics input[type = "text"]'))).toBeTruthy();
+
+    element(by.css('app-project-statistics .rlTickCount')).click();
     element(by.css('app-project-statistics .rlTickCount')).sendKeys(sampleText);
     element(by.css('app-project-statistics .lsTickCount')).sendKeys(sampleText);
-
+    browser.waitForAngular();
     element(by.css('app-project-statistics .michelinAtter')).sendKeys('12');
     element(by.css('app-project-statistics .michelinDFA')).sendKeys('12');
 
@@ -308,7 +312,10 @@ describe('workspace-project App with image upload', () => {
     element(by.css('app-project-statistics .goldDFA')).sendKeys('12');
     element(by.css('app-project-statistics .goldAtter')).sendKeys('12');
     element(by.buttonText('Save Project Statistic Section')).click();
-
+    browser.waitForAngular();
     expect(element(by.css('app-project-preview img')[2])).not.toContain('null');
+
+    expect(element(by.css('app-project-preview .projectstat strong'))).toBeTruthy();
+
   });
 });
