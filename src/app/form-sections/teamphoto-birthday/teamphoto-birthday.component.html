@@ -5,7 +5,7 @@
       <button class="btn btn-link" type="button">
         <div class="row">
           <div class="col-md-9 teamSection">
-            Team Photo , Birthday and Anniversary
+            Team Photo , Birthday and Anniversary Section
           </div>
           <div class="col-md-1" [ngClass]="{'closed': expandtoggle.teamandbirthday.status == 'closed','open': expandtoggle.teamandbirthday.status == 'open'}">
           </div>
@@ -17,13 +17,13 @@
   <div id="collapseEleven" [ngClass]="showorhide" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample"
     (click)="showActive()" #patientDDL>
     <div class="card-body">
-      Section Header Image
+      Team , Birthday and Anni
     </div>
     <div class="card-body">
       <div>
         <form [formGroup]="userFormuserteam" (ngSubmit)="onFormSubmit($event)">
 
-          <div class="form-group">
+          <div class="form-group teamImage">
             <label for="teamImage">Team Image:</label>
             <br>
             <!-- <img src='{{teamImage[0]}}' alt="" /> -->
@@ -31,7 +31,7 @@
             <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />
           </div>
 
-          <div class="form-group">
+          <div class="form-group birthdayImage">
               <label for="birthdayImage">Birthday Images:</label>
               <br>
               <!-- <img src='{{teamImage[1]}}' alt="" />
@@ -40,7 +40,7 @@
               <input type="file" class="form-control" name="img[]" (change)="birthdayphoto(inputbirth)" multiple #inputbirth>
           </div>
 
-          <div class="form-group">
+          <div class="form-group anniversaryImage">
               <label for="anniversaryImage">Anniversary Images:</label>
               <br>
               <input type="file" class="form-control" name="img[]" (change)="anniversaryphoto(input2)" #input2 multiple>

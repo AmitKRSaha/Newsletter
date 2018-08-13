@@ -1,6 +1,5 @@
 import { AppPage } from './app.po';
 import { element, by, browser } from '../../node_modules/protractor';
-import { BrowserStack } from '../../node_modules/protractor/built/driverProviders';
 
 describe('workspace-project App should have different sections with all input properties', () => {
   let page: AppPage;
@@ -21,7 +20,7 @@ describe('workspace-project App should have different sections with all input pr
     expect(element(by.css('.brainSection')).getText()).toEqual(' Brain Teasers '.trim());
     expect(element(by.css('.healthtipsSection')).getText()).toEqual(' Health Tips '.trim());
     expect(element(by.css('.brainteaserSection')).getText()).toEqual(' Brain Teaser Answers '.trim());
-    expect(element(by.css('.teamSection')).getText()).toEqual(' Team Photo , Birthday and Anniversary '.trim());
+    expect(element(by.css('.teamSection')).getText()).toEqual(' Team Photo , Birthday and Anniversary Section '.trim());
   });
 
   it('should have header section with all properties', () => {
@@ -203,9 +202,6 @@ describe('workspace-project App with image upload', () => {
     element(by.buttonText('Save Business Update')).click();
     browser.waitForAngular();
     expect(element(by.css('app-businessupdate-preview img')[1])).not.toContain('null');
-    // tslint:disable-next-line:max-line-length
-    expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-businessupdate-preview/div/div/div[2]/div/ul/li'))).not.toContain('null');
-
   });
 
   it('should upload opportunity section data', function () {
@@ -227,11 +223,6 @@ describe('workspace-project App with image upload', () => {
     element(by.buttonText('Save Opportunity Section')).click();
     browser.waitForAngular();
     expect(element(by.css('app-businessupdate-preview img')[2])).not.toContain('null');
-
-    // tslint:disable-next-line:max-line-length
-    expect(element(by.xpath('/html/body/app-root/div[2]/div/div[3]/div/app-businessupdate-preview/div/div/div[3]/div/ul/li'))).not.toContain('null');
-
-
   });
 
   it('should upload acheivement section data', function () {
@@ -246,12 +237,13 @@ describe('workspace-project App with image upload', () => {
     element(by.css('app-business-update textarea')).click();
     element(by.css('app-business-update textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Business Update')).click();
+    browser.waitForAngular();
     expect(element(by.css('app-businessupdate-preview img')[1])).not.toContain('null');
 
     expect(element(by.css('app-opportunity-pipeline textarea'))).toBeTruthy();
     element(by.css('app-opportunity-pipeline textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Opportunity Section')).click();
-
+    browser.waitForAngular();
     expect(element(by.css('app-acheivement textarea'))).toBeTruthy();
     element(by.css('app-acheivement textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Acheivement Section')).click();
@@ -317,5 +309,93 @@ describe('workspace-project App with image upload', () => {
 
     expect(element(by.css('app-project-preview .projectstat strong'))).toBeTruthy();
 
+  });
+
+  it('should upload technical article section image', function () {
+
+    expect(element(by.css('app-technical-article techSection'))).toBeTruthy();
+
+    element(by.css('app-technical-article .techSection')).click();
+    fileToUpload =
+      '../../../form-app/src/assets/business-update-background.png',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    element(by.css('app-technical-article input')).sendKeys(absolutePath);
+    expect(by.css('app-technical-article btn-success')).toBeTruthy();
+    element(by.css('app-technical-article .btn-success')).click();
+    element(by.css('app-technical-article textarea')).click();
+    element(by.css('app-technical-article textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Technical Arcitle')).click();
+    browser.waitForAngular();
+    expect(element(by.css('app-technical-preview .planning img'))).not.toContain('null');
+    expect(element(by.css('app-technical-preview .planning strong'))).toBeTruthy();
+
+  });
+
+  it('should upload brain teaser and health tips section data', function () {
+
+    element(by.css('app-brain-teasers .brainSection')).click();
+    fileToUpload =
+      '../../../form-app/src/assets/business-update-background.png',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    element(by.css('app-brain-teasers input')).sendKeys(absolutePath);
+    expect(by.css('app-brain-teasers btn-success')).toBeTruthy();
+    element(by.css('app-brain-teasers .btn-success')).click();
+    element(by.css('app-brain-teasers textarea')).click();
+    element(by.css('app-brain-teasers textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Brain Teasers')).click();
+    browser.waitForAngular();
+    expect(element(by.css('app-barinteaser-healthtips img')[1])).not.toContain('null');
+
+    expect(element(by.css('app-healthy-tips textarea'))).toBeTruthy();
+    element(by.css('app-healthy-tips textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Health Tips')).click();
+    browser.waitForAngular();
+    expect(element(by.css('app-barinteaser-healthtips img')[2])).not.toContain('null');
+
+  });
+
+  it('should upload brain teaser answer section data', function () {
+
+    element(by.css('app-brain-teaser-answer .brainteaserSection')).click();
+    fileToUpload =
+      '../../../form-app/src/assets/business-update-background.png',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    element(by.css('app-brain-teaser-answer input')).sendKeys(absolutePath);
+    expect(by.css('app-brain-teaser-answer btn-success')).toBeTruthy();
+    element(by.css('app-brain-teaser-answer .btn-success')).click();
+
+    element(by.css('app-brain-teaser-answer textarea')).click();
+    element(by.css('app-brain-teaser-answer textarea')).sendKeys(sampleText);
+    element(by.buttonText('Save Brain Teasers Answers')).click();
+    browser.waitForAngular();
+    expect(element(by.css('app-barinteaser-answer .brainteaserans ul li'))).toBeTruthy();
+
+  });
+
+  it('should upload team section data', function () {
+
+    element(by.css('app-teamphoto-birthday .teamSection')).click();
+    fileToUpload =
+      '../../../form-app/src/assets/business-update-background.png',
+    absolutePath = path.resolve(__dirname, fileToUpload);
+    element(by.css('app-teamphoto-birthday .teamImage input')).sendKeys(absolutePath);
+    element(by.css('app-teamphoto-birthday .birthdayImage input')).sendKeys(absolutePath);
+    element(by.css('app-teamphoto-birthday .anniversaryImage input')).sendKeys(absolutePath);
+
+    element(by.buttonText('Save All')).click();
+    browser.waitForAngular();
+    expect(element(by.css('app-team-preview img')[0])).toBeTruthy();
+    expect(element(by.css('app-team-preview img')[1])).toBeTruthy();
+    expect(element(by.css('app-team-preview img')[2])).toBeTruthy();
+  });
+
+  it('should create final news letter', function () {
+
+    element(by.buttonText('Final NewsLetter')).click();
+    browser.waitForAngular();
+    expect(element(by.css('app-final-newsletter h1')).getText()).toEqual('Final News Letter');
+    expect(element(by.css('app-final-newsletter firstImage'))).toBeTruthy();
+    expect(element(by.css('app-final-newsletter secondImage'))).toBeTruthy();
+    expect(element(by.css('app-final-newsletter thirdImage'))).toBeTruthy();
   });
 });
