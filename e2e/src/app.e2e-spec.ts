@@ -7,6 +7,7 @@ describe('workspace-project App should have different sections with all input pr
   beforeEach(() => {
     page = new AppPage();
     page.navigateTo();
+    browser.waitForAngular();
   });
 
   it('should have different sections', () => {
@@ -216,6 +217,7 @@ describe('workspace-project App with image upload', () => {
     element(by.css('app-business-update textarea')).click();
     element(by.css('app-business-update textarea')).sendKeys(sampleText);
     element(by.buttonText('Save Business Update')).click();
+    browser.waitForAngular();
     expect(element(by.css('app-businessupdate-preview img')[1])).not.toContain('null');
 
     expect(element(by.css('app-opportunity-pipeline textarea'))).toBeTruthy();
