@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row no-container">
-    <div class="col-md-2" id="sectionhead">
+    <div class="col-md-2 animated bounceInLeft" id="sectionhead">
       <div class="liner">
         <div [ngClass]="{'sectionheadlineActive': line.sectionHead.status == 'active', 'sectionheadlineCompleted': line.sectionHead.status == 'completed'}"></div>
         <div [ngClass]="{'businessupdatelineActive': line.businessupdate.status == 'active', 'businessupdatelineCompleted': line.businessupdate.status == 'completed'}"></div>
@@ -80,7 +80,7 @@
       </div>
     </div>
 
-    <div class="col-md-5 shadow p-3 mb-5 bg-white rounded">
+    <div class="col-md-5 shadow p-3 mb-5 bg-white rounded animated bounceInUp">
       <div class="accordion" id="accordionExample">
         <app-section-head [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" [businessupdate]="businessupdate"></app-section-head>
         <app-business-update [expandtoggle]="expandtoggle" [opportunityPipeline]="opportunityPipeline" [line]="line" [completedSections]="completedSections"
@@ -104,7 +104,7 @@
         <app-teamphoto-birthday [expandtoggle]="expandtoggle" [completedSections]="completedSections" [line]="line" #teamphotobirthday></app-teamphoto-birthday>
       </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5 animated bounceInRight">
       <div style="position: fixed; padding-left: 5%">
         <router-outlet></router-outlet>
       </div>
@@ -134,7 +134,7 @@
   Products List
 </a> -->
 
-<div class="container newsletter">
+<div class="container newsletter animated bounceInDown">
   <router-outlet name="newsletter"></router-outlet>
 </div>
 
