@@ -11,7 +11,8 @@
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
 //       declarations: [ BusinessUpdateComponent, FileSelectDirective ],
-//       imports: [RouterTestingModule.withRoutes([]) , ReactiveFormsModule, FormsModule]
+//       imports: [RouterTestingModule.withRoutes([]) , ReactiveFormsModule, FormsModule],
+      // schemas: [NO_ERRORS_SCHEMA]
 //     }).compileComponents();
 //   }));
 
